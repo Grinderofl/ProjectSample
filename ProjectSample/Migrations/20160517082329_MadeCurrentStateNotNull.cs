@@ -11,13 +11,13 @@ namespace ProjectSample.Migrations
     {
         public override void Up()
         {
-            Update.Table("Order").InSchema("dbo").Set(new {CurrentState_id = (int?)1}).Where(new {CurrentState_id = (int?)null});
-            Alter.Table("Order").InSchema("dbo").AlterColumn("CurrentState_id").AsInt16().NotNullable();
+            Update.Table("Order").InSchema("dbo").Set(new {CurrentStateId = (int?)1}).Where(new {CurrentStateId = (int?)null});
+            Alter.Table("Order").InSchema("dbo").AlterColumn("CurrentStateId").AsInt16().NotNullable();
         }
 
         public override void Down()
         {
-            Alter.Table("Order").InSchema("dbo").AlterColumn("CurrentState_id").AsInt16().Nullable();
+            Alter.Table("Order").InSchema("dbo").AlterColumn("CurrentStateId").AsInt16().Nullable();
         }
     }
 }

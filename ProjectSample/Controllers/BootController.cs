@@ -21,8 +21,9 @@ namespace ProjectSample.Controllers
             if (id.IsNullOrEmpty())
                 return Content("No name");
             var configuration = new NHibernateConfigurationBuilder().GetConfiguration(null);
-            new SchemaUpdate(configuration).Execute(s => System.IO.File.AppendAllText(Server.MapPath($"~/Sql/{id}.sql"), s), false);
-            //new SchemaExport(configuration).Execute(s => System.IO.File.AppendAllText(Server.MapPath("~/Sql/create.sql"), s), false, false, Response.Output);
+            var sqlFilename = Server.MapPath($"~/Sql/{id}.sql");
+            System.IO.File.Delete(sqlFilename);
+            new SchemaUpdate(configuration).Execute(s => System.IO.File.AppendAllText(sqlFilename, s), false);
             var generator = new SchemaGenerator(configuration);
             new SchemaClassGenerator(generator).SaveClassFile(Server.MapPath("~/Sql/"), id, "ProjectSample.Migrations");
             return Content("Done");

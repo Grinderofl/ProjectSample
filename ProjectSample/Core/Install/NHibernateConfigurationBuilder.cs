@@ -29,6 +29,7 @@ namespace ProjectSample.Core.Install
                     m => m.AutoMappings.Add(AutoMap.AssemblyOf<NHibernateConfigurationBuilder>(new NhTestAutoMappingConfiguration())
                         .UseOverridesFromAssemblyOf<NHibernateConfigurationBuilder>()
                         .AddMappingsFromAssemblyOf<NHibernateConfigurationBuilder>()
+                        .Conventions.AddFromAssemblyOf<NHibernateConfigurationBuilder>()
                         )
                 );
 

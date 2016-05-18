@@ -15,7 +15,7 @@ namespace ProjectSample.Migrations
             // Table: Order.
             Create.Table("Order").InSchema("").WithColumn("Id").AsInt64().PrimaryKey().Identity().NotNullable()
             .WithColumn("LastModified").AsDateTime().Nullable()
-            .WithColumn("CurrentState_id").AsInt16().Nullable();
+            .WithColumn("CurrentStateId").AsInt16().Nullable();
 
             // Table: OrderState.
             Create.Table("OrderState").InSchema("").WithColumn("Id").AsInt16().PrimaryKey().NotNullable()
@@ -26,15 +26,15 @@ namespace ProjectSample.Migrations
             Create.Table("OrderStateHistoryItem").InSchema("").WithColumn("Id").AsInt64().PrimaryKey().Identity().NotNullable()
             .WithColumn("Created").AsDateTime().Nullable()
             .WithColumn("LastModified").AsDateTime().Nullable()
-            .WithColumn("Order_id").AsInt64().Nullable()
-            .WithColumn("State_id").AsInt16().Nullable();
+            .WithColumn("OrderId").AsInt64().Nullable()
+            .WithColumn("StateId").AsInt16().Nullable();
 
             // Foreign keys for table: Order.
-            Create.ForeignKey("FK3117099BF33F4407").FromTable("Order").InSchema("").ForeignColumns("CurrentState_id").ToTable("OrderState").InSchema("").PrimaryColumns("Id");
+            Create.ForeignKey("FK3117099BF33F4407").FromTable("Order").InSchema("").ForeignColumns("CurrentStateId").ToTable("OrderState").InSchema("").PrimaryColumns("Id");
 
             // Foreign keys for table: OrderStateHistoryItem.
-            Create.ForeignKey("FKEBAAA11E871A04D2").FromTable("OrderStateHistoryItem").InSchema("").ForeignColumns("Order_id").ToTable("Order").InSchema("").PrimaryColumns("Id");
-            Create.ForeignKey("FKEBAAA11E3CAD2FD").FromTable("OrderStateHistoryItem").InSchema("").ForeignColumns("State_id").ToTable("OrderState").InSchema("").PrimaryColumns("Id");
+            Create.ForeignKey("FKEBAAA11E871A04D2").FromTable("OrderStateHistoryItem").InSchema("").ForeignColumns("OrderId").ToTable("Order").InSchema("").PrimaryColumns("Id");
+            Create.ForeignKey("FKEBAAA11E3CAD2FD").FromTable("OrderStateHistoryItem").InSchema("").ForeignColumns("StateId").ToTable("OrderState").InSchema("").PrimaryColumns("Id");
 
             var objs = new List<OrderState>()
             {

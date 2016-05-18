@@ -191,6 +191,8 @@
     <Compile Include="Core\Domain\Product.cs" />
     <Compile Include="Core\Domain\Shipment.cs" />
     <Compile Include="Core\Domain\ShipmentItem.cs" />
+    <Compile Include="Core\Infrastructure\NHibernate\Conventions\ProjectSampleConventions.cs" />
+    <Compile Include="Core\Infrastructure\NHibernate\Conventions\ProjectSampleForeignKeyConvention.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\DataAccess\Impl\NhRepository.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\DataAccess\Impl\StackBasedUnitOfWork.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\IRepository.cs" />
