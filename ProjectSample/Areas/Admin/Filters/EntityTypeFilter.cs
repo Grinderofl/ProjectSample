@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ProjectSample.Core.Infrastructure.Extensions;
 
 namespace ProjectSample.Areas.Admin.Filters
 {
@@ -10,7 +11,7 @@ namespace ProjectSample.Areas.Admin.Filters
     {
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            filterContext.Controller.ViewBag.EntityType = filterContext.RouteData.Values["controller"] as string;
+            filterContext.Controller.ViewBag.EntityType = (filterContext.RouteData.Values["controller"] as string).Capitalize();
         }
 
         public void OnActionExecuted(ActionExecutedContext filterContext)

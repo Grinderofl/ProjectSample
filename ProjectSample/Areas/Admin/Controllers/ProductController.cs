@@ -11,9 +11,9 @@ using ProjectSample.Core.Infrastructure.Mvc.Controllers;
 
 namespace ProjectSample.Areas.Admin.Controllers
 {
-    public class ProductsController : EntityController<Product, ProductViewModel, ProductFields, ProductLineItemModel,long>
+    public class ProductController : EntityController<Product, ProductViewModel, ProductFields, ProductLineItemModel,long>
     {
-        public ProductsController(IMapper mapper, IRepository repository) : base(mapper, repository)
+        public ProductController(IMapper mapper, IRepository repository) : base(mapper, repository)
         {
         }
 

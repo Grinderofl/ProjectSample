@@ -145,7 +145,8 @@ namespace ProjectSample.Core.Infrastructure.Mvc.Controllers
 
         #region Delete
 
-        protected virtual ActionResult Delete(TKey id)
+        [HttpPost]
+        public virtual ActionResult Delete(TKey id)
         {
             var entity = FindEntity(id);
             DeleteCore(entity);

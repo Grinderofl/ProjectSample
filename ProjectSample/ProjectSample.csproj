@@ -185,8 +185,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Conventions\AdminFilterConventions.cs" />
+    <Compile Include="Areas\Admin\Conventions\EntityTypeControllerRequestConstraint.cs" />
     <Compile Include="Areas\Admin\Filters\EntityTypeFilter.cs" />
     <Compile Include="Areas\Admin\Mapping\ProductsProfile.cs" />
     <Compile Include="Core\Infrastructure\AutoMapper\EntityProfile.cs" />
@@ -212,6 +213,7 @@
     <Compile Include="Core\Domain\Product.cs" />
     <Compile Include="Core\Domain\Shipment.cs" />
     <Compile Include="Core\Domain\ShipmentItem.cs" />
+    <Compile Include="Core\Infrastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Core\Infrastructure\Extensions\TypeExtensions.cs" />
     <Compile Include="Core\Infrastructure\FluentMvc\WindsorConventionActivator.cs" />
     <Compile Include="Core\Infrastructure\FluentMvc\WindsorObjectFactory.cs" />
@@ -271,13 +273,11 @@
     <Content Include="Areas\Admin\Views\Shared\IndexScripts.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\IndexPaging.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\Fields.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorJs.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Products\Fields.cshtml" />
-    <Content Include="Areas\Admin\Views\Products\EditorTemplates\ProductFields.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\EditorTemplates\ProductFields.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Products\DisplayTemplates\ProductViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\DisplayTemplates\ProductViewModel.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -286,7 +286,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Areas\Admin\Views\Products\DisplayTemplates\ProductLineItemModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\DisplayTemplates\ProductLineItemModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Navigation.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\DetailsJs.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

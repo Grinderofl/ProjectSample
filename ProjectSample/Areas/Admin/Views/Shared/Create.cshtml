@@ -4,11 +4,15 @@
     <div class="col-lg-12">
         @using (Html.BeginForm("Create", ViewBag.EntityType as string, FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
         {
+            @Html.AntiForgeryToken()
             @Html.EditorForModel()
 
-            <div class="form-actions">
-                <button type="submit" class="btn btn-large btn-primary">Create</button>
-                <a class="btn" href="@Url.Action("Index")">Cancel</a>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn-large btn-primary">Create</button>
+                    <a class="btn btn-large btn-default" href="@Url.Action("Index")">Cancel</a>
+                </div>
+                
             </div>
         }
     </div>

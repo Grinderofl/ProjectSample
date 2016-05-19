@@ -1,0 +1,15 @@
+﻿@model ProjectSample.Areas.Admin.Models.ProductLineItemModel
+
+<tr>
+    <td>@Model.Id</td>
+    <td>@Html.ActionLink(Model.Name, "Details", new {Model.Id})</td>
+    <td>
+        @using (Html.BeginForm("Delete", "Product", FormMethod.Post, new { @class = "form-inline" }))
+        {
+            <a href="@Url.Action("Edit", new { Model.Id })" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-edit"></span></a>
+            @Html.AntiForgeryToken()
+            var confirmMessage = $"Are you sure you wish to delete the product {@Model.Name}";
+            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('@confirmMessage');"><span class="glyphicon glyphicon-trash"></span></button>
+        }
+    </td>
+</tr>

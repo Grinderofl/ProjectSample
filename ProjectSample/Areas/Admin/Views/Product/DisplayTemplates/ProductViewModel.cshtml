@@ -1,0 +1,10 @@
+﻿@model ProjectSample.Areas.Admin.Models.ProductViewModel
+
+<div class="row">
+    <div class="col-md-4">
+        @Html.LabelFor(x => x.Name, new { @class = "col-sm-2 col-lg-2 control-label" })
+    </div>
+    <div class="col-md-8">
+        @Html.DisplayFor(x => x.Name)
+    </div>
+</div>

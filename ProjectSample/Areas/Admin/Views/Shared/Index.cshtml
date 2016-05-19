@@ -1,11 +1,18 @@
 ﻿@using System.Collections
 @using ProjectSample.Core.Infrastructure.Mvc.Extensions
 @model ProjectSample.Core.Infrastructure.Mvc.Models.EntityIndexModel
+@{
+    ViewBag.Title = $"{ViewBag.EntityType}s";
+}
+
+<h2>@(ViewBag.EntityType)s</h2>
 
 <div class="row">
     <div class="col-md-8">
-        <a class="btn btn-primary" href="@Url.Action("Create")">Create</a>
-        @{ Html.RenderPartial("IndexActions");}
+        <p>
+            <a class="btn btn-primary" href="@Url.Action("Create")">Create</a>
+            @{ Html.RenderPartial("IndexActions");}
+        </p>
     </div>
 </div>
 
@@ -13,26 +20,28 @@
     @{Html.RenderPartial("IndexScripts");}
 }
 
-<section id="lister">
-    <div class="table-responsive">
-        @{Html.RenderPartial("IndexPaging");}
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    @foreach (var header in Model.Headers)
+<div class="row" id="lister">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            @{Html.RenderPartial("IndexPaging");}
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        @foreach (var header in Model.Headers)
+                        {
+                            <th>@header</th>
+                        }
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in (IEnumerable)Model.Items)
                     {
-                        <th>@header</th>
+                        @Html.DisplayFor(x => item)
                     }
-                    <th colspan="2">&nbsp;</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in (IEnumerable) Model.Items)
-                {
-                    @Html.DisplayFor(x => item)
-                }
-            </tbody>
-        </table>
-        @{Html.RenderPartial("IndexPaging");}
+                </tbody>
+            </table>
+            @{Html.RenderPartial("IndexPaging");}
+        </div>
     </div>
-</section>
+</div>
