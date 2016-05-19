@@ -1,0 +1,15 @@
+﻿@using (Html.BeginForm("Edit", ViewBag.EntityType as string, FormMethod.Post, new {@class = "form-horizontal", enctype = "multipart/form-data"}))
+{
+    Html.Hidden("Id");
+    Html.RenderPartial("Fields");
+
+    <div class="form-actions">
+        <button type="submit" class="btn btn-large btn-primary">Save</button>
+        <a class="btn" href="@Url.Action("Details")">Cancel</a>
+    </div>
+}
+
+@section scripts
+{
+    @{Html.RenderPartial("EditorJs");}
+}

@@ -1,0 +1,34 @@
+﻿@using ProjectSample.Core.Infrastructure.Mvc.Extensions
+@model ProjectSample.Core.Infrastructure.Mvc.Models.EntityIndexModel
+
+<div class="row">
+    <div class="col-md-8">
+        <a class="btn btn-primary" href="@Url.Action("Create")">Create</a>
+        @{ Html.RenderPartial("IndexActions");}
+    </div>
+</div>
+
+@section scripts {
+    @{Html.RenderPartial("IndexScripts");}
+}
+
+<section id="lister">
+    <div class="table-responsive">
+        @{Html.RenderPartial("IndexPaging");}
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                @foreach (var header in Model.Headers)
+                {
+                    <th>@header</th>
+                }
+                <th colspan="2">&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody>
+            @HtmlHelperExtensions.RenderPartials(Html, Model.Items)
+            </tbody>
+        </table>
+        @{Html.RenderPartial("IndexPaging");}
+    </div>
+</section>
