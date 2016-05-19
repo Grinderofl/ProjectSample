@@ -111,6 +111,7 @@ namespace ProjectSample.Core.Infrastructure.Mvc.Controllers
         public virtual ActionResult CreateCreateResult(TFieldModel model) => View(model);
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public virtual ActionResult Create(TFieldModel fields)
         {
             if (!ModelState.IsValid)
@@ -146,6 +147,7 @@ namespace ProjectSample.Core.Infrastructure.Mvc.Controllers
         #region Delete
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public virtual ActionResult Delete(TKey id)
         {
             var entity = FindEntity(id);
@@ -176,6 +178,7 @@ namespace ProjectSample.Core.Infrastructure.Mvc.Controllers
         protected virtual ActionResult CreateEditResult(TFieldModel model) => View(model);
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public virtual ActionResult Edit(TKey id, TFieldModel fields)
         {
             if (!ModelState.IsValid)

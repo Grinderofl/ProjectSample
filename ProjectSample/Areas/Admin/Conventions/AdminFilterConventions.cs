@@ -15,10 +15,6 @@ namespace ProjectSample.Areas.Admin.Conventions
         public void ApplyConvention(IFilterRegistration filterRegistration)
         {
             filterRegistration.WithFilter<EntityTypeFilter>(Apply.When<EntityTypeControllerRequestConstraint>());
-            filterRegistration.WithFilter<ValidateAntiForgeryTokenAttribute>(
-                Apply.For<ProductController>(x => x.Create(null))
-                    .AndFor<ProductController>(x => x.Delete(0))
-                    .AndFor<ProductController>(x => x.Edit(0, null)));
         }
     }
 }

@@ -1,15 +1,30 @@
-﻿@using (Html.BeginForm("Edit", ViewBag.EntityType as string, FormMethod.Post, new {@class = "form-horizontal", enctype = "multipart/form-data"}))
-{
-    @Html.Hidden("Id");
-    @Html.EditorForModel()
-
-    <div class="form-actions">
-        <button type="submit" class="btn btn-large btn-primary">Save</button>
-        <a class="btn" href="@Url.Action("Details")">Cancel</a>
-    </div>
+﻿@{
+    ViewBag.Title = $"Edit {ViewBag.EntityType}";
 }
 
-@section scripts
-{
+
+<h3>Edit @ViewBag.EntityType</h3>
+
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("Edit", ViewBag.EntityType as string, FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Hidden("Id")
+            @Html.EditorForModel()
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <button type="submit" class="btn btn-large btn-primary">Save</button>
+                    <a class="btn btn-large btn-default" href="@Url.Action("Index")">Cancel</a>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+
+
+@section scripts {
     @{Html.RenderPartial("EditorJs");}
 }

@@ -289,6 +289,8 @@
     <Content Include="Areas\Admin\Views\Product\DisplayTemplates\ProductLineItemModel.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Navigation.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\DetailsJs.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\DetailsActions.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\DetailsActions.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
