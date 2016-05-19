@@ -13,28 +13,28 @@ namespace ProjectSample.Migrations
         {
 
             // Table: Order.
-            Create.Table("Order").InSchema("").WithColumn("Id").AsInt64().PrimaryKey().Identity().NotNullable()
+            Create.Table("Order").InSchema("dbo").WithColumn("OrderId").AsInt64().PrimaryKey().Identity().NotNullable()
             .WithColumn("LastModified").AsDateTime().Nullable()
             .WithColumn("CurrentStateId").AsInt16().Nullable();
 
             // Table: OrderState.
-            Create.Table("OrderState").InSchema("").WithColumn("Id").AsInt16().PrimaryKey().NotNullable()
+            Create.Table("OrderState").InSchema("dbo").WithColumn("OrderStateId").AsInt16().PrimaryKey().NotNullable()
             .WithColumn("Name").AsString(255).Nullable()
             .WithColumn("LastModified").AsDateTime().Nullable();
 
             // Table: OrderStateHistoryItem.
-            Create.Table("OrderStateHistoryItem").InSchema("").WithColumn("Id").AsInt64().PrimaryKey().Identity().NotNullable()
+            Create.Table("OrderStateHistoryItem").InSchema("dbo").WithColumn("OrderStateHistoryItemId").AsInt64().PrimaryKey().Identity().NotNullable()
             .WithColumn("Created").AsDateTime().Nullable()
             .WithColumn("LastModified").AsDateTime().Nullable()
             .WithColumn("OrderId").AsInt64().Nullable()
             .WithColumn("StateId").AsInt16().Nullable();
 
             // Foreign keys for table: Order.
-            Create.ForeignKey("FK3117099BF33F4407").FromTable("Order").InSchema("").ForeignColumns("CurrentStateId").ToTable("OrderState").InSchema("").PrimaryColumns("Id");
+            Create.ForeignKey("FK3117099BF33F4407").FromTable("Order").InSchema("dbo").ForeignColumns("CurrentStateId").ToTable("OrderState").InSchema("dbo").PrimaryColumns("OrderStateId");
 
             // Foreign keys for table: OrderStateHistoryItem.
-            Create.ForeignKey("FKEBAAA11E871A04D2").FromTable("OrderStateHistoryItem").InSchema("").ForeignColumns("OrderId").ToTable("Order").InSchema("").PrimaryColumns("Id");
-            Create.ForeignKey("FKEBAAA11E3CAD2FD").FromTable("OrderStateHistoryItem").InSchema("").ForeignColumns("StateId").ToTable("OrderState").InSchema("").PrimaryColumns("Id");
+            Create.ForeignKey("FKEBAAA11E871A04D2").FromTable("OrderStateHistoryItem").InSchema("dbo").ForeignColumns("OrderId").ToTable("Order").InSchema("dbo").PrimaryColumns("OrderId");
+            Create.ForeignKey("FKEBAAA11E3CAD2FD").FromTable("OrderStateHistoryItem").InSchema("dbo").ForeignColumns("StateId").ToTable("OrderState").InSchema("dbo").PrimaryColumns("OrderStateId");
 
             var objs = new List<OrderState>()
             {
@@ -45,7 +45,7 @@ namespace ProjectSample.Migrations
 
             foreach (var state in objs)
             {
-                Insert.IntoTable("OrderState").Row(state);
+                Insert.IntoTable("OrderState").Row(new {OrderStateId = state.Id, state.Name, state.LastModified});
             }
         }
 
@@ -53,20 +53,20 @@ namespace ProjectSample.Migrations
         {
 
             // Foreign keys for table: Order.
-            Delete.ForeignKey("FK3117099BF33F4407").OnTable("Order").InSchema("");
+            Delete.ForeignKey("FK3117099BF33F4407").OnTable("Order").InSchema("dbo");
 
             // Foreign keys for table: OrderStateHistoryItem.
-            Delete.ForeignKey("FKEBAAA11E871A04D2").OnTable("OrderStateHistoryItem").InSchema("");
-            Delete.ForeignKey("FKEBAAA11E3CAD2FD").OnTable("OrderStateHistoryItem").InSchema("");
+            Delete.ForeignKey("FKEBAAA11E871A04D2").OnTable("OrderStateHistoryItem").InSchema("dbo");
+            Delete.ForeignKey("FKEBAAA11E3CAD2FD").OnTable("OrderStateHistoryItem").InSchema("dbo");
 
             // Tabela: Order.
-            Delete.Table("Order").InSchema("");
+            Delete.Table("Order").InSchema("dbo");
 
             // Tabela: OrderState.
-            Delete.Table("OrderState").InSchema("");
+            Delete.Table("OrderState").InSchema("dbo");
 
             // Tabela: OrderStateHistoryItem.
-            Delete.Table("OrderStateHistoryItem").InSchema("");
+            Delete.Table("OrderStateHistoryItem").InSchema("dbo");
 
         }
     }

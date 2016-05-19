@@ -17,16 +17,16 @@
         @{Html.RenderPartial("IndexPaging");}
         <table class="table table-bordered table-hover">
             <thead>
-            <tr>
-                @foreach (var header in Model.Headers)
-                {
-                    <th>@header</th>
-                }
-                <th colspan="2">&nbsp;</th>
-            </tr>
+                <tr>
+                    @foreach (var header in Model.Headers)
+                    {
+                        <th>@header</th>
+                    }
+                    <th colspan="2">&nbsp;</th>
+                </tr>
             </thead>
             <tbody>
-            @HtmlHelperExtensions.RenderPartials(Html, Model.Items)
+                @HtmlHelperExtensions.RenderPartials(Html, Model.Items)
             </tbody>
         </table>
         @{Html.RenderPartial("IndexPaging");}

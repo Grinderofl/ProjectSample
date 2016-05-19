@@ -188,6 +188,8 @@
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Conventions\AdminFilterConventions.cs" />
     <Compile Include="Areas\Admin\Filters\EntityTypeFilter.cs" />
+    <Compile Include="Areas\Admin\Models\ProductFields.cs" />
+    <Compile Include="Areas\Admin\Models\ProductLineItemModel.cs" />
     <Compile Include="Areas\Admin\Models\ProductViewModel.cs" />
     <Compile Include="Areas\Catalog\CatalogAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\IndexController.cs" />
@@ -245,6 +247,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -268,6 +272,18 @@
     <Content Include="Areas\Admin\Views\Shared\Fields.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorJs.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Fields.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\EditorTemplates\ProductFields.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\DisplayTemplates\ProductViewModel.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -298,7 +314,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Products\" />
     <Folder Include="Areas\Catalog\Controllers\" />
     <Folder Include="Areas\Catalog\Models\" />
     <Folder Include="Areas\Catalog\Views\Shared\" />
@@ -311,9 +326,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />

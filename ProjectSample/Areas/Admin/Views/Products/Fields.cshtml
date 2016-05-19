@@ -1,0 +1,9 @@
+﻿@model ProjectSample.Areas.Admin.Models.ProductFields
+
+<div class="form-group">
+    @Html.HiddenFor(x => x.Id)
+    @Html.LabelFor(x => x.Name)
+    <div class="col-lg-8">
+        @Html.EditorFor(x => x.Name)
+    </div>
+</div>

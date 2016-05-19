@@ -1,7 +1,7 @@
 ﻿@using (Html.BeginForm("Edit", ViewBag.EntityType as string, FormMethod.Post, new {@class = "form-horizontal", enctype = "multipart/form-data"}))
 {
-    Html.Hidden("Id");
-    Html.RenderPartial("Fields");
+    @Html.Hidden("Id");
+    @Html.EditorForModel()
 
     <div class="form-actions">
         <button type="submit" class="btn btn-large btn-primary">Save</button>

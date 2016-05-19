@@ -19,7 +19,7 @@ namespace ProjectSample.Core.Infrastructure.NHibernate.Conventions
         {
             instance.AsSet();
             instance.LazyLoad();
-            instance.Access.LowerCaseField(LowerCasePrefix.Underscore);
+            instance.Access.CamelCaseField(CamelCasePrefix.Underscore);
         }
 
         public void Apply(IIdentityInstance instance)

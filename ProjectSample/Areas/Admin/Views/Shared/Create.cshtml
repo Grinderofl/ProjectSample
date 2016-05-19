@@ -1,11 +1,19 @@
-﻿@using (Html.BeginForm("Create", ViewBag.EntityType as string, FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data"}))
-{
-    Html.RenderPartial("Fields");
-    <div class="form-actions">
-        <button type="submit" class="btn btn-large btn-primary">Create</button>
-        <a class="btn" href="@Url.Action("Index")">Cancel</a>
+﻿<h3>Create @ViewBag.EntityType</h3>
+
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("Create", ViewBag.EntityType as string, FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            @Html.EditorForModel()
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-large btn-primary">Create</button>
+                <a class="btn" href="@Url.Action("Index")">Cancel</a>
+            </div>
+        }
     </div>
-}
+</div>
+
 
 @section scripts {
     @{Html.RenderPartial("EditorJs");}
