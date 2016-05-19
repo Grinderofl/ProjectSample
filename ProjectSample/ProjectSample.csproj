@@ -188,6 +188,8 @@
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Conventions\AdminFilterConventions.cs" />
     <Compile Include="Areas\Admin\Filters\EntityTypeFilter.cs" />
+    <Compile Include="Areas\Admin\Mapping\ProductsProfile.cs" />
+    <Compile Include="Core\Infrastructure\AutoMapper\EntityProfile.cs" />
     <Compile Include="Areas\Admin\Models\ProductFields.cs" />
     <Compile Include="Areas\Admin\Models\ProductLineItemModel.cs" />
     <Compile Include="Areas\Admin\Models\ProductViewModel.cs" />
@@ -284,6 +286,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Areas\Admin\Views\Products\DisplayTemplates\ProductLineItemModel.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

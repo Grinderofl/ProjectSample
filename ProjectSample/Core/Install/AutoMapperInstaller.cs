@@ -14,7 +14,7 @@ namespace ProjectSample.Core.Install
                 conf.ConstructServicesUsing(container.Resolve);
                 var childContainer = new WindsorContainer();
                 container.AddChildContainer(childContainer);
-                childContainer.Register(Classes.FromThisAssembly().BasedOn<Profile>());
+                childContainer.Register(Classes.FromThisAssembly().BasedOn<Profile>().WithServiceBase());
                 foreach (var profile in childContainer.ResolveAll<Profile>())
                     conf.AddProfile(profile);
                 container.RemoveChildContainer(childContainer);

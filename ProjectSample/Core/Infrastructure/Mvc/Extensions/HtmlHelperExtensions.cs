@@ -18,7 +18,7 @@ namespace ProjectSample.Core.Infrastructure.Mvc.Extensions
             var partials = 
                     models
                         .Select(model => new {model, partialViewName = model.GetType().Name})
-                        .Select(t => htmlHelper.Partial(t.partialViewName, t.model));
+                        .Select(t => htmlHelper.DisplayForModel(t.partialViewName,t.model));
             renderedPartials.AddRange(partials);
             renderedPartials.Add(new MvcHtmlString(end));
 

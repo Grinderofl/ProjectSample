@@ -21,7 +21,7 @@ namespace ProjectSample.Core.Infrastructure.NHibernate.Queries
 
         protected override IEnumerable<TEntity> ExecuteCore(ISession session)
         {
-            return session.Query<TEntity>().OrderBy(x => x.Id).Skip(_page*_itemsPerPage).Take(_itemsPerPage);
+            return session.Query<TEntity>().OrderBy(x => x.Id).Skip((_page-1)*_itemsPerPage).Take(_itemsPerPage);
         }
     }
 }

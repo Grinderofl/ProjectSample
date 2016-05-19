@@ -1,4 +1,5 @@
-﻿@using ProjectSample.Core.Infrastructure.Mvc.Extensions
+﻿@using System.Collections
+@using ProjectSample.Core.Infrastructure.Mvc.Extensions
 @model ProjectSample.Core.Infrastructure.Mvc.Models.EntityIndexModel
 
 <div class="row">
@@ -26,7 +27,10 @@
                 </tr>
             </thead>
             <tbody>
-                @HtmlHelperExtensions.RenderPartials(Html, Model.Items)
+                @foreach (var item in (IEnumerable) Model.Items)
+                {
+                    @Html.DisplayFor(x => item)
+                }
             </tbody>
         </table>
         @{Html.RenderPartial("IndexPaging");}
