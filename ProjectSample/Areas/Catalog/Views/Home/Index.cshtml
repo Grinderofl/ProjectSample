@@ -1,0 +1,23 @@
+﻿@using System.Collections
+@model ProjectSample.Areas.Catalog.Models.Home.IndexModel
+    
+<h2>Catalog</h2>
+
+
+<div class="row" id="lister">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @Html.DisplayFor(x => x.Products)
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

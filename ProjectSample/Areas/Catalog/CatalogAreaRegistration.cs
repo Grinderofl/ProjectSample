@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using ProjectSample.Areas.Catalog.Controllers;
 
 namespace ProjectSample.Areas.Catalog
 {
@@ -17,7 +18,8 @@ namespace ProjectSample.Areas.Catalog
             context.MapRoute(
                 "Catalog_default",
                 "Catalog/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new[] {typeof(HomeController).Namespace}
             );
         }
     }

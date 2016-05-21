@@ -199,14 +199,18 @@
     <Compile Include="Areas\Admin\Models\Orders\OrderFields.cs" />
     <Compile Include="Areas\Admin\Models\Orders\OrderLineItem.cs" />
     <Compile Include="Areas\Admin\Models\Orders\OrderViewModel.cs" />
+    <Compile Include="Areas\Catalog\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Catalog\Mapping\CatalogMapping.cs" />
+    <Compile Include="Areas\Catalog\Models\Home\IndexModel.cs" />
+    <Compile Include="Areas\Catalog\Models\Home\ProductModel.cs" />
+    <Compile Include="Core\Domain\Queries\FindProductsByPageQuery.cs" />
     <Compile Include="Core\Infrastructure\AutoMapper\EntityProfile.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductFields.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductLineItemModel.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductViewModel.cs" />
     <Compile Include="Areas\Catalog\CatalogAreaRegistration.cs" />
-    <Compile Include="Areas\Home\Controllers\IndexController.cs" />
+    <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
-    <Compile Include="Areas\Products\ProductsAreaRegistration.cs" />
     <Compile Include="Controllers\BootController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
@@ -271,9 +275,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Home\Views\web.config" />
-    <Content Include="Areas\Products\Views\web.config" />
     <Content Include="Areas\Catalog\Views\web.config" />
-    <Content Include="Areas\Home\Views\Index\Index.cshtml" />
+    <Content Include="Areas\Home\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
@@ -305,6 +308,12 @@
     <Content Include="Areas\Admin\Views\Orders\EditorTemplates\OrderFields.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\DetailsActions.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\IndexActions.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Navigation.cshtml" />
+    <Content Include="Areas\Catalog\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Catalog\Views\Home\DisplayTemplates\ProductModel.cshtml" />
+    <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Catalog\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -327,22 +336,16 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Homse\About.cshtml" />
+    <Content Include="Views\Homse\Contact.cshtml" />
+    <Content Include="Views\Homse\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Catalog\Controllers\" />
-    <Folder Include="Areas\Catalog\Models\" />
     <Folder Include="Areas\Catalog\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Shared\" />
-    <Folder Include="Areas\Products\Controllers\" />
-    <Folder Include="Areas\Products\Models\" />
-    <Folder Include="Areas\Products\Views\Shared\" />
     <Folder Include="Core\Infrastructure\DataAccess\Impl\" />
     <Folder Include="Models\" />
   </ItemGroup>
