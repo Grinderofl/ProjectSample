@@ -1,0 +1,28 @@
+﻿@model ProjectSample.Areas.Admin.Models.Orders.OrderViewModel
+
+<div class="row">
+    <div class="col-md-2">
+        @Html.LabelFor(x => x.Id, new { @class = "col-sm-2 col-lg-2 control-label" })
+    </div>
+    <div class="col-md-10">
+        @Html.DisplayFor(x => x.Id)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        @Html.LabelFor(x => x.CurrentStateName, new {@class = "col-sm-2 col-lg-2 control-label"})
+    </div>
+    <div class="col-md-10">
+        @Html.DisplayFor(x => x.CurrentStateName)
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+        @Html.LabelFor(x => x.Total, new { @class = "col-sm-2 col-lg-2 control-label" })
+    </div>
+    <div class="col-md-10">
+        @Html.DisplayFor(x => x.Total)
+    </div>
+</div>

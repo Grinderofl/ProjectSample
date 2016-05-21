@@ -1,6 +1,6 @@
-﻿namespace ProjectSample.Areas.Admin.Models
+﻿namespace ProjectSample.Areas.Admin.Models.Products
 {
-    public class ProductFields
+    public class ProductLineItemModel
     {
         public long Id { get; set; }
         public string Name { get; set; }

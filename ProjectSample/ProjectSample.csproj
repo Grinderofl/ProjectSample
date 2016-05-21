@@ -96,6 +96,10 @@
       <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Inflector, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Inflector.1.0.0.0\lib\net45\Inflector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
       <Private>True</Private>
@@ -185,15 +189,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Conventions\AdminFilterConventions.cs" />
     <Compile Include="Areas\Admin\Conventions\EntityTypeControllerRequestConstraint.cs" />
     <Compile Include="Areas\Admin\Filters\EntityTypeFilter.cs" />
+    <Compile Include="Areas\Admin\Mapping\OrdersProfile.cs" />
     <Compile Include="Areas\Admin\Mapping\ProductsProfile.cs" />
+    <Compile Include="Areas\Admin\Models\Orders\OrderFields.cs" />
+    <Compile Include="Areas\Admin\Models\Orders\OrderLineItem.cs" />
+    <Compile Include="Areas\Admin\Models\Orders\OrderViewModel.cs" />
     <Compile Include="Core\Infrastructure\AutoMapper\EntityProfile.cs" />
-    <Compile Include="Areas\Admin\Models\ProductFields.cs" />
-    <Compile Include="Areas\Admin\Models\ProductLineItemModel.cs" />
-    <Compile Include="Areas\Admin\Models\ProductViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Products\ProductFields.cs" />
+    <Compile Include="Areas\Admin\Models\Products\ProductLineItemModel.cs" />
+    <Compile Include="Areas\Admin\Models\Products\ProductViewModel.cs" />
     <Compile Include="Areas\Catalog\CatalogAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\IndexController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
@@ -275,9 +284,9 @@
     <Content Include="Areas\Admin\Views\Shared\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\EditorJs.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\EditorTemplates\ProductFields.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\EditorTemplates\ProductFields.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Details.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\DisplayTemplates\ProductViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\DisplayTemplates\ProductViewModel.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -286,11 +295,16 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Areas\Admin\Views\Product\DisplayTemplates\ProductLineItemModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\DisplayTemplates\ProductLineItemModel.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Navigation.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\DetailsJs.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\DetailsActions.cshtml" />
-    <Content Include="Areas\Admin\Views\Product\DetailsActions.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\DetailsActions.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\DisplayTemplates\OrderLineItemModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\DisplayTemplates\OrderViewModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\EditorTemplates\OrderFields.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\DetailsActions.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\IndexActions.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
