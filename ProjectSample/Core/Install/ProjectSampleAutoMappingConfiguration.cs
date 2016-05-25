@@ -4,7 +4,7 @@ using ProjectSample.Core.Domain.Base;
 
 namespace ProjectSample.Core.Install
 {
-    public class NhTestAutoMappingConfiguration : DefaultAutomappingConfiguration
+    public class ProjectSampleAutoMappingConfiguration : DefaultAutomappingConfiguration
     {
         public override bool ShouldMap(Type type)
         {

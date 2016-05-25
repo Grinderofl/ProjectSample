@@ -271,7 +271,7 @@
     <Compile Include="Core\Install\ControllerInstaller.cs" />
     <Compile Include="Core\Install\FluentMvcInstaller.cs" />
     <Compile Include="Core\Install\ImplementationInstaller.cs" />
-    <Compile Include="Core\Install\NHTestAutoMappingConfiguration.cs" />
+    <Compile Include="Core\Install\ProjectSampleAutoMappingConfiguration.cs" />
     <Compile Include="Core\Install\NHibernateConfigurationBuilder.cs" />
     <Compile Include="Core\Install\NHibernateInstaller.cs" />
     <Compile Include="Core\Infrastructure\FluentMvc\SampleFilterProvider.cs" />

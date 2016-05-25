@@ -26,7 +26,7 @@ namespace ProjectSample.Core.Install
                         MsSqlConfiguration.MsSql2012.ConnectionString(
                             "Data Source=.;Initial Catalog=NHTest;Integrated Security=SSPI;").ShowSql().DefaultSchema("dbo"))
                 .Mappings(
-                    m => m.AutoMappings.Add(AutoMap.AssemblyOf<NHibernateConfigurationBuilder>(new NhTestAutoMappingConfiguration())
+                    m => m.AutoMappings.Add(AutoMap.AssemblyOf<NHibernateConfigurationBuilder>(new ProjectSampleAutoMappingConfiguration())
                         .UseOverridesFromAssemblyOf<NHibernateConfigurationBuilder>()
                         .AddMappingsFromAssemblyOf<NHibernateConfigurationBuilder>()
                         .Conventions.AddFromAssemblyOf<NHibernateConfigurationBuilder>()
