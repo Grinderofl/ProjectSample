@@ -254,6 +254,7 @@
     <Compile Include="Core\Infrastructure\CommandBus\ICommandHandlerFactory.cs" />
     <Compile Include="Core\Infrastructure\CommandBus\IHandleCommand.cs" />
     <Compile Include="Core\Infrastructure\CommandBus\Impl\CommandBus.cs" />
+    <Compile Include="Core\Infrastructure\DataAccess\List\EntityPageDescriptor.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\List\IListService.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\List\ListResult.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\List\Mapping\ListProfile.cs" />
