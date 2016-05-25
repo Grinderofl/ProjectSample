@@ -348,7 +348,7 @@
     <Content Include="Areas\Admin\Views\Shared\DetailsJs.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\DetailsActions.cshtml" />
     <Content Include="Areas\Admin\Views\Products\DetailsActions.cshtml" />
-    <Content Include="Areas\Admin\Views\Orders\DisplayTemplates\OrderLineItemModel.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\DisplayTemplates\OrderLineItem.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\DisplayTemplates\OrderViewModel.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\EditorTemplates\OrderFields.cshtml" />
     <Content Include="Areas\Admin\Views\Orders\DetailsActions.cshtml" />

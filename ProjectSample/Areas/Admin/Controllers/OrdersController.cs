@@ -19,6 +19,7 @@ namespace ProjectSample.Areas.Admin.Controllers
             yield return "Id";
             yield return "Total";
             yield return "State";
+            yield return "";
         }
 
         public override ActionResult Edit(long id)
@@ -28,6 +29,14 @@ namespace ProjectSample.Areas.Admin.Controllers
 
         public override ActionResult Create()
         {
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Accept(long id)
+        {
+            var order = FindEntity(id);
+            order.Progress(OrderState.Accepted);
+            SaveEntity(order);
             return RedirectToAction("Index");
         }
     }

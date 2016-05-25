@@ -1,0 +1,33 @@
+﻿@model ProjectSample.Areas.Admin.Models.Orders.OrderLineItem
+
+<tr>
+    <td>@Html.ActionLink(Model.Id.ToString(), "Details", new {Model.Id})</td>
+    <td>@Html.ActionLink(Model.Total.ToString("C"), "Details", new {Model.Id})</td>
+    <td>@Html.ActionLink(Model.CurrentStateName, "Details", new { Model.Id })</td>
+    <td>
+        @if (Model.CurrentStateName != "Completed")
+        {
+            using (Html.BeginForm("Delete", "Orders", FormMethod.Post, new {@class = "form-inline"}))
+            {
+                @Html.HiddenFor(x => x.Id)
+                @Html.AntiForgeryToken()
+                var confirmMessage = $"Are you sure you wish to cancel the order {@Model.Id}";
+                <button type="submit" class="btn btn-danger" onclick="return confirm('@confirmMessage');"><span class="glyphicon glyphicon-trash"></span></button>
+            }
+        }
+    </td>
+    <td>
+        @if (Model.CurrentStateName == "Placed")
+        {
+            using (Html.BeginForm("Accept", "Orders", new { Model.Id }, FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-warning">Accept</button>
+            }
+        }
+        @if (Model.CurrentStateName == "Accepted")
+        {
+            <button class="btn btn-success"><i class="glyphicon glyphicon-credit-card"></i></button>
+        }
+    </td>
+</tr>
