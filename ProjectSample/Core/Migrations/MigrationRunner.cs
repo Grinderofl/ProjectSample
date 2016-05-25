@@ -14,7 +14,7 @@ namespace ProjectSample.Core.Migrations
     {
         public void Execute(Type type, string connectionString)
         {
-            var announcer = new TextWriterAnnouncer(s => Console.WriteLine(s));
+            var announcer = new TextWriterAnnouncer(Console.WriteLine);
             var assembly = Assembly.GetAssembly(type);
 
             var migrationContext = new RunnerContext(announcer);
