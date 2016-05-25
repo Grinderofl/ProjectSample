@@ -10,7 +10,7 @@ namespace ProjectSample.Core.Infrastructure.NHibernate.DataAccess.List.Impl
 {
     public class NhListService<T> : IListService<T>
     {
-        private ISession _session;
+        private readonly ISession _session;
 
         public NhListService(ISession session)
         {
@@ -22,14 +22,18 @@ namespace ProjectSample.Core.Infrastructure.NHibernate.DataAccess.List.Impl
             var entities = _session.Query<T>();
 
             var query = entities;
+            foreach (var searchItem in pageDescriptor.Search.SearchItems)
+            {
+                query = query.Where(searchItem);
+            }
 
             var orderedQuery = pageDescriptor.SortDirection == "asc"
-                ? query.OrderBy(x => pageDescriptor.SortProperty(x))
-                : query.OrderByDescending(x => pageDescriptor.SortProperty(x));
+                ? query.OrderBy(pageDescriptor.SortProperty)
+                : query.OrderByDescending(pageDescriptor.SortProperty);
 
             var totalItems = orderedQuery.Count();
             var pagesToSkip = (pageDescriptor.Page - 1)*pageDescriptor.RowsPerPage;
-            var pagedItems = orderedQuery.Skip(pagesToSkip).Take(pageDescriptor.RowsPerPage);
+            var pagedItems = orderedQuery.Skip(pagesToSkip).Take(pageDescriptor.RowsPerPage).ToList();
             
             var result = new ListResult<T>(totalItems, pagedItems);
 

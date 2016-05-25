@@ -24,14 +24,4 @@ namespace ProjectSample.Areas.Basket.Controllers
             return RedirectToAction("Index", "Home", new {area = "Catalog"});
         }
     }
-
-
-    public class WidgetController : Controller
-    {
-        
-        public ActionResult Index()
-        {
-            return View();
-        }
-    }
 }

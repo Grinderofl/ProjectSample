@@ -204,6 +204,9 @@
     <Compile Include="Areas\Basket\Commands\Handlers\AddProductToBasketHandler.cs" />
     <Compile Include="Areas\Basket\Controllers\HomeController.cs" />
     <Compile Include="Areas\Basket\Controllers\UpdateController.cs" />
+    <Compile Include="Areas\Basket\Controllers\WidgetController.cs" />
+    <Compile Include="Areas\Basket\Mapping\BasketItemListProfile.cs" />
+    <Compile Include="Areas\Basket\Models\BasketItemModel.cs" />
     <Compile Include="Areas\Basket\Services\IBasketItemService.cs" />
     <Compile Include="Areas\Basket\Services\Impl\BasketItemListService.cs" />
     <Compile Include="Areas\Catalog\Controllers\HomeController.cs" />
@@ -251,7 +254,11 @@
     <Compile Include="Core\Infrastructure\CommandBus\Impl\CommandBus.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\List\IListService.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\List\ListResult.cs" />
+    <Compile Include="Core\Infrastructure\DataAccess\List\Mapping\ListProfile.cs" />
+    <Compile Include="Core\Infrastructure\DataAccess\List\Models\ListModel.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\List\PageDescriptor.cs" />
+    <Compile Include="Core\Infrastructure\DataAccess\List\Search.cs" />
+    <Compile Include="Core\Infrastructure\DataAccess\List\SearchItem.cs" />
     <Compile Include="Core\Infrastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Core\Infrastructure\Extensions\TypeExtensions.cs" />
     <Compile Include="Core\Infrastructure\FluentMvc\WindsorConventionActivator.cs" />
@@ -277,6 +284,7 @@
     <Compile Include="Core\Install\ControllerInstaller.cs" />
     <Compile Include="Core\Install\FluentMvcInstaller.cs" />
     <Compile Include="Core\Install\ImplementationInstaller.cs" />
+    <Compile Include="Core\Install\ListServiceInstaller.cs" />
     <Compile Include="Core\Install\ProjectSampleAutoMappingConfiguration.cs" />
     <Compile Include="Core\Install\NHibernateConfigurationBuilder.cs" />
     <Compile Include="Core\Install\NHibernateInstaller.cs" />
@@ -345,6 +353,7 @@
     <Content Include="Areas\Catalog\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Basket\Views\web.config" />
     <Content Include="Areas\Basket\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Basket\Views\Widget\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -374,7 +383,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Basket\Models\" />
     <Folder Include="Areas\Basket\Views\Home\" />
     <Folder Include="Areas\Basket\Views\Shared\" />
     <Folder Include="Areas\Basket\Views\Update\" />
