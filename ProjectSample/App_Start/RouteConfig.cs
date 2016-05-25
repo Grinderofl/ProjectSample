@@ -18,6 +18,9 @@ namespace ProjectSample
             //    url: "{controller}/{action}/{id}",
             //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             //);
+
+            routes.MapRoute("Boot",
+                "boot/{action}/{id}", new {controller = "Boot", action = "Index", id = UrlParameter.Optional});
         }
     }
 }

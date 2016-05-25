@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Castle.Facilities.TypedFactory;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
@@ -27,6 +28,7 @@ namespace ProjectSample
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Container = new WindsorContainer();
+            Container.AddFacility<TypedFactoryFacility>();
             Container.Kernel.Resolver.AddSubResolver(new CollectionResolver(Container.Kernel, true));
             Container.Install(FromAssembly.This());
 

@@ -3,4 +3,5 @@
 <tr>
     <td>@Model.Id</td>
     <td>@Model.Name</td>
+    <td><a href="@Url.Action("Add", "Update", new {area = "Basket", Model.Id})" class="btn btn-default"><i class="glyphicon glyphicon-shopping-cart"></i></a></td>
 </tr>

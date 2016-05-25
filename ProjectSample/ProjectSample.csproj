@@ -199,10 +199,27 @@
     <Compile Include="Areas\Admin\Models\Orders\OrderFields.cs" />
     <Compile Include="Areas\Admin\Models\Orders\OrderLineItem.cs" />
     <Compile Include="Areas\Admin\Models\Orders\OrderViewModel.cs" />
+    <Compile Include="Areas\Basket\BasketAreaRegistration.cs" />
+    <Compile Include="Areas\Basket\Commands\AddProductToBasketCommand.cs" />
+    <Compile Include="Areas\Basket\Commands\Handlers\AddProductToBasketHandler.cs" />
+    <Compile Include="Areas\Basket\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Basket\Controllers\UpdateController.cs" />
     <Compile Include="Areas\Catalog\Controllers\HomeController.cs" />
     <Compile Include="Areas\Catalog\Mapping\CatalogMapping.cs" />
     <Compile Include="Areas\Catalog\Models\Home\IndexModel.cs" />
     <Compile Include="Areas\Catalog\Models\Home\ProductModel.cs" />
+    <Compile Include="Core\Application\ICurrentUserService.cs" />
+    <Compile Include="Core\Application\Impl\CachingCurrentUserService.cs" />
+    <Compile Include="Core\Application\Impl\Base\CurrentUserService.cs" />
+    <Compile Include="Core\Application\ICustomerIdentityFactory.cs" />
+    <Compile Include="Core\Application\Impl\CustomerIdentityFactory.cs" />
+    <Compile Include="Core\Application\Models\CustomerIdentity.cs" />
+    <Compile Include="Core\Domain\Basket.cs" />
+    <Compile Include="Core\Domain\BasketItem.cs" />
+    <Compile Include="Core\Domain\Customer.cs" />
+    <Compile Include="Core\Domain\Mapping\BasketOverride.cs" />
+    <Compile Include="Core\Domain\Mapping\CustomerOverride.cs" />
+    <Compile Include="Core\Domain\Queries\FindCustomerByIdentityQuery.cs" />
     <Compile Include="Core\Domain\Queries\FindProductsByPageQuery.cs" />
     <Compile Include="Core\Infrastructure\AutoMapper\EntityProfile.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductFields.cs" />
@@ -226,6 +243,10 @@
     <Compile Include="Core\Domain\Product.cs" />
     <Compile Include="Core\Domain\Shipment.cs" />
     <Compile Include="Core\Domain\ShipmentItem.cs" />
+    <Compile Include="Core\Infrastructure\CommandBus\ICommandBus.cs" />
+    <Compile Include="Core\Infrastructure\CommandBus\ICommandHandlerFactory.cs" />
+    <Compile Include="Core\Infrastructure\CommandBus\IHandleCommand.cs" />
+    <Compile Include="Core\Infrastructure\CommandBus\Impl\CommandBus.cs" />
     <Compile Include="Core\Infrastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Core\Infrastructure\Extensions\TypeExtensions.cs" />
     <Compile Include="Core\Infrastructure\FluentMvc\WindsorConventionActivator.cs" />
@@ -246,6 +267,7 @@
     <Compile Include="Core\Infrastructure\Queries\QueryObject.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\Repository.cs" />
     <Compile Include="Core\Install\AutoMapperInstaller.cs" />
+    <Compile Include="Core\Install\CommandBusInstaller.cs" />
     <Compile Include="Core\Install\ControllerInstaller.cs" />
     <Compile Include="Core\Install\FluentMvcInstaller.cs" />
     <Compile Include="Core\Install\ImplementationInstaller.cs" />
@@ -261,6 +283,7 @@
     <Compile Include="Migrations\20160517081229_AddedProducts.cs" />
     <Compile Include="Migrations\20160517214547_AddedShipments.cs" />
     <Compile Include="Migrations\20160517082329_MadeCurrentStateNotNull.cs" />
+    <Compile Include="Migrations\20160524180427_AddedBasket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -314,6 +337,8 @@
     <Content Include="Areas\Catalog\Views\Home\DisplayTemplates\ProductModel.cshtml" />
     <Content Include="Areas\Home\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Catalog\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Basket\Views\web.config" />
+    <Content Include="Areas\Basket\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -336,13 +361,17 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Homse\About.cshtml" />
-    <Content Include="Views\Homse\Contact.cshtml" />
-    <Content Include="Views\Homse\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Basket\Models\" />
+    <Folder Include="Areas\Basket\Views\Home\" />
+    <Folder Include="Areas\Basket\Views\Shared\" />
+    <Folder Include="Areas\Basket\Views\Update\" />
     <Folder Include="Areas\Catalog\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Shared\" />
