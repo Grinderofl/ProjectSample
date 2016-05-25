@@ -32,6 +32,22 @@ namespace ProjectSample.Core.Domain
             }
         }
 
+        public virtual void Remove(Product product)
+        {
+            var currentItem = FindItemForProduct(product);
+            if (currentItem != null)
+            {
+                if (currentItem.Quantity > 1)
+                {
+                    currentItem.DecreaseQuantity();
+                }
+                else
+                {
+                    _items.Remove(currentItem);
+                }
+            }
+        }
+
         public virtual BasketItem FindItemForProduct(Product product)
             => _items.SingleOrDefault(x => x.Product == product);
     }

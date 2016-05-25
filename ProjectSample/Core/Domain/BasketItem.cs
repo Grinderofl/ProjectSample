@@ -32,5 +32,10 @@ namespace ProjectSample.Core.Domain
         {
             Quantity++;
         }
+
+        public virtual void DecreaseQuantity()
+        {
+            Quantity--;
+        }
     }
 }

@@ -203,6 +203,7 @@
     <Compile Include="Areas\Basket\BasketAreaRegistration.cs" />
     <Compile Include="Areas\Basket\Commands\AddProductToBasketCommand.cs" />
     <Compile Include="Areas\Basket\Commands\Handlers\AddProductToBasketHandler.cs" />
+    <Compile Include="Areas\Basket\Commands\RemoveProductFromBasketCommand.cs" />
     <Compile Include="Areas\Basket\Controllers\Base\BasketControllerBase.cs" />
     <Compile Include="Areas\Basket\Controllers\WidgetController.cs" />
     <Compile Include="Areas\Basket\Controllers\UpdateController.cs" />
@@ -393,7 +394,6 @@
     <Folder Include="Areas\Catalog\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Shared\" />
-    <Folder Include="Core\Infrastructure\DataAccess\Impl\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

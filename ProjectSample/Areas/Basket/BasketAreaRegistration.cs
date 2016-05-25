@@ -17,7 +17,7 @@ namespace ProjectSample.Areas.Basket
             context.MapRoute(
                 "Basket_default",
                 "Basket/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

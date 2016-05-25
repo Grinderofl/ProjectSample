@@ -24,10 +24,12 @@ namespace ProjectSample.Areas.Basket.Controllers
             return RedirectToAction("Index", "Home", new {area = "Catalog"});
         }
 
-        public ActionResult Delete(long id)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(long productId)
         {
-            _commandBus.Send(new RemoveProductFromBasketCommand(id));
-            return RedirectToAction("Index", "Home", new {area = "Catalog"});
+            _commandBus.Send(new RemoveProductFromBasketCommand(productId));
+            return RedirectToAction("Index", "Home", new {area = "Basket"});
         }
     }
 }

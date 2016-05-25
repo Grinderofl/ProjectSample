@@ -18,5 +18,10 @@ namespace ProjectSample.Core.Domain
         {
             Basket.Add(product);
         }
+
+        public virtual void RemoveFromBasket(Product product)
+        {
+            Basket.Remove(product);
+        }
     }
 }
