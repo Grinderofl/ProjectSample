@@ -8,7 +8,7 @@ namespace ProjectSample.Core.Domain.Mapping
     {
         public void Override(AutoMapping<Shipment> mapping)
         {
-            mapping.HasMany(x => x.ShipmentItems).AsSet().Cascade.DeleteOrphan();
+            mapping.HasMany(x => x.ShipmentItems).AsSet().Cascade.AllDeleteOrphan();
             mapping.References(x => x.Order).Index("IX_Shipment_Order_OrderId");
         }
     }

@@ -1,0 +1,14 @@
+﻿
+@model ProjectSample.Core.Infrastructure.DataAccess.List.Models.ListModel<ProjectSample.Areas.Basket.Models.BasketItemModel>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>You have @Model.Total items. Press 'Place order' to place the order.</p>
+    </div>
+</div>
+
+@using (Html.BeginForm("Create", "Checkout", new {area = "Basket"}, FormMethod.Post, new {@class = "form-horizontal"}))
+{
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Place order</button>
+}

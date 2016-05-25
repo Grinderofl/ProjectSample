@@ -10,3 +10,9 @@
     </tr>
     @Html.DisplayFor(x => x.Items)
 </table>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-8">
+    <a class="btn btn-primary" href="@Url.Action("Index", "Checkout", new {area = "Basket"})"><i class="glyphicon glyphicon-bitcoin"></i> Checkout</a>
+    </div>
+</div>

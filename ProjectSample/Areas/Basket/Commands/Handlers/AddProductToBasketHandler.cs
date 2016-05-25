@@ -32,27 +32,4 @@ namespace ProjectSample.Areas.Basket.Commands.Handlers
             }
         }
     }
-
-    public class RemoveProductFromBasketHandler : IHandleCommand<RemoveProductFromBasketCommand>
-    {
-        private readonly ICurrentUserService _currentUserService;
-        private readonly IRepository _repository;
-
-        public RemoveProductFromBasketHandler(ICurrentUserService currentUserService, IRepository repository)
-        {
-            _currentUserService = currentUserService;
-            _repository = repository;
-        }
-
-        public void Handle(RemoveProductFromBasketCommand command)
-        {
-            var customer = _currentUserService.ActiveCustomer();
-            var product = _repository.Find<Product>(command.Id);
-            if (product != null)
-            {
-                customer.RemoveFromBasket(product);
-                _repository.Save(customer);
-            }
-        }
-    }
 }

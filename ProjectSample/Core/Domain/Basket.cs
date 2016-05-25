@@ -50,5 +50,7 @@ namespace ProjectSample.Core.Domain
 
         public virtual BasketItem FindItemForProduct(Product product)
             => _items.SingleOrDefault(x => x.Product == product);
+
+        public virtual void Empty() => _items.Clear();
     }
 }

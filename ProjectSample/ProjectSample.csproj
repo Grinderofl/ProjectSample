@@ -202,9 +202,14 @@
     <Compile Include="Areas\Admin\Models\Orders\OrderViewModel.cs" />
     <Compile Include="Areas\Basket\BasketAreaRegistration.cs" />
     <Compile Include="Areas\Basket\Commands\AddProductToBasketCommand.cs" />
+    <Compile Include="Areas\Basket\Commands\CheckoutCommand.cs" />
     <Compile Include="Areas\Basket\Commands\Handlers\AddProductToBasketHandler.cs" />
+    <Compile Include="Areas\Basket\Factories\Impl\OrderFactory.cs" />
+    <Compile Include="Areas\Basket\Factories\IOrderFactory.cs" />
+    <Compile Include="Areas\Basket\Commands\Handlers\RemoveProductFromBasketHandler.cs" />
     <Compile Include="Areas\Basket\Commands\RemoveProductFromBasketCommand.cs" />
     <Compile Include="Areas\Basket\Controllers\Base\BasketControllerBase.cs" />
+    <Compile Include="Areas\Basket\Controllers\CheckoutController.cs" />
     <Compile Include="Areas\Basket\Controllers\WidgetController.cs" />
     <Compile Include="Areas\Basket\Controllers\UpdateController.cs" />
     <Compile Include="Areas\Basket\Controllers\HomeController.cs" />
@@ -360,6 +365,8 @@
     <Content Include="Areas\Basket\Views\Home\Index.cshtml" />
     <Content Include="Areas\Basket\Views\Home\DisplayTemplates\BasketItemModel.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Basket\Views\Checkout\Index.cshtml" />
+    <Content Include="Areas\Basket\Views\Checkout\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
