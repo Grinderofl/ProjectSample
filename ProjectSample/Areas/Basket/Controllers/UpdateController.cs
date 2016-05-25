@@ -23,5 +23,11 @@ namespace ProjectSample.Areas.Basket.Controllers
             _commandBus.Send(new AddProductToBasketCommand(id));
             return RedirectToAction("Index", "Home", new {area = "Catalog"});
         }
+
+        public ActionResult Delete(long id)
+        {
+            _commandBus.Send(new RemoveProductFromBasketCommand(id));
+            return RedirectToAction("Index", "Home", new {area = "Catalog"});
+        }
     }
 }

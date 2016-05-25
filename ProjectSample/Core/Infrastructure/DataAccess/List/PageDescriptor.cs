@@ -1,5 +1,6 @@
 using System;
 using System.Linq.Expressions;
+using ProjectSample.Core.Domain.Base;
 
 namespace ProjectSample.Core.Infrastructure.DataAccess.List
 {
@@ -33,4 +34,12 @@ namespace ProjectSample.Core.Infrastructure.DataAccess.List
             Search.AddItem(expression);
         }
     }
+
+    public class EntityPageDescriptor<TEntity> : PageDescriptor<TEntity> where TEntity : Entity<long>
+    {
+        public EntityPageDescriptor()
+        {
+            SortProperty = t => t.Id;
+        }
+    } 
 }
