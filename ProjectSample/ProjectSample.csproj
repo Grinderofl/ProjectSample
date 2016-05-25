@@ -204,6 +204,8 @@
     <Compile Include="Areas\Basket\Commands\Handlers\AddProductToBasketHandler.cs" />
     <Compile Include="Areas\Basket\Controllers\HomeController.cs" />
     <Compile Include="Areas\Basket\Controllers\UpdateController.cs" />
+    <Compile Include="Areas\Basket\Services\IBasketItemService.cs" />
+    <Compile Include="Areas\Basket\Services\Impl\BasketItemListService.cs" />
     <Compile Include="Areas\Catalog\Controllers\HomeController.cs" />
     <Compile Include="Areas\Catalog\Mapping\CatalogMapping.cs" />
     <Compile Include="Areas\Catalog\Models\Home\IndexModel.cs" />
@@ -247,6 +249,9 @@
     <Compile Include="Core\Infrastructure\CommandBus\ICommandHandlerFactory.cs" />
     <Compile Include="Core\Infrastructure\CommandBus\IHandleCommand.cs" />
     <Compile Include="Core\Infrastructure\CommandBus\Impl\CommandBus.cs" />
+    <Compile Include="Core\Infrastructure\DataAccess\List\IListService.cs" />
+    <Compile Include="Core\Infrastructure\DataAccess\List\ListResult.cs" />
+    <Compile Include="Core\Infrastructure\DataAccess\List\PageDescriptor.cs" />
     <Compile Include="Core\Infrastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Core\Infrastructure\Extensions\TypeExtensions.cs" />
     <Compile Include="Core\Infrastructure\FluentMvc\WindsorConventionActivator.cs" />
@@ -262,6 +267,7 @@
     <Compile Include="Core\Infrastructure\NHibernate\DataAccess\Impl\StackBasedUnitOfWork.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\IRepository.cs" />
     <Compile Include="Core\Infrastructure\DataAccess\IUnitOfWork.cs" />
+    <Compile Include="Core\Infrastructure\NHibernate\DataAccess\List\Impl\NhListService.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\Queries\GenericEntityQueryObject.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\Queries\NhQueryObject.cs" />
     <Compile Include="Core\Infrastructure\Queries\QueryObject.cs" />

@@ -20,6 +20,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 @{ Html.RenderPartial("Navigation"); }
+                @{Html.RenderAction("Index", "Widget", new {area = "Basket"});}
             </div>
         </div>
     </div>
