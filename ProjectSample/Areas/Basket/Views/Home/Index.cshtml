@@ -1,4 +1,13 @@
 ﻿
 @model ProjectSample.Core.Infrastructure.DataAccess.List.Models.ListModel<ProjectSample.Areas.Basket.Models.BasketItemModel>
 
+<h2>Basket</h2>
+<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+    </tr>
+    @Html.DisplayFor(x => x.Items)
+</table>
 <a class="btn" href="@Url.Action("Index", "Home", new {area = "Basket"})"><i class="glyphicon glyphicon-shopping-cart"></i> @Model.Total</a>

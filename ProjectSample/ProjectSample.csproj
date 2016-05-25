@@ -202,9 +202,10 @@
     <Compile Include="Areas\Basket\BasketAreaRegistration.cs" />
     <Compile Include="Areas\Basket\Commands\AddProductToBasketCommand.cs" />
     <Compile Include="Areas\Basket\Commands\Handlers\AddProductToBasketHandler.cs" />
-    <Compile Include="Areas\Basket\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Basket\Controllers\UpdateController.cs" />
+    <Compile Include="Areas\Basket\Controllers\Base\BasketControllerBase.cs" />
     <Compile Include="Areas\Basket\Controllers\WidgetController.cs" />
+    <Compile Include="Areas\Basket\Controllers\UpdateController.cs" />
+    <Compile Include="Areas\Basket\Controllers\HomeController.cs" />
     <Compile Include="Areas\Basket\Mapping\BasketItemListProfile.cs" />
     <Compile Include="Areas\Basket\Models\BasketItemModel.cs" />
     <Compile Include="Areas\Basket\Services\IBasketItemService.cs" />
@@ -354,6 +355,8 @@
     <Content Include="Areas\Basket\Views\web.config" />
     <Content Include="Areas\Basket\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Basket\Views\Widget\Index.cshtml" />
+    <Content Include="Areas\Basket\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Basket\Views\Home\DisplayTemplates\BasketItemModel.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -383,7 +386,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Basket\Views\Home\" />
     <Folder Include="Areas\Basket\Views\Shared\" />
     <Folder Include="Areas\Basket\Views\Update\" />
     <Folder Include="Areas\Catalog\Views\Shared\" />

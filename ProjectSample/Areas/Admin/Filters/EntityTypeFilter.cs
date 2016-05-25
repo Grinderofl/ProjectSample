@@ -11,7 +11,7 @@ namespace ProjectSample.Areas.Admin.Filters
     {
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            filterContext.Controller.ViewBag.EntityType = Inflector.Inflector.Singularize(filterContext.RouteData.Values["controller"] as string).Capitalize();
+            filterContext.Controller.ViewBag.EntityType = (filterContext.RouteData.Values["controller"] as string).Capitalize();
         }
 
         public void OnActionExecuted(ActionExecutedContext filterContext)
