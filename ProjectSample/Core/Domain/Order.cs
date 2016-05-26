@@ -28,11 +28,11 @@ namespace ProjectSample.Core.Domain
 
         public virtual void AddOrUpdateProduct(Product product, int quantity = 1)
         {
-            var currentItem = _orderItems.SingleOrDefault(p => p.Product == product);
+            var currentItem = _items.SingleOrDefault(p => p.Product == product);
             if (currentItem == null)
             {
                 currentItem = new OrderItem(this, product);
-                _orderItems.Add(currentItem);
+                _items.Add(currentItem);
             }
             currentItem.SetQuantity(quantity);
         }
@@ -53,9 +53,9 @@ namespace ProjectSample.Core.Domain
         private readonly ISet<OrderStateHistoryItem> _orderStateHistory = new HashSet<OrderStateHistoryItem>();
         public virtual IEnumerable<OrderStateHistoryItem> OrderStateHistory => _orderStateHistory;
         
-        private readonly ISet<OrderItem> _orderItems = new HashSet<OrderItem>();
+        private readonly ISet<OrderItem> _items = new HashSet<OrderItem>();
 
-        public virtual IEnumerable<OrderItem> OrderItems => _orderItems;
+        public virtual IEnumerable<OrderItem> Items => _items;
         public virtual DateTime Created { get; set; } = DateTime.Now;
     }
 }

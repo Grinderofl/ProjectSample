@@ -27,7 +27,10 @@
         }
         @if (Model.CurrentStateName == "Accepted")
         {
-            <button class="btn btn-success"><i class="glyphicon glyphicon-credit-card"></i></button>
+            using (Html.BeginForm("Ship", "Orders", new { Model.Id }, FormMethod.Post))
+            {
+                <button class="btn btn-success">Ship</button>
+            }
         }
     </td>
 </tr>

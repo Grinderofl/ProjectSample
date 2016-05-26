@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using ProjectSample.Core.Domain.Base;
+using ProjectSample.Core.Infrastructure.CommandBus;
 using ProjectSample.Core.Infrastructure.DataAccess;
 using ProjectSample.Core.Infrastructure.Mvc.Models;
 using ProjectSample.Core.Infrastructure.NHibernate.Queries;
@@ -21,6 +22,8 @@ namespace ProjectSample.Core.Infrastructure.Mvc.Controllers
         protected readonly IRepository Repository;
 
         protected virtual int ItemsPerPage => 10;
+
+        public virtual ICommandBus Bus { get; set; }
 
         protected EntityController(IMapper mapper, IRepository repository)
         {

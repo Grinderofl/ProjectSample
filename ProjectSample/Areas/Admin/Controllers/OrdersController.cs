@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
+using ProjectSample.Areas.Admin.Commands;
 using ProjectSample.Areas.Admin.Models.Orders;
 using ProjectSample.Core.Domain;
+using ProjectSample.Core.Domain.Extensions;
 using ProjectSample.Core.Infrastructure.DataAccess;
 using ProjectSample.Core.Infrastructure.Mvc.Controllers;
 
@@ -35,8 +37,31 @@ namespace ProjectSample.Areas.Admin.Controllers
         public ActionResult Accept(long id)
         {
             var order = FindEntity(id);
-            order.Progress(OrderState.Accepted);
-            SaveEntity(order);
+            if (order.IsPlaced())
+            {
+                order.Accept();
+                SaveEntity(order);
+                SetSuccess("The order has been accepted.");
+            }
+            else
+            {
+                SetError("The order cannot be accepted.");
+            }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Ship(long id)
+        {
+            var order = FindEntity(id);
+            if (order.IsAccepted())
+            {
+                Bus.Send(new ShipOrderCommand(order));
+                SetSuccess("Order has been shipped.");
+            }
+            else
+            {
+                SetError("Order cannot be shipped.");
+            }
             return RedirectToAction("Index");
         }
     }

@@ -189,6 +189,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Commands\Handlers\ShipOrderHandler.cs" />
+    <Compile Include="Areas\Admin\Commands\ShipOrderCommand.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
@@ -230,6 +232,7 @@
     <Compile Include="Core\Domain\Basket.cs" />
     <Compile Include="Core\Domain\BasketItem.cs" />
     <Compile Include="Core\Domain\Customer.cs" />
+    <Compile Include="Core\Domain\Extensions\OrderExtensions.cs" />
     <Compile Include="Core\Domain\Mapping\BasketOverride.cs" />
     <Compile Include="Core\Domain\Mapping\CustomerOverride.cs" />
     <Compile Include="Core\Domain\Queries\FindCustomerByIdentityQuery.cs" />
