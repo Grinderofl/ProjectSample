@@ -25,16 +25,24 @@
     </div>
 <div class="container body-content">
     @{
-        var successMessage = ViewBag.Success as string;
+        var successMessage = TempData["Success"] as string;
         if (successMessage != null)
         {
-            <p class="bg-success">@successMessage</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="bg-success">@successMessage</p>
+                </div>
+            </div>
         }
 
-        var errorMessage = ViewBag.Error as string;
+        var errorMessage = TempData["Error"] as string;
         if (errorMessage != null)
         {
-            <p class="bg-danger">@errorMessage</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="bg-danger">@errorMessage</p>
+                </div>
+            </div>
         }
     }
     @RenderBody()
