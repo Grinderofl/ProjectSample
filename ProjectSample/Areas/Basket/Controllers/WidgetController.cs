@@ -20,8 +20,8 @@ namespace ProjectSample.Areas.Basket.Controllers
             return PartialView(listModel);
         }
 
-        public WidgetController(ICurrentUserService currentUserService, IListService<BasketItem> listService,
-            IMapper mapper) : base(currentUserService, listService, mapper)
+        public WidgetController(ICurrentCustomerService currentCustomerService, IListService<BasketItem> listService,
+            IMapper mapper) : base(currentCustomerService, listService, mapper)
         {
         }
     }

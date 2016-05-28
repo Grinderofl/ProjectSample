@@ -10,18 +10,18 @@ namespace ProjectSample.Areas.Basket.Commands.Handlers
 {
     public class RemoveProductFromBasketHandler : IHandleCommand<RemoveProductFromBasketCommand>
     {
-        private readonly ICurrentUserService _currentUserService;
+        private readonly ICurrentCustomerService _currentCustomerService;
         private readonly IRepository _repository;
 
-        public RemoveProductFromBasketHandler(ICurrentUserService currentUserService, IRepository repository)
+        public RemoveProductFromBasketHandler(ICurrentCustomerService currentCustomerService, IRepository repository)
         {
-            _currentUserService = currentUserService;
+            _currentCustomerService = currentCustomerService;
             _repository = repository;
         }
 
         public void Handle(RemoveProductFromBasketCommand command)
         {
-            var customer = _currentUserService.ActiveCustomer();
+            var customer = _currentCustomerService.ActiveCustomer();
             var product = _repository.Find<Product>(command.Id);
             if (product != null)
             {

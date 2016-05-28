@@ -2,7 +2,7 @@
 
 namespace ProjectSample.Core.Application
 {
-    public interface ICurrentUserService
+    public interface ICurrentCustomerService
     {
         Customer ActiveCustomer();
     }

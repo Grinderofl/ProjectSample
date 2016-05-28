@@ -15,13 +15,13 @@ namespace ProjectSample.Areas.Account.Services.Impl
     public class RegistrationService : IRegistrationService
     {
         private readonly IRepository _repository;
-        private readonly ICurrentUserService _currentUserService;
+        private readonly ICurrentCustomerService _currentCustomerService;
         private readonly ICryptoService _cryptoService;
 
-        public RegistrationService(IRepository repository, ICurrentUserService currentUserService, ICryptoService cryptoService)
+        public RegistrationService(IRepository repository, ICurrentCustomerService currentCustomerService, ICryptoService cryptoService)
         {
             _repository = repository;
-            _currentUserService = currentUserService;
+            _currentCustomerService = currentCustomerService;
             _cryptoService = cryptoService;
         }
 
@@ -35,7 +35,7 @@ namespace ProjectSample.Areas.Account.Services.Impl
             var user = new User()
             {
                 Role = Role.User,
-                Customer = _currentUserService.ActiveCustomer(),
+                Customer = _currentCustomerService.ActiveCustomer(),
                 PasswordHash = _cryptoService.HashPassword(fields.Password),
                 UserName = fields.Email
             };

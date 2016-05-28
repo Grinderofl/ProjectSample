@@ -4,9 +4,9 @@ using ProjectSample.Core.Infrastructure.DataAccess;
 
 namespace ProjectSample.Core.Application.Impl
 {
-    public class CachingCurrentUserService : CurrentUserService
+    public class CachingCurrentCustomerService : CurrentCustomerService
     {
-        public CachingCurrentUserService(IRepository repository, ICustomerIdentityFactory identityFactory) : base(repository, identityFactory)
+        public CachingCurrentCustomerService(IRepository repository, ICustomerIdentityFactory identityFactory) : base(repository, identityFactory)
         {
         }
 

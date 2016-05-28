@@ -14,20 +14,20 @@ namespace ProjectSample.Areas.Basket.Controllers.Base
 {
     public class BasketControllerBase : Controller
     {
-        protected readonly ICurrentUserService CurrentUserService;
+        protected readonly ICurrentCustomerService CurrentCustomerService;
         private readonly IListService<BasketItem> _listService;
         private readonly IMapper _mapper;
 
-        public BasketControllerBase(ICurrentUserService currentUserService, IListService<BasketItem> listService, IMapper mapper)
+        public BasketControllerBase(ICurrentCustomerService currentCustomerService, IListService<BasketItem> listService, IMapper mapper)
         {
-            CurrentUserService = currentUserService;
+            CurrentCustomerService = currentCustomerService;
             _listService = listService;
             _mapper = mapper;
         }
 
         protected virtual ListModel<BasketItemModel> CreateBasketModel()
         {
-            var customer = CurrentUserService.ActiveCustomer();
+            var customer = CurrentCustomerService.ActiveCustomer();
             var pageDescriptor = new EntityPageDescriptor<BasketItem>();
             pageDescriptor.AddSearchItem(x => x.Basket.Customer == customer);
             var listResult = _listService.GetListResult(pageDescriptor);

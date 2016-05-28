@@ -12,18 +12,18 @@ namespace ProjectSample.Areas.Basket.Commands.Handlers
 {
     public class AddProductToBasketHandler : IHandleCommand<AddProductToBasketCommand>
     {
-        private readonly ICurrentUserService _currentUserService;
+        private readonly ICurrentCustomerService _currentCustomerService;
         private readonly IRepository _repository;
 
-        public AddProductToBasketHandler(ICurrentUserService currentUserService, IRepository repository)
+        public AddProductToBasketHandler(ICurrentCustomerService currentCustomerService, IRepository repository)
         {
-            _currentUserService = currentUserService;
+            _currentCustomerService = currentCustomerService;
             _repository = repository;
         }
 
         public void Handle(AddProductToBasketCommand command)
         {
-            var customer = _currentUserService.ActiveCustomer();
+            var customer = _currentCustomerService.ActiveCustomer();
             var product = _repository.Find<Product>(command.Id);
             if (product != null)
             {

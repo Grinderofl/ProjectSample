@@ -13,7 +13,7 @@ namespace ProjectSample.Areas.Basket.Controllers
     {
         private readonly ICommandBus _commandBus;
 
-        public CheckoutController(ICurrentUserService currentUserService, IListService<BasketItem> listService, IMapper mapper, ICommandBus commandBus) : base(currentUserService, listService, mapper)
+        public CheckoutController(ICurrentCustomerService currentCustomerService, IListService<BasketItem> listService, IMapper mapper, ICommandBus commandBus) : base(currentCustomerService, listService, mapper)
         {
             _commandBus = commandBus;
         }
@@ -28,7 +28,7 @@ namespace ProjectSample.Areas.Basket.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create()
         {
-            var currentUser = CurrentUserService.ActiveCustomer();
+            var currentUser = CurrentCustomerService.ActiveCustomer();
             _commandBus.Send(new CheckoutCommand(currentUser));
             return View();
         }

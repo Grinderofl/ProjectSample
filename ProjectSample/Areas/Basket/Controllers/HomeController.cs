@@ -19,7 +19,7 @@ namespace ProjectSample.Areas.Basket.Controllers
             return View(listModel);
         }
 
-        public HomeController(ICurrentUserService currentUserService, IListService<BasketItem> listService, IMapper mapper) : base(currentUserService, listService, mapper)
+        public HomeController(ICurrentCustomerService currentCustomerService, IListService<BasketItem> listService, IMapper mapper) : base(currentCustomerService, listService, mapper)
         {
         }
     }
