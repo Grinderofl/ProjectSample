@@ -196,6 +196,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
+    <Compile Include="Areas\Account\Controllers\AccountControllerBase.cs" />
+    <Compile Include="Areas\Account\Controllers\RegisterController.cs" />
+    <Compile Include="Areas\Account\Models\Login\LoginFields.cs" />
+    <Compile Include="Areas\Account\Models\Register\RegisterFields.cs" />
+    <Compile Include="Areas\Account\Services\Impl\RegistrationService.cs" />
+    <Compile Include="Areas\Account\Services\IRegistrationService.cs" />
+    <Compile Include="Areas\Account\Services\Models\RegistrationResult.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Commands\Handlers\ShipOrderHandler.cs" />
     <Compile Include="Areas\Admin\Commands\ShipOrderCommand.cs" />
@@ -259,8 +267,6 @@
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
     <Compile Include="Controllers\BootController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Core\Domain\Base\Entity.cs" />
     <Compile Include="Core\Domain\Mapping\OrderOverride.cs" />
     <Compile Include="Core\Domain\Mapping\OrderStateOverride.cs" />
@@ -290,6 +296,7 @@
     <Compile Include="Core\Infrastructure\FluentMvc\WindsorConventionActivator.cs" />
     <Compile Include="Core\Infrastructure\FluentMvc\WindsorObjectFactory.cs" />
     <Compile Include="Core\Infrastructure\Identity\IAuthenticationService.cs" />
+    <Compile Include="Core\Infrastructure\Identity\IAuthorizationService.cs" />
     <Compile Include="Core\Infrastructure\Identity\Models\AuthenticationResult.cs" />
     <Compile Include="Core\Infrastructure\Mvc\Controllers\EntityController.cs" />
     <Compile Include="Core\Infrastructure\Mvc\Extensions\HtmlHelperExtensions.cs" />
@@ -304,6 +311,7 @@
     <Compile Include="Core\Infrastructure\DataAccess\IUnitOfWork.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\DataAccess\List\Impl\NhListService.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\Identity\Impl\AuthenticationService.cs" />
+    <Compile Include="Core\Infrastructure\NHibernate\Identity\Impl\AuthorizationService.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\Identity\Impl\CryptoService.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\Identity\Queries\FindUserByUsernameQuery.cs" />
     <Compile Include="Core\Infrastructure\NHibernate\Queries\GenericEntityQueryObject.cs" />
@@ -394,6 +402,13 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Basket\Views\Checkout\Index.cshtml" />
     <Content Include="Areas\Basket\Views\Checkout\Create.cshtml" />
+    <Content Include="Areas\Account\Views\web.config" />
+    <Content Include="Areas\Account\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Account\Views\Register\Index.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\EditorTemplates\RegisterFields.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

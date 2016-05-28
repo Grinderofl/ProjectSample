@@ -14,13 +14,13 @@ namespace ProjectSample.Core.Infrastructure.Identity.Models
         private AuthenticationResult(string message, bool sucess)
         {
             Message = message;
-            Sucess = sucess;
+            Authenticated = sucess;
         }
 
         public static AuthenticationResult Success(UserBase user)
             => new AuthenticationResult("Success", true) {User = user};
 
-        public bool Sucess { get; }
+        public bool Authenticated { get; }
         public string Message { get; }
         public UserBase User { get; set; }
     }

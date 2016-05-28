@@ -18,7 +18,7 @@ namespace ProjectSample.Core.Domain
         public virtual IEnumerable<BasketItem> Items => _items ;
         public virtual Customer Customer { get; protected set; }
 
-        public virtual void Add(Product product)
+        public virtual void Add(Product product, int quantity)
         {
             var currentItem = FindItemForProduct(product);
             if (currentItem == null)
@@ -28,18 +28,18 @@ namespace ProjectSample.Core.Domain
             }
             else
             {
-                currentItem.IncreaseQuantity();
+                currentItem.IncreaseQuantity(quantity);
             }
         }
 
-        public virtual void Remove(Product product)
+        public virtual void Remove(Product product, int quantity = 0)
         {
             var currentItem = FindItemForProduct(product);
             if (currentItem != null)
             {
-                if (currentItem.Quantity > 1)
+                if (quantity > 0)
                 {
-                    currentItem.DecreaseQuantity();
+                    currentItem.DecreaseQuantity(quantity);
                 }
                 else
                 {

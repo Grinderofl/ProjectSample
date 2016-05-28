@@ -16,9 +16,17 @@ namespace ProjectSample.Core.Domain
 
         public virtual User User { get; set; }
 
-        public virtual void AddToBasket(Product product)
+        public virtual void TransferBasket(Customer other)
         {
-            Basket.Add(product);
+            foreach (var item in other.Basket.Items)
+            {
+                AddToBasket(item.Product, item.Quantity);
+            }
+        }
+
+        public virtual void AddToBasket(Product product, int quantity = 1)
+        {
+            Basket.Add(product, quantity);
         }
 
         public virtual void RemoveFromBasket(Product product)

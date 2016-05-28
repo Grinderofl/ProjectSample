@@ -28,14 +28,14 @@ namespace ProjectSample.Core.Domain
             return new BasketItem(product, basket);
         }
 
-        public virtual void IncreaseQuantity()
+        public virtual void IncreaseQuantity(int @by = 1)
         {
-            Quantity++;
+            Quantity += @by;
         }
 
-        public virtual void DecreaseQuantity()
+        public virtual void DecreaseQuantity(int @by = 1)
         {
-            Quantity--;
+            Quantity -= by;
         }
     }
 }
