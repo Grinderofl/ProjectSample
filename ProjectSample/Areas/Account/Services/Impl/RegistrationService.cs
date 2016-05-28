@@ -35,7 +35,7 @@ namespace ProjectSample.Areas.Account.Services.Impl
             var user = new User()
             {
                 Role = Role.User,
-                Customer = _currentCustomerService.ActiveCustomer(),
+                Customer = _currentCustomerService.CurrentCustomer(),
                 PasswordHash = _cryptoService.HashPassword(fields.Password),
                 UserName = fields.Email
             };

@@ -4,6 +4,6 @@ namespace ProjectSample.Core.Application
 {
     public interface ICurrentCustomerService
     {
-        Customer ActiveCustomer();
+        Customer CurrentCustomer();
     }
 }

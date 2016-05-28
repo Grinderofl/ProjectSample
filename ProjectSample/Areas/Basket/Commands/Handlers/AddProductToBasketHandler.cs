@@ -23,7 +23,7 @@ namespace ProjectSample.Areas.Basket.Commands.Handlers
 
         public void Handle(AddProductToBasketCommand command)
         {
-            var customer = _currentCustomerService.ActiveCustomer();
+            var customer = _currentCustomerService.CurrentCustomer();
             var product = _repository.Find<Product>(command.Id);
             if (product != null)
             {

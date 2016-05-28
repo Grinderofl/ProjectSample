@@ -6,7 +6,7 @@ namespace ProjectSample.Core.Application.Impl
 {
     public class UserIdentifierFactory : IIdentifierFactory<User>
     {
-        public Identifier CreateIdentifier()
+        public virtual Identifier CreateIdentifier()
         {
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {

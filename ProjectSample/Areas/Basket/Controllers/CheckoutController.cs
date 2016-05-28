@@ -28,7 +28,7 @@ namespace ProjectSample.Areas.Basket.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create()
         {
-            var currentUser = CurrentCustomerService.ActiveCustomer();
+            var currentUser = CurrentCustomerService.CurrentCustomer();
             _commandBus.Send(new CheckoutCommand(currentUser));
             return View();
         }

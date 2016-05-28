@@ -27,7 +27,7 @@ namespace ProjectSample.Areas.Basket.Controllers.Base
 
         protected virtual ListModel<BasketItemModel> CreateBasketModel()
         {
-            var customer = CurrentCustomerService.ActiveCustomer();
+            var customer = CurrentCustomerService.CurrentCustomer();
             var pageDescriptor = new EntityPageDescriptor<BasketItem>();
             pageDescriptor.AddSearchItem(x => x.Basket.Customer == customer);
             var listResult = _listService.GetListResult(pageDescriptor);

@@ -6,6 +6,6 @@ namespace ProjectSample.Core.Application.Impl
 {
     public class CustomerIdentifierFactory : IIdentifierFactory<Customer>
     {
-        public Identifier CreateIdentifier() => (Identifier) HttpContext.Current.Session.SessionID;
+        public virtual Identifier CreateIdentifier() => (Identifier) HttpContext.Current.Session.SessionID;
     }
 }

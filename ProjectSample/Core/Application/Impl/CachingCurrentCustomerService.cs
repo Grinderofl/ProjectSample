@@ -12,6 +12,6 @@ namespace ProjectSample.Core.Application.Impl
 
         private Customer _cachedCustomer;
 
-        public override Customer ActiveCustomer() => _cachedCustomer ?? (_cachedCustomer = base.ActiveCustomer());
+        public override Customer CurrentCustomer() => _cachedCustomer ?? (_cachedCustomer = base.CurrentCustomer());
     }
 }

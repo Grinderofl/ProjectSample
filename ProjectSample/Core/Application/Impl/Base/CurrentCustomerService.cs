@@ -15,27 +15,19 @@ namespace ProjectSample.Core.Application.Impl.Base
             _identifierFactory = identifierFactory;
         }
 
-        public virtual Customer ActiveCustomer()
+        public virtual Customer CurrentCustomer()
         {
-            var identity = _identifierFactory.CreateIdentifier();
-            var customer = _repository.Query(new FindCustomerByIdentityQuery(identity));
+            var identifier = _identifierFactory.CreateIdentifier();
+            var customer = _repository.Query(new FindCustomerByIdentityQuery(identifier));
             if (customer == null)
             {
                 customer = new Customer()
                 {
-                    Identifier = identity
+                    Identifier = identifier
                 };
                 _repository.Save(customer);
             }
             return customer;
-        }
-
-        public class CurrentUserService : ICurrentUserService
-        {
-            public User CurrentUser()
-            {
-                
-            }
         }
     }
 }
