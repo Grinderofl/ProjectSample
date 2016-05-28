@@ -1,8 +1,6 @@
-﻿using System;
-using System.IO;
-using FluentMigrator;
+﻿using FluentMigrator;
 
-namespace ProjectSample.Migrations
+namespace ProjectSample.Core.Migrations
 {
     [Migration(5)]
     public class AddedBasket : Migration

@@ -1,8 +1,7 @@
 ﻿using System;
-using System.IO;
 using FluentMigrator;
 
-namespace ProjectSample.Migrations
+namespace ProjectSample.Core.Migrations
 {
     [Migration(2)]
     public class AddedProducts : Migration

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using FluentMigrator;
+﻿using FluentMigrator;
 
-namespace ProjectSample.Migrations
+namespace ProjectSample.Core.Migrations
 {
     [Migration(3)]
     public class MadeCurrentStateNotNull : Migration

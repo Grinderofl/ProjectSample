@@ -1,8 +1,6 @@
-using System;
-using System.IO;
 using FluentMigrator;
 
-namespace ProjectSample.Migrations
+namespace ProjectSample.Core.Migrations
 {
     [Migration(4)]
     public class AddedShipments : Migration

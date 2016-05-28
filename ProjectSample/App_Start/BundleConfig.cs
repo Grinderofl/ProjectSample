@@ -23,6 +23,12 @@ namespace ProjectSample
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new StyleBundle("~/Content/Admin/css").Include(
+                    "~/Content/bootstrap.css",
+                    "~/Content/Admin/sb-admin-2.css",
+                    "~/Content/Admin/timeline.css"
+                ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",

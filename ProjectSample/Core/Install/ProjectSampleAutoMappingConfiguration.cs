@@ -15,5 +15,10 @@ namespace ProjectSample.Core.Install
         {
             return base.IsComponent(type) && type.Namespace.EndsWith("Components");
         }
+
+        public override bool IsDiscriminated(Type type)
+        {
+            return base.IsDiscriminated(type) && type == typeof(UserBase);
+        }
     }
 }

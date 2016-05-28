@@ -104,6 +104,10 @@
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -229,14 +233,21 @@
     <Compile Include="Core\Application\ICustomerIdentityFactory.cs" />
     <Compile Include="Core\Application\Impl\CustomerIdentityFactory.cs" />
     <Compile Include="Core\Application\Models\CustomerIdentity.cs" />
+    <Compile Include="Core\Application\Models\UserModel.cs" />
+    <Compile Include="Core\Domain\Base\UserBase.cs" />
     <Compile Include="Core\Domain\Basket.cs" />
     <Compile Include="Core\Domain\BasketItem.cs" />
     <Compile Include="Core\Domain\Customer.cs" />
     <Compile Include="Core\Domain\Extensions\OrderExtensions.cs" />
     <Compile Include="Core\Domain\Mapping\BasketOverride.cs" />
     <Compile Include="Core\Domain\Mapping\CustomerOverride.cs" />
+    <Compile Include="Core\Domain\Mapping\RoleOverride.cs" />
+    <Compile Include="Core\Domain\Mapping\UserBaseOverride.cs" />
+    <Compile Include="Core\Domain\Mapping\UserOverride.cs" />
     <Compile Include="Core\Domain\Queries\FindCustomerByIdentityQuery.cs" />
     <Compile Include="Core\Domain\Queries\FindProductsByPageQuery.cs" />
+    <Compile Include="Core\Domain\Role.cs" />
+    <Compile Include="Core\Domain\User.cs" />
     <Compile Include="Core\Infrastructure\AutoMapper\EntityProfile.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductFields.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductLineItemModel.cs" />
@@ -300,18 +311,22 @@
     <Compile Include="Core\Install\NHibernateConfigurationBuilder.cs" />
     <Compile Include="Core\Install\NHibernateInstaller.cs" />
     <Compile Include="Core\Infrastructure\FluentMvc\SampleFilterProvider.cs" />
+    <Compile Include="Core\Migrations\20160528103434_AddedUsersAndRoles.cs" />
+    <Compile Include="Core\Migrations\20160528112337_AddedUsers.cs" />
     <Compile Include="Core\Migrations\MigrationRunner.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20160515131726_CreateOrderAndOrderHistory.cs" />
-    <Compile Include="Migrations\20160517081229_AddedProducts.cs" />
-    <Compile Include="Migrations\20160517214547_AddedShipments.cs" />
-    <Compile Include="Migrations\20160517082329_MadeCurrentStateNotNull.cs" />
-    <Compile Include="Migrations\20160524180427_AddedBasket.cs" />
+    <Compile Include="Core\Migrations\20160515131726_CreateOrderAndOrderHistory.cs" />
+    <Compile Include="Core\Migrations\20160517081229_AddedProducts.cs" />
+    <Compile Include="Core\Migrations\20160517214547_AddedShipments.cs" />
+    <Compile Include="Core\Migrations\20160517082329_MadeCurrentStateNotNull.cs" />
+    <Compile Include="Core\Migrations\20160524180427_AddedBasket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin\sb-admin-2.css" />
+    <Content Include="Content\Admin\timeline.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -404,6 +419,7 @@
     <Folder Include="Areas\Catalog\Views\Shared\" />
     <Folder Include="Areas\Home\Models\" />
     <Folder Include="Areas\Home\Views\Shared\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

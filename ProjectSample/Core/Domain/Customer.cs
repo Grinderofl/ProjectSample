@@ -14,6 +14,8 @@ namespace ProjectSample.Core.Domain
 
         public virtual Basket Basket { get; protected set; }
 
+        public virtual User User { get; set; }
+
         public virtual void AddToBasket(Product product)
         {
             Basket.Add(product);

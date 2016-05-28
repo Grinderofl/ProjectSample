@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
 using FluentMigrator;
 using ProjectSample.Core.Domain;
 
-namespace ProjectSample.Migrations
+namespace ProjectSample.Core.Migrations
 {
     [Migration(1)]
     public class CreateOrderStateHistory : Migration
