@@ -246,11 +246,13 @@
     <Compile Include="Areas\Catalog\Models\Home\IndexModel.cs" />
     <Compile Include="Areas\Catalog\Models\Home\ProductModel.cs" />
     <Compile Include="Core\Application\ICurrentCustomerService.cs" />
+    <Compile Include="Core\Application\ICurrentUserService.cs" />
     <Compile Include="Core\Application\Impl\CachingCurrentCustomerService.cs" />
     <Compile Include="Core\Application\Impl\Base\CurrentCustomerService.cs" />
-    <Compile Include="Core\Application\ICustomerIdentityFactory.cs" />
-    <Compile Include="Core\Application\Impl\CustomerIdentityFactory.cs" />
-    <Compile Include="Core\Application\Models\CustomerIdentity.cs" />
+    <Compile Include="Core\Application\IIdentifierFactory.cs" />
+    <Compile Include="Core\Application\Impl\CustomerIdentifierFactory.cs" />
+    <Compile Include="Core\Application\Impl\UserIdentifierFactory.cs" />
+    <Compile Include="Core\Application\Models\Identifier.cs" />
     <Compile Include="Core\Domain\Base\UserBase.cs" />
     <Compile Include="Core\Domain\Basket.cs" />
     <Compile Include="Core\Domain\BasketItem.cs" />

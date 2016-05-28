@@ -11,9 +11,9 @@ namespace ProjectSample.Core.Domain.Queries
 {
     public class FindCustomerByIdentityQuery : NhQueryObject<Customer>
     {
-        private readonly CustomerIdentity _identity;
+        private readonly Identifier _identity;
 
-        public FindCustomerByIdentityQuery(CustomerIdentity identity)
+        public FindCustomerByIdentityQuery(Identifier identity)
         {
             _identity = identity;
         }

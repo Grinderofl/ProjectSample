@@ -2,8 +2,8 @@
 
 namespace ProjectSample.Core.Application
 {
-    public interface ICustomerIdentityFactory
+    public interface IIdentifierFactory<TEntity>
     {
-        CustomerIdentity CreateIdentity();
+        Identifier CreateIdentifier();
     }
 }

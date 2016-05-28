@@ -7,17 +7,17 @@ namespace ProjectSample.Core.Application.Impl.Base
     public class CurrentCustomerService : ICurrentCustomerService
     {
         private readonly IRepository _repository;
-        private readonly ICustomerIdentityFactory _identityFactory;
+        private readonly IIdentifierFactory<Customer> _identifierFactory;
 
-        public CurrentCustomerService(IRepository repository, ICustomerIdentityFactory identityFactory)
+        public CurrentCustomerService(IRepository repository, IIdentifierFactory<Customer> identifierFactory)
         {
             _repository = repository;
-            _identityFactory = identityFactory;
+            _identifierFactory = identifierFactory;
         }
 
         public virtual Customer ActiveCustomer()
         {
-            var identity = _identityFactory.CreateIdentity();
+            var identity = _identifierFactory.CreateIdentifier();
             var customer = _repository.Query(new FindCustomerByIdentityQuery(identity));
             if (customer == null)
             {
@@ -28,6 +28,14 @@ namespace ProjectSample.Core.Application.Impl.Base
                 _repository.Save(customer);
             }
             return customer;
+        }
+
+        public class CurrentUserService : ICurrentUserService
+        {
+            public User CurrentUser()
+            {
+                
+            }
         }
     }
 }

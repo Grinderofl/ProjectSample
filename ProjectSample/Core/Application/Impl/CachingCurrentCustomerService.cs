@@ -6,7 +6,7 @@ namespace ProjectSample.Core.Application.Impl
 {
     public class CachingCurrentCustomerService : CurrentCustomerService
     {
-        public CachingCurrentCustomerService(IRepository repository, ICustomerIdentityFactory identityFactory) : base(repository, identityFactory)
+        public CachingCurrentCustomerService(IRepository repository, IIdentifierFactory<Customer> identifierFactory) : base(repository, identifierFactory)
         {
         }
 
