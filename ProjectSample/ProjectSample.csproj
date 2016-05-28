@@ -197,7 +197,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
+    <Compile Include="Areas\Account\Commands\Handlers\LoginUserHandler.cs" />
+    <Compile Include="Areas\Account\Commands\LoginUserCommand.cs" />
     <Compile Include="Areas\Account\Controllers\AccountControllerBase.cs" />
+    <Compile Include="Areas\Account\Controllers\LoginController.cs" />
     <Compile Include="Areas\Account\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Account\Models\Login\LoginFields.cs" />
     <Compile Include="Areas\Account\Models\Register\RegisterFields.cs" />
@@ -409,6 +412,8 @@
     <Content Include="Areas\Account\Views\Shared\EditorTemplates\Password.cshtml" />
     <Content Include="Areas\Account\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
     <Content Include="Areas\Account\Views\Shared\EditorTemplates\RegisterFields.cshtml" />
+    <Content Include="Areas\Account\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Account\Views\Shared\EditorTemplates\LoginFields.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

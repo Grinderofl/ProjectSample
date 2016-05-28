@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using ProjectSample.Areas.Account.Commands;
-using ProjectSample.Areas.Account.Models.Register;
-using ProjectSample.Areas.Account.Services;
+using ProjectSample.Areas.Account.Commands.Handlers;
+using ProjectSample.Areas.Account.Models.Login;
+using ProjectSample.Core.Infrastructure.Identity;
 
 namespace ProjectSample.Areas.Account.Controllers
 {
-    public class RegisterController : AccountControllerBase
+    public class LoginController : AccountControllerBase
     {
-        private readonly IRegistrationService _registrationService;
+        private readonly IAuthenticationService _authenticationService;
 
-        public RegisterController(IRegistrationService registrationService)
+        public LoginController(IAuthenticationService authenticationService)
         {
-            _registrationService = registrationService;
+            _authenticationService = authenticationService;
         }
 
         public ActionResult Index()
@@ -24,12 +21,12 @@ namespace ProjectSample.Areas.Account.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(RegisterFields fields)
+        public ActionResult Index(LoginFields fields)
         {
             if (ModelState.IsValid)
             {
-                var result = _registrationService.Register(fields);
-                if (result.Registered)
+                var result = _authenticationService.Authenticate(fields.Email, fields.Password);
+                if (result.Authenticated)
                 {
                     Bus.Send(new LoginUserCommand(result.User));
                     return RedirectToAction("Index", "Home", new {area = "Catalog"});

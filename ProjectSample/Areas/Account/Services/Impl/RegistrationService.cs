@@ -41,7 +41,7 @@ namespace ProjectSample.Areas.Account.Services.Impl
             };
 
             _repository.Save(user);
-            return RegistrationResult.Success;
+            return RegistrationResult.Success(user);
         }
     }
 }
