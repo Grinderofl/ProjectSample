@@ -10,7 +10,7 @@ using FluentMvc.ActionResultFactories;
 using FluentMvc.Configuration;
 using FluentMvc.Conventions;
 using FluentMvc.Utils;
-using ProjectSample.Core.Infrastructure.FluentMvc;
+using ProjectSample.Infrastructure.FluentMvc;
 
 namespace ProjectSample.Core.Install
 {

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using ProjectSample.Areas.Catalog.Models.Home;
 using ProjectSample.Core.Domain.Queries;
-using ProjectSample.Core.Infrastructure.DataAccess;
+using ProjectSample.Infrastructure.DataAccess;
 
 namespace ProjectSample.Areas.Catalog.Controllers
 {

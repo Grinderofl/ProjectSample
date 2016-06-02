@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using NHibernate;
 using NHibernate.Linq;
-using ProjectSample.Core.Application.Models;
-using ProjectSample.Core.Infrastructure.NHibernate.Queries;
+using ProjectSample.Areas.Shared.Models;
+using ProjectSample.Infrastructure.NHibernate.Queries;
 
 namespace ProjectSample.Core.Domain.Queries
 {

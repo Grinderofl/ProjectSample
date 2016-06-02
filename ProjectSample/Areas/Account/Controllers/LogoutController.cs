@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProjectSample.Areas.Account.Commands;
-using ProjectSample.Core.Infrastructure.Identity;
 
 namespace ProjectSample.Areas.Account.Controllers
 {

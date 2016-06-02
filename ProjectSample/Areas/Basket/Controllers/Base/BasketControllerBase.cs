@@ -5,10 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using ProjectSample.Areas.Basket.Models;
-using ProjectSample.Core.Application;
+using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.DataAccess.List;
-using ProjectSample.Core.Infrastructure.DataAccess.List.Models;
+using ProjectSample.Infrastructure.DataAccess.List;
+using ProjectSample.Infrastructure.DataAccess.List.Models;
 
 namespace ProjectSample.Areas.Basket.Controllers.Base
 {

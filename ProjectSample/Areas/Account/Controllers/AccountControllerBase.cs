@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using ProjectSample.Core.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.CommandBus;
 
 namespace ProjectSample.Areas.Account.Controllers
 {

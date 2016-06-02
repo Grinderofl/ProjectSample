@@ -5,8 +5,8 @@ using ProjectSample.Areas.Admin.Commands;
 using ProjectSample.Areas.Admin.Models.Orders;
 using ProjectSample.Core.Domain;
 using ProjectSample.Core.Domain.Extensions;
-using ProjectSample.Core.Infrastructure.DataAccess;
-using ProjectSample.Core.Infrastructure.Mvc.Controllers;
+using ProjectSample.Infrastructure.DataAccess;
+using ProjectSample.Infrastructure.Mvc.Controllers;
 
 namespace ProjectSample.Areas.Admin.Controllers
 {

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using ProjectSample.Areas.Account.Models.Register;
 using ProjectSample.Areas.Account.Services.Models;
-using ProjectSample.Core.Application;
+using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.DataAccess;
-using ProjectSample.Core.Infrastructure.NHibernate.Identity.Queries;
-using ProjectSample.Core.Infrastructure.Security;
+using ProjectSample.Infrastructure.DataAccess;
+using ProjectSample.Infrastructure.NHibernate.Security.Queries;
+using ProjectSample.Infrastructure.Security.Services;
 
 namespace ProjectSample.Areas.Account.Services.Impl
 {

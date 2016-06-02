@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using NHibernate.Criterion;
 using ProjectSample.Areas.Basket.Factories;
-using ProjectSample.Core.Application;
+using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.CommandBus;
-using ProjectSample.Core.Infrastructure.DataAccess;
+using ProjectSample.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.DataAccess;
 
 namespace ProjectSample.Areas.Basket.Commands.Handlers
 {

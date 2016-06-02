@@ -7,8 +7,8 @@ using AutoMapper;
 using ProjectSample.Areas.Admin.Models;
 using ProjectSample.Areas.Admin.Models.Products;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.DataAccess;
-using ProjectSample.Core.Infrastructure.Mvc.Controllers;
+using ProjectSample.Infrastructure.DataAccess;
+using ProjectSample.Infrastructure.Mvc.Controllers;
 
 namespace ProjectSample.Areas.Admin.Controllers
 {

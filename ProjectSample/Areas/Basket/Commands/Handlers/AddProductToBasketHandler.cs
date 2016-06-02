@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using FluentNHibernate.Visitors;
-using ProjectSample.Core.Application;
+using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.CommandBus;
-using ProjectSample.Core.Infrastructure.DataAccess;
+using ProjectSample.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.DataAccess;
 
 namespace ProjectSample.Areas.Basket.Commands.Handlers
 {

@@ -1,6 +1,6 @@
 ﻿using ProjectSample.Areas.Admin.Models.Orders;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.AutoMapper;
+using ProjectSample.Infrastructure.AutoMapper;
 
 namespace ProjectSample.Areas.Admin.Mapping
 {

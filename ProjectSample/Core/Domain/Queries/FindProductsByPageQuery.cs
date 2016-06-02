@@ -4,9 +4,7 @@ using System.Linq;
 using System.Web;
 using NHibernate;
 using NHibernate.Linq;
-using ProjectSample.Core.Infrastructure.DataAccess;
-using ProjectSample.Core.Infrastructure.NHibernate.Queries;
-using ProjectSample.Core.Infrastructure.Queries;
+using ProjectSample.Infrastructure.NHibernate.Queries;
 
 namespace ProjectSample.Core.Domain.Queries
 {

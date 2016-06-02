@@ -2,7 +2,7 @@ using System.Web.Mvc;
 using ProjectSample.Areas.Account.Commands;
 using ProjectSample.Areas.Account.Commands.Handlers;
 using ProjectSample.Areas.Account.Models.Login;
-using ProjectSample.Core.Infrastructure.Identity;
+using ProjectSample.Infrastructure.Security.Services;
 
 namespace ProjectSample.Areas.Account.Controllers
 {

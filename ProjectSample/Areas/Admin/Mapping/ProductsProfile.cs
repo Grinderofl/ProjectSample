@@ -5,7 +5,7 @@ using System.Web;
 using ProjectSample.Areas.Admin.Models;
 using ProjectSample.Areas.Admin.Models.Products;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.AutoMapper;
+using ProjectSample.Infrastructure.AutoMapper;
 
 namespace ProjectSample.Areas.Admin.Mapping
 {

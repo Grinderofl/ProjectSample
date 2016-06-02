@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using ProjectSample.Core.Domain;
 using ProjectSample.Core.Domain.Extensions;
-using ProjectSample.Core.Infrastructure.CommandBus;
-using ProjectSample.Core.Infrastructure.DataAccess;
+using ProjectSample.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.DataAccess;
 
 namespace ProjectSample.Areas.Admin.Commands.Handlers
 {
