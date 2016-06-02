@@ -1,6 +1,5 @@
-﻿using System;
-using ProjectSample.Core.Infrastructure.CommandBus;
-using ProjectSample.Core.Infrastructure.Identity;
+﻿using ProjectSample.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.Security.Services;
 
 namespace ProjectSample.Areas.Account.Commands.Handlers
 {

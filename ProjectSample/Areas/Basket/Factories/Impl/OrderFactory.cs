@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ProjectSample.Core.Domain;
+﻿using ProjectSample.Core.Domain;
 
 namespace ProjectSample.Areas.Basket.Factories.Impl
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ProjectSample.Core.Domain.Base;
+﻿using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Core.Domain
 {

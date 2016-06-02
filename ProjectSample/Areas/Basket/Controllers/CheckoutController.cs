@@ -2,10 +2,10 @@
 using AutoMapper;
 using ProjectSample.Areas.Basket.Commands;
 using ProjectSample.Areas.Basket.Controllers.Base;
-using ProjectSample.Core.Application;
+using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.CommandBus;
-using ProjectSample.Core.Infrastructure.DataAccess.List;
+using ProjectSample.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.DataAccess.List;
 
 namespace ProjectSample.Areas.Basket.Controllers
 {

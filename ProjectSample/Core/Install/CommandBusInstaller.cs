@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Castle.Facilities.TypedFactory;
+﻿using Castle.Facilities.TypedFactory;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using ProjectSample.Core.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.CommandBus;
 
 namespace ProjectSample.Core.Install
 {

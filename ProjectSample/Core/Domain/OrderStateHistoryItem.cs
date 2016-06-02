@@ -1,5 +1,5 @@
 using System;
-using ProjectSample.Core.Domain.Base;
+using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Core.Domain
 {
@@ -9,6 +9,7 @@ namespace ProjectSample.Core.Domain
         {
             
         }
+
         public OrderStateHistoryItem(Order order, OrderState state)
         {
             Order = order;

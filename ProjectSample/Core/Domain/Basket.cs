@@ -1,20 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using ProjectSample.Core.Domain.Base;
+using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Core.Domain
 {
     public class Basket : Entity<long>
     {
+        private readonly ISet<BasketItem> _items = new HashSet<BasketItem>();
+
         protected Basket()
         { }
+
         public Basket(Customer customer)
         {
             Customer = customer;
         }
 
-        private readonly ISet<BasketItem> _items = new HashSet<BasketItem>();
         public virtual IEnumerable<BasketItem> Items => _items ;
         public virtual Customer Customer { get; protected set; }
 

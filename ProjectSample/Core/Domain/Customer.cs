@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using ProjectSample.Core.Domain.Base;
+﻿using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Core.Domain
 {
@@ -10,6 +8,7 @@ namespace ProjectSample.Core.Domain
         {
             Basket = new Basket(this);
         }
+
         public virtual string Identifier { get; set; }
 
         public virtual Basket Basket { get; protected set; }

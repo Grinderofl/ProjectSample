@@ -8,7 +8,7 @@
         {
             <a href="@Url.Action("Edit", new { Model.Id })" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-edit"></span></a>
             @Html.AntiForgeryToken()
-            var confirmMessage = $"Are you sure you wish to delete the product {@Model.Name}";
+            var confirmMessage = $"Are you sure you wish to delete the product {Model.Name}";
             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('@confirmMessage');"><span class="glyphicon glyphicon-trash"></span></button>
         }
     </td>

@@ -1,10 +1,9 @@
 ﻿using System.Linq;
-using NHibernate.Criterion;
 using ProjectSample.Areas.Basket.Factories;
-using ProjectSample.Core.Application;
+using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
-using ProjectSample.Core.Infrastructure.CommandBus;
-using ProjectSample.Core.Infrastructure.DataAccess;
+using ProjectSample.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.DataAccess;
 
 namespace ProjectSample.Areas.Basket.Commands.Handlers
 {
@@ -33,8 +32,8 @@ namespace ProjectSample.Areas.Basket.Commands.Handlers
 
     public class CheckoutHandler : IHandleCommand<CheckoutCommand>
     {
-        private readonly IRepository _repository;
         private readonly IOrderFactory _orderFactory;
+        private readonly IRepository _repository;
 
         public CheckoutHandler(IRepository repository, IOrderFactory orderFactory)
         {

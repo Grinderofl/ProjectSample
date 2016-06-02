@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using ProjectSample.Areas.Basket.Commands;
-using ProjectSample.Core.Infrastructure.CommandBus;
+using ProjectSample.Infrastructure.CommandBus;
 
 namespace ProjectSample.Areas.Basket.Controllers
 {

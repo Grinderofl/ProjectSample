@@ -1,6 +1,7 @@
 using System;
 using FluentNHibernate.Automapping;
-using ProjectSample.Core.Domain.Base;
+using ProjectSample.Infrastructure.Domain.Base;
+using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Core.Install
 {

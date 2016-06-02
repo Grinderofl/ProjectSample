@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
+﻿using AutoMapper;
 using ProjectSample.Areas.Catalog.Models.Home;
 using ProjectSample.Core.Domain;
 

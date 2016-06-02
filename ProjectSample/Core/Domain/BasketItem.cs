@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Web;
-using ProjectSample.Core.Domain.Base;
+﻿using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Core.Domain
 {
@@ -17,7 +14,7 @@ namespace ProjectSample.Core.Domain
             Product = product;
             Basket = basket;
         }
-        
+
         public virtual Product Product { get; protected set; }
         // Business requirement: Default quantity of new product in basket is 1
         public virtual int Quantity { get; set; } = 1;
@@ -28,12 +25,12 @@ namespace ProjectSample.Core.Domain
             return new BasketItem(product, basket);
         }
 
-        public virtual void IncreaseQuantity(int @by = 1)
+        public virtual void IncreaseQuantity(int by = 1)
         {
-            Quantity += @by;
+            Quantity += by;
         }
 
-        public virtual void DecreaseQuantity(int @by = 1)
+        public virtual void DecreaseQuantity(int by = 1)
         {
             Quantity -= by;
         }

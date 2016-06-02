@@ -1,7 +1,7 @@
 ﻿using FluentMvc;
 using FluentMvc.Constraints;
-using ProjectSample.Core.Infrastructure.Extensions;
-using ProjectSample.Core.Infrastructure.Mvc.Controllers;
+using ProjectSample.Infrastructure.Extensions;
+using ProjectSample.Infrastructure.Mvc.Controllers;
 
 namespace ProjectSample.Areas.Admin.Conventions
 {

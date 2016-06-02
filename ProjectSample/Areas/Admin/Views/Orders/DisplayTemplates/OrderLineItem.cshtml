@@ -11,7 +11,7 @@
             {
                 @Html.HiddenFor(x => x.Id)
                 @Html.AntiForgeryToken()
-                var confirmMessage = $"Are you sure you wish to cancel the order {@Model.Id}";
+                var confirmMessage = $"Are you sure you wish to cancel the order {Model.Id}";
                 <button type="submit" class="btn btn-danger" onclick="return confirm('@confirmMessage');"><span class="glyphicon glyphicon-trash"></span></button>
             }
         }

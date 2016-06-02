@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace ProjectSample.Core.Domain.Extensions
+﻿namespace ProjectSample.Core.Domain.Extensions
 {
     public static class OrderExtensions
     {

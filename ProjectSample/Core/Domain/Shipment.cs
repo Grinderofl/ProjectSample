@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using ProjectSample.Core.Domain.Base;
-using ProjectSample.Core.Domain.Mapping;
+using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Core.Domain
 {
     public class Shipment : Entity<long>
     {
+        private readonly ISet<ShipmentItem> _shipmentItems = new HashSet<ShipmentItem>();
+
         protected Shipment()
         {
             
@@ -18,6 +17,11 @@ namespace ProjectSample.Core.Domain
         {
             Order = order;
         }
+
+
+        public virtual IEnumerable<ShipmentItem> ShipmentItems => _shipmentItems;
+
+        public virtual Order Order { get; protected set; }
 
         public virtual void AddOrUpdateItem(OrderItem orderItem, int quantity = 1)
         {
@@ -29,13 +33,5 @@ namespace ProjectSample.Core.Domain
             }
             shipmentItem.SetQuantity(quantity);
         }
-
-
-        public virtual IEnumerable<ShipmentItem> ShipmentItems => _shipmentItems;
-
-        private readonly ISet<ShipmentItem> _shipmentItems = new HashSet<ShipmentItem>();
-        
-        public virtual Order Order { get; protected set; }
-
     }
 }
