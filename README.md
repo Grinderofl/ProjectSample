@@ -11,6 +11,8 @@ This project is created to demonstrate the following:
 * Usage and nesting of Editor / Display Templates
 * Structure & Organization
 * FluentMigrations
+* Heavy use of generics
+* Cryptography (Bcrypt)
 * Design Patterns:
   * Repository
   * Unit of Work
