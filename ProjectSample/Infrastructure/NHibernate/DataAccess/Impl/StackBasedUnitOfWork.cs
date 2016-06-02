@@ -15,14 +15,14 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.Impl
             _session = session;
         }
 
-        public void Begin()
+        public virtual void Begin()
         {
             _stack++;
             if(_transaction == null)
             _transaction = _session.BeginTransaction();
         }
 
-        public bool Commit()
+        public virtual bool Commit()
         {
             _stack--;
             if (_stack == 0)
@@ -42,7 +42,7 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.Impl
             return true;
         }
 
-        public void Rollback()
+        public virtual void Rollback()
         {
             _stack = 0;
             _transaction.Rollback();

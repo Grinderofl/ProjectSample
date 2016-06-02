@@ -3,7 +3,7 @@ using FluentNHibernate.Automapping;
 using ProjectSample.Infrastructure.Domain.Base;
 using ProjectSample.Infrastructure.Security.Domain;
 
-namespace ProjectSample.Core.Install
+namespace ProjectSample.Core.Configuration
 {
     public class ProjectSampleAutoMappingConfiguration : DefaultAutomappingConfiguration
     {

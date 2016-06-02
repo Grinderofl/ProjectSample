@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
 using ProjectSample.Infrastructure.CommandBus;
@@ -20,6 +21,8 @@ namespace ProjectSample.Infrastructure.Mvc.Controllers
 
         protected EntityController(IMapper mapper, IRepository repository)
         {
+            if (mapper == null) throw new ArgumentNullException(nameof(mapper));
+            if (repository == null) throw new ArgumentNullException(nameof(repository));
             Mapper = mapper;
             Repository = repository;
         }

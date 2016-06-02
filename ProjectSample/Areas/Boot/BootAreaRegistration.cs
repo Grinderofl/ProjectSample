@@ -17,7 +17,7 @@ namespace ProjectSample.Areas.Boot
             context.MapRoute(
                 "Boot_default",
                 "Boot/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

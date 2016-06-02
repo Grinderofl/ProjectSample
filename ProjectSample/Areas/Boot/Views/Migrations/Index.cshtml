@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Migrate database";
+}
+
+<h2>Migration</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            The database exists, but does not contain required fields. If you would like to perform migrations, please press the Migrate button.
+        </p>
+        @using (Html.BeginForm("PerformMigration", "Migrations", FormMethod.Post))
+        {
+            <input type="submit" value="Migrate" class="btn btn-default"/>
+        }
+    </div>
+</div>        

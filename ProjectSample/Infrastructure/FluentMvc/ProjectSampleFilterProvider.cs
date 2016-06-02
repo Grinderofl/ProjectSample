@@ -1,14 +1,16 @@
+using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace ProjectSample.Infrastructure.FluentMvc
 {
-    public class SampleFilterProvider : IFilterProvider
+    public class ProjectSampleFilterProvider : IFilterProvider
     {
         private readonly IFilterProvider _provider;
 
-        public SampleFilterProvider(IFilterProvider provider)
+        public ProjectSampleFilterProvider(IFilterProvider provider)
         {
+            if (provider == null) throw new ArgumentNullException(nameof(provider));
             _provider = provider;
         }
 

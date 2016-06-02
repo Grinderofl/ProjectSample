@@ -20,14 +20,22 @@ namespace ProjectSample
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Initialize();
+            SetControllerFactory();
+        }
 
+        private static void SetControllerFactory()
+        {
+            var controllerFactory = new WindsorControllerFactory(Container.Kernel);
+            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+        }
+
+        private static void Initialize()
+        {
             Container = new WindsorContainer();
             Container.AddFacility<TypedFactoryFacility>();
             Container.Kernel.Resolver.AddSubResolver(new CollectionResolver(Container.Kernel, true));
             Container.Install(FromAssembly.This());
-
-            var controllerFactory = new WindsorControllerFactory(Container.Kernel);
-            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
         }
 
         protected void Application_End()

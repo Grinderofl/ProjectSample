@@ -7,6 +7,7 @@ using FluentMvc.ActionResultFactories;
 using FluentMvc.Conventions;
 using FluentMvc.Utils;
 using ProjectSample.Infrastructure.FluentMvc;
+using ProjectSample.Infrastructure.FluentMvc.Windsor;
 
 namespace ProjectSample.Core.Install
 {
@@ -29,7 +30,7 @@ namespace ProjectSample.Core.Install
                 c.FilterConventions.LoadFromAssemblyContaining<FluentMvcInstaller>();
             });
 
-            FilterProviders.Providers.Add(new SampleFilterProvider(provider));
+            FilterProviders.Providers.Add(new ProjectSampleFilterProvider(provider));
         }
     }
 }

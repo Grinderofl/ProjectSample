@@ -2,7 +2,7 @@
 using Castle.Windsor;
 using FluentMvc.Configuration;
 
-namespace ProjectSample.Infrastructure.FluentMvc
+namespace ProjectSample.Infrastructure.FluentMvc.Windsor
 {
     public class WindsorObjectFactory : FluentMvcObjectFactory
     {

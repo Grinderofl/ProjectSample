@@ -244,11 +244,12 @@
     <Compile Include="Areas\Boot\BootAreaRegistration.cs" />
     <Compile Include="Areas\Boot\Controllers\CreateController.cs" />
     <Compile Include="Areas\Boot\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Boot\Controllers\MigrateController.cs" />
+    <Compile Include="Areas\Boot\Controllers\MigrationsController.cs" />
     <Compile Include="Areas\Catalog\Controllers\HomeController.cs" />
     <Compile Include="Areas\Catalog\Mapping\CatalogMapping.cs" />
     <Compile Include="Areas\Catalog\Models\Home\IndexModel.cs" />
     <Compile Include="Areas\Catalog\Models\Home\ProductModel.cs" />
+    <Compile Include="Areas\Shared\Registries\Impl\ExceptionRouteRegistry.cs" />
     <Compile Include="Areas\Shared\Services\ICurrentCustomerService.cs" />
     <Compile Include="Areas\Shared\Services\ICurrentUserService.cs" />
     <Compile Include="Areas\Shared\Services\Impl\Base\CurrentUserService.cs" />
@@ -259,6 +260,9 @@
     <Compile Include="Areas\Shared\Factories\Impl\CustomerIdentifierFactory.cs" />
     <Compile Include="Areas\Shared\Factories\Impl\UserIdentifierFactory.cs" />
     <Compile Include="Areas\Shared\Models\Identifier.cs" />
+    <Compile Include="Core\Conventions\GlobalFilterConvention.cs" />
+    <Compile Include="Infrastructure\Mvc\Filters\DatabaseExceptionFilter.cs" />
+    <Compile Include="Infrastructure\Mvc\Registries\IExceptionRouteRegistry.cs" />
     <Compile Include="Infrastructure\Security\Domain\UserBase.cs" />
     <Compile Include="Core\Domain\Basket.cs" />
     <Compile Include="Core\Domain\BasketItem.cs" />
@@ -306,8 +310,8 @@
     <Compile Include="Infrastructure\DataAccess\List\Models\SearchItem.cs" />
     <Compile Include="Infrastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\Extensions\TypeExtensions.cs" />
-    <Compile Include="Infrastructure\FluentMvc\WindsorConventionActivator.cs" />
-    <Compile Include="Infrastructure\FluentMvc\WindsorObjectFactory.cs" />
+    <Compile Include="Infrastructure\FluentMvc\Windsor\WindsorConventionActivator.cs" />
+    <Compile Include="Infrastructure\FluentMvc\Windsor\WindsorObjectFactory.cs" />
     <Compile Include="Infrastructure\NHibernate\Security\Impl\UserDataSource.cs" />
     <Compile Include="Infrastructure\Security\Services\IAuthenticationService.cs" />
     <Compile Include="Infrastructure\Security\Services\IAuthorizationService.cs" />
@@ -338,10 +342,10 @@
     <Compile Include="Core\Install\ControllerInstaller.cs" />
     <Compile Include="Core\Install\FluentMvcInstaller.cs" />
     <Compile Include="Core\Install\ImplementationInstaller.cs" />
-    <Compile Include="Core\Install\ProjectSampleAutoMappingConfiguration.cs" />
+    <Compile Include="Core\Configuration\ProjectSampleAutoMappingConfiguration.cs" />
     <Compile Include="Core\Install\NHibernateConfigurationBuilder.cs" />
-    <Compile Include="Core\Install\NHibernateInstaller.cs" />
-    <Compile Include="Infrastructure\FluentMvc\SampleFilterProvider.cs" />
+    <Compile Include="Core\Configuration\NHibernateInstaller.cs" />
+    <Compile Include="Infrastructure\FluentMvc\ProjectSampleFilterProvider.cs" />
     <Compile Include="Core\Migrations\20160528112337_AddedUsers.cs" />
     <Compile Include="Core\Migrations\MigrationRunner.cs" />
     <Compile Include="Global.asax.cs">
@@ -428,7 +432,9 @@
     <Content Include="Areas\Boot\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Boot\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Boot\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Boot\Views\Migrate\Index.cshtml" />
+    <Content Include="Areas\Boot\Views\Migrations\Index.cshtml" />
+    <Content Include="Areas\Boot\Views\Migrations\PerformMigration.cshtml" />
+    <Content Include="Areas\Boot\Views\Migrations\Create.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -451,10 +457,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Shared\AuthNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

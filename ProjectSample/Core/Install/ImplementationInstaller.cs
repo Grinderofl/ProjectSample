@@ -1,4 +1,5 @@
-﻿using Castle.MicroKernel.Registration;
+﻿using System.Web.Mvc;
+using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
@@ -13,6 +14,10 @@ namespace ProjectSample.Core.Install
                     .Where(t => t.Namespace != null && t.Namespace.EndsWith(".Impl"))
                     .LifestylePerWebRequest()
                     .WithServiceFirstInterface());
+
+            container.Register(
+                Component.For<AuthorizeAttribute>()
+                );
         }
     }
 }

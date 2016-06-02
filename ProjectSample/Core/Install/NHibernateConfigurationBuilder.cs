@@ -3,26 +3,29 @@ using Castle.Facilities.NHibernateIntegration;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
-using NHibernate.Cfg;
+using ProjectSample.Core.Configuration;
 
 namespace ProjectSample.Core.Install
 {
     public class NHibernateConfigurationBuilder : IConfigurationBuilder
     {
-        public Configuration GetConfiguration(IConfiguration config)
+        public NHibernate.Cfg.Configuration GetConfiguration(IConfiguration config)
         {
             var conf = Fluently.Configure()
                 .ExposeConfiguration(c => c.Properties["default_flush_mode"] = "Commit")
                 .Database(
                     () =>
                         MsSqlConfiguration.MsSql2012.ConnectionString(
-                            "Data Source=.;Initial Catalog=NHTest;Integrated Security=SSPI;").ShowSql().DefaultSchema("dbo"))
+                            conn => conn.FromConnectionStringWithKey("Default")).ShowSql().DefaultSchema("dbo"))
                 .Mappings(
-                    m => m.AutoMappings.Add(AutoMap.AssemblyOf<NHibernateConfigurationBuilder>(new ProjectSampleAutoMappingConfiguration())
-                        .UseOverridesFromAssemblyOf<NHibernateConfigurationBuilder>()
-                        .AddMappingsFromAssemblyOf<NHibernateConfigurationBuilder>()
-                        .Conventions.AddFromAssemblyOf<NHibernateConfigurationBuilder>()
-                        )
+                    m =>
+                        m.AutoMappings.Add(
+                            AutoMap.AssemblyOf<NHibernateConfigurationBuilder>(
+                                new ProjectSampleAutoMappingConfiguration())
+                                .UseOverridesFromAssemblyOf<NHibernateConfigurationBuilder>()
+                                .AddMappingsFromAssemblyOf<NHibernateConfigurationBuilder>()
+                                .Conventions.AddFromAssemblyOf<NHibernateConfigurationBuilder>()
+                            )
                 );
 
             return conf.BuildConfiguration();

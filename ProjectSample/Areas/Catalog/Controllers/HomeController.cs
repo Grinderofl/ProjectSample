@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
 using ProjectSample.Areas.Catalog.Models.Home;
@@ -20,7 +21,7 @@ namespace ProjectSample.Areas.Catalog.Controllers
 
         public ActionResult Index(int page = 1)
         {
-            var products = _repository.Query(new FindProductsByPageQuery(page, 30));
+            var products = _repository.Query(new FindProductsByPageQuery(page, 30)).ToList();
             var productModels = _mapper.Map<IEnumerable<ProductModel>>(products);
             var model = new IndexModel
             {
