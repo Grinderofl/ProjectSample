@@ -1,5 +1,5 @@
 # ProjectSample
-Sample product management and ordering site using MVC5, NHibernate and Castle Windsor with DDD concepts
+Sample product management and ordering site using ASP.NET MVC5, NHibernate and Castle Windsor with DDD concepts
 
 This project is created to demonstrate the following:
 
