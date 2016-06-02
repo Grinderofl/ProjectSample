@@ -22,3 +22,7 @@ This project is created to demonstrate the following:
   * Strategy
   * Command
   
+### Startup
+1. Create database `ProjectSample` in local database (or edit the connectionstring in web.config)
+2. Run application, navigate to /Boot/Migrate
+3. Click Migrate
