@@ -10,6 +10,7 @@ This project is created to demonstrate the following:
 * Convention-oriented programming
 * Usage and nesting of Editor / Display Templates
 * Structure & Organization
+  * Organizing by Features
 * FluentMigrations
 * Heavy use of generics
 * Cryptography (Bcrypt)
