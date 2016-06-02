@@ -1,6 +1,5 @@
 ﻿using FluentNHibernate.Automapping;
 using FluentNHibernate.Automapping.Alterations;
-using FluentNHibernate.Mapping;
 
 namespace ProjectSample.Core.Domain.Mapping
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using AutoMapper;
 using ProjectSample.Areas.Basket.Models;
 using ProjectSample.Areas.Shared.Services;
@@ -14,9 +10,9 @@ namespace ProjectSample.Areas.Basket.Controllers.Base
 {
     public class BasketControllerBase : Controller
     {
-        protected readonly ICurrentCustomerService CurrentCustomerService;
         private readonly IListService<BasketItem> _listService;
         private readonly IMapper _mapper;
+        protected readonly ICurrentCustomerService CurrentCustomerService;
 
         public BasketControllerBase(ICurrentCustomerService currentCustomerService, IListService<BasketItem> listService, IMapper mapper)
         {

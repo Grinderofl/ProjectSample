@@ -1,7 +1,7 @@
-﻿using ProjectSample.Core.Domain.Base;
-using ProjectSample.Infrastructure.DataAccess;
+﻿using ProjectSample.Infrastructure.DataAccess;
 using ProjectSample.Infrastructure.NHibernate.Security.Queries;
 using ProjectSample.Infrastructure.Security;
+using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Infrastructure.NHibernate.Security.Impl
 {

@@ -11,7 +11,7 @@ namespace ProjectSample.Infrastructure.DataAccess.List.Models
 
         //public IEnumerable<SearchItem<T>> SearchItems => _searchItems;
 
-        public IEnumerable<Expression<Func<T, bool>>> SearchItems => _searchItems; 
+        public IEnumerable<Expression<Func<T, bool>>> SearchItems => _searchItems;
 
         public void AddItem(Expression<Func<T, bool>> expression)
         {

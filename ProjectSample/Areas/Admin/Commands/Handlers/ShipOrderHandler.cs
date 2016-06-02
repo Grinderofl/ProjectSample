@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ProjectSample.Core.Domain;
-using ProjectSample.Core.Domain.Extensions;
+﻿using ProjectSample.Core.Domain.Extensions;
 using ProjectSample.Infrastructure.CommandBus;
 using ProjectSample.Infrastructure.DataAccess;
 

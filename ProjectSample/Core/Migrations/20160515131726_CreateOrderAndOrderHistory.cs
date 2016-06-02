@@ -34,7 +34,7 @@ namespace ProjectSample.Core.Migrations
             Create.ForeignKey("FKEBAAA11E871A04D2").FromTable("OrderStateHistoryItem").InSchema("dbo").ForeignColumns("OrderId").ToTable("Order").InSchema("dbo").PrimaryColumns("OrderId");
             Create.ForeignKey("FKEBAAA11E3CAD2FD").FromTable("OrderStateHistoryItem").InSchema("dbo").ForeignColumns("StateId").ToTable("OrderState").InSchema("dbo").PrimaryColumns("OrderStateId");
 
-            var objs = new List<OrderState>()
+            var objs = new List<OrderState>
             {
                 OrderState.Accepted,
                 OrderState.Completed,

@@ -6,6 +6,5 @@ namespace ProjectSample.Areas.Account.Services
     public interface IRegistrationService
     {
         RegistrationResult Register(RegisterFields fields);
-
     }
 }

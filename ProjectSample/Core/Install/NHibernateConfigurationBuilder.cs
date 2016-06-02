@@ -1,16 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
-using Castle.Core.Configuration;
+﻿using Castle.Core.Configuration;
 using Castle.Facilities.NHibernateIntegration;
-using Castle.Facilities.NHibernateIntegration.Builders;
-using FluentNHibernate;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
-using FluentNHibernate.Conventions.Helpers;
-using FluentNHibernate.Conventions.Inspections;
 using NHibernate.Cfg;
 
 namespace ProjectSample.Core.Install

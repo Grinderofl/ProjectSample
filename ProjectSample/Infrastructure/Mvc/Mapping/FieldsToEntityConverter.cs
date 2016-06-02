@@ -5,7 +5,6 @@ namespace ProjectSample.Infrastructure.Mvc.Mapping
     public abstract class FieldsToEntityConverter<TFields, TEntity> : ITypeConverter<TFields, TEntity>
         where TFields : class where TEntity : class
     {
-
         public TEntity Convert(ResolutionContext context)
             =>
                 context.DestinationValue == null

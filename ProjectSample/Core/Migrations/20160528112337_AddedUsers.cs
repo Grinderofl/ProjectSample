@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using FluentMigrator;
 using ProjectSample.Core.Domain;
+using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Core.Migrations
 {
@@ -18,8 +19,8 @@ namespace ProjectSample.Core.Migrations
             Create.Table("Role").InSchema("dbo").WithColumn("RoleId").AsInt32().PrimaryKey().NotNullable()
             .WithColumn("Name").AsString(255).Nullable()
             .WithColumn("LastModified").AsDateTime().Nullable();
-            var roles = new List<Role>()
-                        {
+            var roles = new List<Role>
+            {
                             Role.User,
                             Role.Administrator
                         };

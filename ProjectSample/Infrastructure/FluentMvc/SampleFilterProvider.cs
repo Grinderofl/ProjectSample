@@ -9,7 +9,7 @@ namespace ProjectSample.Infrastructure.FluentMvc
 
         public SampleFilterProvider(IFilterProvider provider)
         {
-            this._provider = provider;
+            _provider = provider;
         }
 
         public IEnumerable<Filter> GetFilters(ControllerContext controllerContext, ActionDescriptor actionDescriptor)

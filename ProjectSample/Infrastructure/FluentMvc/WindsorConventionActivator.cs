@@ -10,7 +10,7 @@ namespace ProjectSample.Infrastructure.FluentMvc
 
         public WindsorConventionActivator(IWindsorContainer container)
         {
-            this._container = container;
+            _container = container;
         }
 
         public IFilterConvention Activate(Type type)

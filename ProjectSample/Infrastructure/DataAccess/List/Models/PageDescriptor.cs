@@ -8,16 +8,11 @@ namespace ProjectSample.Infrastructure.DataAccess.List.Models
         public static PageDescriptor<T> Create<T>()
         {
             return new PageDescriptor<T>();
-        } 
+        }
     }
 
     public class PageDescriptor<T> : PageDescriptor
     {
-        public int Page { get; set; }
-        public int RowsPerPage { get; set; }
-        public Expression<Func<T, object>> SortProperty { get; set; }
-        public string SortDirection { get; set; } = "asc";
-        public Search<T> Search { get; } = new Search<T>();
         public PageDescriptor(int page, int rowsPerPage)
         {
             Page = page;
@@ -27,6 +22,12 @@ namespace ProjectSample.Infrastructure.DataAccess.List.Models
         public PageDescriptor() : this(1, 30)
         {   
         }
+
+        public int Page { get; set; }
+        public int RowsPerPage { get; set; }
+        public Expression<Func<T, object>> SortProperty { get; set; }
+        public string SortDirection { get; set; } = "asc";
+        public Search<T> Search { get; } = new Search<T>();
 
         public void AddSearchItem(Expression<Func<T, bool>> expression)
         {

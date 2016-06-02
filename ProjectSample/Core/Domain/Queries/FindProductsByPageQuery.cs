@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using NHibernate;
 using NHibernate.Linq;
 using ProjectSample.Infrastructure.NHibernate.Queries;
@@ -10,8 +8,8 @@ namespace ProjectSample.Core.Domain.Queries
 {
     public class FindProductsByPageQuery : NhQueryObject<IEnumerable<Product>>
     {
-        private int _page;
         private readonly int _numberOfItemsPerPage;
+        private readonly int _page;
 
         public FindProductsByPageQuery(int page, int numberOfItemsPerPage)
         {

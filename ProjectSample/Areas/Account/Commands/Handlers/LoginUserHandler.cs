@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ProjectSample.Infrastructure.CommandBus;
+﻿using ProjectSample.Infrastructure.CommandBus;
 using ProjectSample.Infrastructure.Security.Services;
 
 namespace ProjectSample.Areas.Account.Commands.Handlers

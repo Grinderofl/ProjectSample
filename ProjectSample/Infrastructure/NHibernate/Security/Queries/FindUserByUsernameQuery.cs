@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using NHibernate;
 using NHibernate.Linq;
-using ProjectSample.Core.Domain.Base;
 using ProjectSample.Infrastructure.NHibernate.Queries;
+using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Infrastructure.NHibernate.Security.Queries
 {

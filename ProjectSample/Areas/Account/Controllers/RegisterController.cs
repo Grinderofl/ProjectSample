@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using ProjectSample.Areas.Account.Commands;
 using ProjectSample.Areas.Account.Models.Register;
 using ProjectSample.Areas.Account.Services;
@@ -34,10 +30,7 @@ namespace ProjectSample.Areas.Account.Controllers
                     Bus.Send(new LoginUserCommand(result.User));
                     return RedirectToAction("Index", "Home", new {area = "Catalog"});
                 }
-                else
-                {
-                    ModelState.AddModelError("Email", result.Message);
-                }
+                ModelState.AddModelError("Email", result.Message);
             }
             return View(fields);
         }

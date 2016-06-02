@@ -13,6 +13,12 @@ namespace ProjectSample.Infrastructure.NHibernate.Conventions
         IReferenceConvention,
         ICollectionConvention
     {
+        public void Apply(ICollectionInstance instance)
+        {
+            instance.AsSet();
+            instance.LazyLoad();
+        }
+
         public void Apply(IOneToManyCollectionInstance instance)
         {
             instance.AsSet();
@@ -20,14 +26,9 @@ namespace ProjectSample.Infrastructure.NHibernate.Conventions
             instance.Access.CamelCaseField(CamelCasePrefix.Underscore);
         }
 
-        public void Apply(IIdentityInstance instance)
-        {
-            instance.Column($"{instance.EntityType.Name}Id");
-        }
-
         public void Apply(IManyToManyCollectionInstance instance)
         {
-            var instanceNames = new SortedSet<string>()
+            var instanceNames = new SortedSet<string>
             {
                 instance.ChildType.Name,
                 instance.EntityType.Name
@@ -37,14 +38,13 @@ namespace ProjectSample.Infrastructure.NHibernate.Conventions
             instance.Table($"{instanceNames.ElementAt(0)}To{instanceNames.ElementAt(1)}");
         }
 
-        public void Apply(IManyToOneInstance instance)
+        public void Apply(IIdentityInstance instance)
         {
+            instance.Column($"{instance.EntityType.Name}Id");
         }
 
-        public void Apply(ICollectionInstance instance)
+        public void Apply(IManyToOneInstance instance)
         {
-            instance.AsSet();
-            instance.LazyLoad();
         }
     }
 }

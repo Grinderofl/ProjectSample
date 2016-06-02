@@ -1,4 +1,4 @@
-using ProjectSample.Core.Domain.Base;
+using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Core.Domain
 {
@@ -15,15 +15,15 @@ namespace ProjectSample.Core.Domain
             Shipment = shipment;
         }
 
-        public virtual void SetQuantity(int quantity)
-        {
-            Quantity = quantity;
-        }
-
         public virtual Product Product => OrderItem.Product;
         public virtual Order Order => OrderItem.Order;
         public virtual Shipment Shipment { get; protected set; }
         public virtual int Quantity { get; protected set; }
         public virtual OrderItem OrderItem { get; protected set; }
+
+        public virtual void SetQuantity(int quantity)
+        {
+            Quantity = quantity;
+        }
     }
 }

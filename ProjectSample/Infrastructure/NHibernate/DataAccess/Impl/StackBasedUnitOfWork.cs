@@ -6,10 +6,10 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.Impl
 {
     public class StackBasedUnitOfWork : IUnitOfWork
     {
-        private int _stack;
-
         private readonly ISession _session;
+        private int _stack;
         private ITransaction _transaction;
+
         public StackBasedUnitOfWork(ISession session)
         {
             _session = session;

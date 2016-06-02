@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Microsoft.AspNet.Identity;
+using ProjectSample.Infrastructure.Domain.Base;
 
-namespace ProjectSample.Core.Domain.Base
+namespace ProjectSample.Infrastructure.Security.Domain
 {
     public abstract class UserBase : Entity<Guid>
     {
@@ -16,6 +13,5 @@ namespace ProjectSample.Core.Domain.Base
 
         public virtual bool IsInRole(Role role)
             => Role == role;
-
     }
 }

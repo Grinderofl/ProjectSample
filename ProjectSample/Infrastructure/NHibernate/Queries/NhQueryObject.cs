@@ -16,6 +16,7 @@ namespace ProjectSample.Infrastructure.NHibernate.Queries
 
             return nhRepo;
         }
+
         public override TResult Execute(IRepository repository)
         {
             var nhRepo = EnsureNhRepo(repository);

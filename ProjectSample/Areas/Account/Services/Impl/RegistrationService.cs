@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using ProjectSample.Areas.Account.Models.Register;
+﻿using ProjectSample.Areas.Account.Models.Register;
 using ProjectSample.Areas.Account.Services.Models;
 using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
 using ProjectSample.Infrastructure.DataAccess;
 using ProjectSample.Infrastructure.NHibernate.Security.Queries;
+using ProjectSample.Infrastructure.Security.Domain;
 using ProjectSample.Infrastructure.Security.Services;
 
 namespace ProjectSample.Areas.Account.Services.Impl
 {
     public class RegistrationService : IRegistrationService
     {
-        private readonly IRepository _repository;
-        private readonly ICurrentCustomerService _currentCustomerService;
         private readonly ICryptoService _cryptoService;
+        private readonly ICurrentCustomerService _currentCustomerService;
+        private readonly IRepository _repository;
 
         public RegistrationService(IRepository repository, ICurrentCustomerService currentCustomerService, ICryptoService cryptoService)
         {
@@ -32,7 +29,7 @@ namespace ProjectSample.Areas.Account.Services.Impl
                 return RegistrationResult.DuplicateUsername;
             }
 
-            var user = new User()
+            var user = new User
             {
                 Role = Role.User,
                 Customer = _currentCustomerService.CurrentCustomer(),

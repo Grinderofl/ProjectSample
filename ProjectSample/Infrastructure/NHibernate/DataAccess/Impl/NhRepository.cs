@@ -7,12 +7,12 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.Impl
 {
     public class NhRepository : Repository
     {
-        public ISession Session { get; }
-
         public NhRepository(IUnitOfWork unitOfWork, ISession session) : base(unitOfWork)
         {
             Session = session;
         }
+
+        public ISession Session { get; }
 
         public override T Find<T>(object id)
         {

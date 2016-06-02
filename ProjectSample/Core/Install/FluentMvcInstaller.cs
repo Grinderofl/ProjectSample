@@ -1,13 +1,9 @@
-﻿using System;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using FluentMvc;
 using FluentMvc.ActionResultFactories;
-using FluentMvc.Configuration;
 using FluentMvc.Conventions;
 using FluentMvc.Utils;
 using ProjectSample.Infrastructure.FluentMvc;

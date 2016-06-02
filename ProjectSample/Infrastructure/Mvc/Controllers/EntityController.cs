@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
-using ProjectSample.Core.Domain.Base;
 using ProjectSample.Infrastructure.CommandBus;
 using ProjectSample.Infrastructure.DataAccess;
 using ProjectSample.Infrastructure.DataAccess.Queries;
+using ProjectSample.Infrastructure.Domain.Base;
 using ProjectSample.Infrastructure.Mvc.Models;
 using ProjectSample.Infrastructure.NHibernate.Queries;
 
@@ -18,15 +18,15 @@ namespace ProjectSample.Infrastructure.Mvc.Controllers
         protected readonly IMapper Mapper;
         protected readonly IRepository Repository;
 
-        protected virtual int ItemsPerPage => 10;
-
-        public virtual ICommandBus Bus { get; set; }
-
         protected EntityController(IMapper mapper, IRepository repository)
         {
             Mapper = mapper;
             Repository = repository;
         }
+
+        protected virtual int ItemsPerPage => 10;
+
+        public virtual ICommandBus Bus { get; set; }
 
         protected void SetError(string message)
         {
@@ -69,7 +69,7 @@ namespace ProjectSample.Infrastructure.Mvc.Controllers
             => Mapper.Map<IEnumerable<TEntity>, IEnumerable<TIndexListItemModel>>(entities);
 
         protected virtual EntityIndexModel CreateIndexModel(IEnumerable<TIndexListItemModel> items)
-            => new EntityIndexModel()
+            => new EntityIndexModel
             {
                 Headers = GetHeaders(),
                 Items = items
@@ -211,8 +211,6 @@ namespace ProjectSample.Infrastructure.Mvc.Controllers
             => Mapper.Map(fields, entity);
 
         #endregion
-
-
     }
 
 }

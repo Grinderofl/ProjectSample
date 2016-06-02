@@ -4,8 +4,8 @@ namespace ProjectSample.Infrastructure.Security.Services.Impl
 {
     public class AuthenticationService : IAuthenticationService
     {
-        private readonly IUserDataSource _userDataSource;
         private readonly ICryptoService _cryptoService;
+        private readonly IUserDataSource _userDataSource;
 
         public AuthenticationService(IUserDataSource userDataSource, ICryptoService cryptoService)
         {

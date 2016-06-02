@@ -23,12 +23,12 @@ namespace ProjectSample.Infrastructure.DataAccess
             _unitOfWork.Commit();
         }
 
-        protected abstract void SaveCore<T>(T entity);
-
         public virtual void Delete<T>(T entity)
         {
             DeleteCore(entity);
         }
+
+        protected abstract void SaveCore<T>(T entity);
 
         protected abstract void DeleteCore<T>(T entity);
     }

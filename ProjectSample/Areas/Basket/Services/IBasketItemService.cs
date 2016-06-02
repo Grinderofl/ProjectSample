@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using ProjectSample.Core.Domain;
+﻿using ProjectSample.Core.Domain;
 using ProjectSample.Infrastructure.DataAccess.List.Models;
 
 namespace ProjectSample.Areas.Basket.Services

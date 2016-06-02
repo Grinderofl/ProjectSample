@@ -1,4 +1,4 @@
-﻿using ProjectSample.Core.Domain.Base;
+﻿using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Infrastructure.Security.Models
 {
@@ -13,11 +13,11 @@ namespace ProjectSample.Infrastructure.Security.Models
             Authenticated = sucess;
         }
 
-        public static AuthenticationResult Success(UserBase user)
-            => new AuthenticationResult("Success", true) {User = user};
-
         public bool Authenticated { get; }
         public string Message { get; }
         public UserBase User { get; set; }
+
+        public static AuthenticationResult Success(UserBase user)
+            => new AuthenticationResult("Success", true) {User = user};
     }
 }

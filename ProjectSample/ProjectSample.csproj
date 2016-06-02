@@ -259,7 +259,7 @@
     <Compile Include="Areas\Shared\Factories\Impl\CustomerIdentifierFactory.cs" />
     <Compile Include="Areas\Shared\Factories\Impl\UserIdentifierFactory.cs" />
     <Compile Include="Areas\Shared\Models\Identifier.cs" />
-    <Compile Include="Core\Domain\Base\UserBase.cs" />
+    <Compile Include="Infrastructure\Security\Domain\UserBase.cs" />
     <Compile Include="Core\Domain\Basket.cs" />
     <Compile Include="Core\Domain\BasketItem.cs" />
     <Compile Include="Core\Domain\Customer.cs" />
@@ -271,7 +271,7 @@
     <Compile Include="Core\Domain\Mapping\UserOverride.cs" />
     <Compile Include="Core\Domain\Queries\FindCustomerByIdentityQuery.cs" />
     <Compile Include="Core\Domain\Queries\FindProductsByPageQuery.cs" />
-    <Compile Include="Core\Domain\Role.cs" />
+    <Compile Include="Infrastructure\Security\Domain\Role.cs" />
     <Compile Include="Core\Domain\User.cs" />
     <Compile Include="Infrastructure\AutoMapper\EntityProfile.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductFields.cs" />
@@ -280,7 +280,7 @@
     <Compile Include="Areas\Catalog\CatalogAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
-    <Compile Include="Core\Domain\Base\Entity.cs" />
+    <Compile Include="Infrastructure\Domain\Base\Entity.cs" />
     <Compile Include="Core\Domain\Mapping\OrderOverride.cs" />
     <Compile Include="Core\Domain\Mapping\OrderStateOverride.cs" />
     <Compile Include="Core\Domain\Mapping\ShipmentItemOverride.cs" />

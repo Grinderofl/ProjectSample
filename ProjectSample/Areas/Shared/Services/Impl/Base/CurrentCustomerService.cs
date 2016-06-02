@@ -7,9 +7,9 @@ namespace ProjectSample.Areas.Shared.Services.Impl.Base
 {
     public class CurrentCustomerService : ICurrentCustomerService
     {
-        private readonly IRepository _repository;
-        private readonly IIdentifierFactory<Customer> _identifierFactory;
         private readonly ICurrentUserService _currentUserService;
+        private readonly IIdentifierFactory<Customer> _identifierFactory;
+        private readonly IRepository _repository;
 
         public CurrentCustomerService(IRepository repository, IIdentifierFactory<Customer> identifierFactory, ICurrentUserService currentUserService)
         {
@@ -28,7 +28,7 @@ namespace ProjectSample.Areas.Shared.Services.Impl.Base
             var customer = _repository.Query(new FindCustomerByIdentityQuery(identifier));
             if (customer == null)
             {
-                customer = new Customer()
+                customer = new Customer
                 {
                     Identifier = identifier
                 };

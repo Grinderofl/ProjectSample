@@ -5,6 +5,5 @@ using ProjectSample.Infrastructure.AutoMapper;
 namespace ProjectSample.Areas.Admin.Mapping
 {
     public class OrdersProfile : EntityProfile<Order, OrderViewModel, OrderFields, OrderLineItem>
-    {
-    }
+    {}
 }

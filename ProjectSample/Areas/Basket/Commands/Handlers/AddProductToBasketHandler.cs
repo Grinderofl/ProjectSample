@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using FluentNHibernate.Visitors;
-using ProjectSample.Areas.Shared.Services;
+﻿using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
 using ProjectSample.Infrastructure.CommandBus;
 using ProjectSample.Infrastructure.DataAccess;

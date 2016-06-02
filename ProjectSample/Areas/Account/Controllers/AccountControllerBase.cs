@@ -6,6 +6,5 @@ namespace ProjectSample.Areas.Account.Controllers
     public abstract class AccountControllerBase : Controller
     {
         public virtual ICommandBus Bus { get; set; }
-
     }
 }

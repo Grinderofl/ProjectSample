@@ -7,8 +7,8 @@ namespace ProjectSample.Areas.Shared.Services.Impl.Base
 {
     public class CurrentUserService : ICurrentUserService
     {
-        private readonly IRepository _repository;
         private readonly IIdentifierFactory<User> _identifierFactory;
+        private readonly IRepository _repository;
 
         public CurrentUserService(IRepository repository, IIdentifierFactory<User> identifierFactory)
         {

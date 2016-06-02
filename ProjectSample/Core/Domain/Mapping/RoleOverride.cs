@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using FluentNHibernate.Automapping;
+﻿using FluentNHibernate.Automapping;
 using FluentNHibernate.Automapping.Alterations;
+using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Core.Domain.Mapping
 {

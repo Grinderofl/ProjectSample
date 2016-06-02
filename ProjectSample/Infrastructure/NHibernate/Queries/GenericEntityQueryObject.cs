@@ -2,14 +2,14 @@
 using System.Linq;
 using NHibernate;
 using NHibernate.Linq;
-using ProjectSample.Core.Domain.Base;
+using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Infrastructure.NHibernate.Queries
 {
     public class GenericEntityQueryObject<TEntity, TPk> : NhQueryObject<IEnumerable<TEntity>> where TEntity : Entity<TPk>
     {
-        private readonly int _page;
         private readonly int _itemsPerPage;
+        private readonly int _page;
 
         public GenericEntityQueryObject(int page, int itemsPerPage)
         {

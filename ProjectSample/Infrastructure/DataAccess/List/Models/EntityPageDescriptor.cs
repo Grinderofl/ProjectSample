@@ -1,4 +1,4 @@
-using ProjectSample.Core.Domain.Base;
+using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Infrastructure.DataAccess.List.Models
 {

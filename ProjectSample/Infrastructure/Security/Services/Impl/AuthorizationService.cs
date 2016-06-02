@@ -1,5 +1,5 @@
 using System.Web.Security;
-using ProjectSample.Core.Domain.Base;
+using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Infrastructure.Security.Services.Impl
 {
