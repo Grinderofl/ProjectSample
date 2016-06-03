@@ -12,6 +12,7 @@ This project is created to demonstrate the following:
 * Structure & Organization
   * Organizing by Features
 * FluentMigrations
+* Migration Generation
 * Heavy use of generics
 * Cryptography (Bcrypt)
 * Design Patterns:
