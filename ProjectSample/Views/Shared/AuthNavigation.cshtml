@@ -1,7 +1,7 @@
 ﻿<ul class="nav navbar-nav navbar-right">
     @if (User.Identity.IsAuthenticated)
     {
-        <li>Welcome, @User.Identity.Name</li>
+        <li><p class="navbar-text">Welcome, @User.Identity.Name</p></li>
         <li>@Html.ActionLink("Log out", "Index", "Logout", new {area = "Account"}, null)</li>
     }
     else

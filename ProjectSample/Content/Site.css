@@ -26,3 +26,7 @@ textarea {
 p {
     padding: 10px;
 }
+
+p.navbar-text {
+    padding: 0;
+}
