@@ -7,6 +7,8 @@ using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using Castle.Windsor.Mvc;
+using FluentValidation.Mvc;
+using ProjectSample.Infrastructure.FluentValidation.Windsor;
 
 namespace ProjectSample
 {
@@ -22,6 +24,7 @@ namespace ProjectSample
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             Initialize();
             SetControllerFactory();
+            SetValidatorProvider();
         }
 
         private static void SetControllerFactory()
@@ -36,6 +39,16 @@ namespace ProjectSample
             Container.AddFacility<TypedFactoryFacility>();
             Container.Kernel.Resolver.AddSubResolver(new CollectionResolver(Container.Kernel, true));
             Container.Install(FromAssembly.This());
+        }
+
+        private static void SetValidatorProvider()
+        {
+            var validatorFactory = new WindsorFluentValidatorFactory(Container.Kernel);
+            //FluentValidationModelValidatorProvider.Configure(x => x.ValidatorFactory = validatorFactory);
+
+            var validatorProvider = new FluentValidationModelValidatorProvider(validatorFactory);
+            ModelValidatorProviders.Providers.Add(validatorProvider);
+            DataAnnotationsModelValidatorProvider.AddImplicitRequiredAttributeForValueTypes = false;
         }
 
         protected void Application_End()

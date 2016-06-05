@@ -5,4 +5,7 @@
     <div class="col-md-10">
         @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
     </div>
+    <div class="col-md-10 col-md-offset-2">
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
 </div>

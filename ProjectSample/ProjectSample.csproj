@@ -88,6 +88,14 @@
       <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.MVC5.6.2.1.0\lib\Net45\FluentValidation.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FluentWindsor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentWindsor.2.0.1\lib\4.6.1\Release\FluentWindsor.dll</HintPath>
       <Private>True</Private>
@@ -205,6 +213,8 @@
     <Compile Include="Areas\Account\Controllers\LogoutController.cs" />
     <Compile Include="Areas\Account\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Account\Models\Login\LoginFields.cs" />
+    <Compile Include="Areas\Account\Models\Login\LoginFieldsValidator.cs" />
+    <Compile Include="Areas\Account\Models\Register\RegisterFieldsValidator.cs" />
     <Compile Include="Areas\Account\Models\Register\RegisterFields.cs" />
     <Compile Include="Areas\Account\Services\Impl\RegistrationService.cs" />
     <Compile Include="Areas\Account\Services\IRegistrationService.cs" />
@@ -223,6 +233,7 @@
     <Compile Include="Areas\Admin\Models\Orders\OrderFields.cs" />
     <Compile Include="Areas\Admin\Models\Orders\OrderLineItem.cs" />
     <Compile Include="Areas\Admin\Models\Orders\OrderViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\Products\ProductFieldsValidator.cs" />
     <Compile Include="Areas\Basket\BasketAreaRegistration.cs" />
     <Compile Include="Areas\Basket\Commands\AddProductToBasketCommand.cs" />
     <Compile Include="Areas\Basket\Commands\CheckoutCommand.cs" />
@@ -260,6 +271,8 @@
     <Compile Include="Areas\Shared\Factories\Impl\UserIdentifierFactory.cs" />
     <Compile Include="Areas\Shared\Models\Identifier.cs" />
     <Compile Include="Core\Conventions\GlobalFilterConvention.cs" />
+    <Compile Include="Core\Install\FluentValidatorInstaller.cs" />
+    <Compile Include="Infrastructure\FluentValidation\Windsor\WindsorFluentValidatorFactory.cs" />
     <Compile Include="Infrastructure\Mvc\Filters\DatabaseExceptionFilter.cs" />
     <Compile Include="Infrastructure\Mvc\Registries\IExceptionRouteRegistry.cs" />
     <Compile Include="Infrastructure\Security\Domain\UserBase.cs" />
