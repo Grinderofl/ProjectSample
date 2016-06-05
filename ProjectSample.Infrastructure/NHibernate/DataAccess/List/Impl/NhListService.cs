@@ -29,7 +29,7 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.List.Impl
             return result;
         }
 
-        private static ListResult<T> CreateListResult(PageDescriptor<T> pageDescriptor, int totalItems,
+        protected virtual ListResult<T> CreateListResult(PageDescriptor<T> pageDescriptor, int totalItems,
             IEnumerable<T> pagedItems)
         {
             var result = new ListResult<T>(totalItems, pagedItems.ToList())
@@ -41,20 +41,20 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.List.Impl
             return result;
         }
 
-        private static IEnumerable<T> PageQuery(PageDescriptor<T> pageDescriptor, IQueryable<T> query)
+        protected virtual IEnumerable<T> PageQuery(PageDescriptor<T> pageDescriptor, IQueryable<T> query)
         {
             var pagesToSkip = (pageDescriptor.Page - 1)*pageDescriptor.RowsPerPage;
             return query.Skip(pagesToSkip).Take(pageDescriptor.RowsPerPage);
         }
 
-        private static IOrderedQueryable<T> OrderQuery(PageDescriptor<T> pageDescriptor, IQueryable<T> query)
+        protected virtual IOrderedQueryable<T> OrderQuery(PageDescriptor<T> pageDescriptor, IQueryable<T> query)
         {
             return pageDescriptor.SortDirection == "asc"
                 ? query.OrderBy(pageDescriptor.SortProperty)
                 : query.OrderByDescending(pageDescriptor.SortProperty);
         }
 
-        private static IQueryable<T> AddSearchItems(PageDescriptor<T> pageDescriptor, IQueryable<T> query)
+        protected virtual IQueryable<T> AddSearchItems(PageDescriptor<T> pageDescriptor, IQueryable<T> query)
         {
             foreach (var searchItem in pageDescriptor.Search.SearchItems)
             {
@@ -64,7 +64,7 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.List.Impl
             return query;
         }
 
-        private IQueryable<T> CreateQuery()
+        protected virtual IQueryable<T> CreateQuery()
         {
             return _session.Query<T>();
         }
