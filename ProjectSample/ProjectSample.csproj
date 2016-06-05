@@ -266,7 +266,9 @@
     <Compile Include="Areas\Shared\Factories\Impl\CustomerIdentifierFactory.cs" />
     <Compile Include="Areas\Shared\Factories\Impl\UserIdentifierFactory.cs" />
     <Compile Include="Areas\Shared\Models\Identifier.cs" />
+    <Compile Include="Core\Configuration\ProjectSampleAssemblyConfiguration.cs" />
     <Compile Include="Core\Conventions\GlobalFilterConvention.cs" />
+    <Compile Include="Core\Install\Base\ProjectSampleInstaller.cs" />
     <Compile Include="Core\Install\FluentValidatorInstaller.cs" />
     <Compile Include="Infrastructure\FluentValidation\Windsor\WindsorFluentValidatorFactory.cs" />
     <Compile Include="Infrastructure\Mvc\Filters\DatabaseExceptionFilter.cs" />
@@ -364,6 +366,9 @@
     <Compile Include="Core\Migrations\20160517214547_AddedShipments.cs" />
     <Compile Include="Core\Migrations\20160517082329_MadeCurrentStateNotNull.cs" />
     <Compile Include="Core\Migrations\20160524180427_AddedBasket.cs" />
+    <Compile Include="Infrastructure\Windsor\AbstractAssemblyInstaller.cs" />
+    <Compile Include="Infrastructure\Windsor\AssemblyConfiguration.cs" />
+    <Compile Include="Infrastructure\Windsor\Extensions\AssemblyConfigurationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

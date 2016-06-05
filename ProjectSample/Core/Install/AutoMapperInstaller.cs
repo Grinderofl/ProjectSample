@@ -1,20 +1,30 @@
+using System;
+using System.Reflection;
 using AutoMapper;
+using Castle.Core.Configuration;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
+using ProjectSample.Core.Install.Base;
+using ProjectSample.Infrastructure.Windsor;
+using ProjectSample.Infrastructure.Windsor.Extensions;
 
 namespace ProjectSample.Core.Install
 {
-    public class AutoMapperInstaller : IWindsorInstaller
+    public class AutoMapperInstaller : ProjectSampleInstaller
     {
-        public void Install(IWindsorContainer container, IConfigurationStore store)
+        public override void Install(IWindsorContainer container, IConfigurationStore store)
         {
+
+            
             Mapper.Initialize(conf =>
             {
                 conf.ConstructServicesUsing(container.Resolve);
                 var childContainer = new WindsorContainer();
                 container.AddChildContainer(childContainer);
-                childContainer.Register(Classes.FromThisAssembly().BasedOn<Profile>().WithServiceBase());
+                Action<Assembly> action = asm =>
+                    childContainer.Register(Classes.FromAssembly(asm).BasedOn<Profile>().WithServiceBase());
+                action.VisitAssemblies(AssemblyConfiguration);
                 foreach (var profile in childContainer.ResolveAll<Profile>())
                     conf.AddProfile(profile);
                 container.RemoveChildContainer(childContainer);

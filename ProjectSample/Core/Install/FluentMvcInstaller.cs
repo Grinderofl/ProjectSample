@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Reflection;
+using System.Web.Mvc;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
@@ -6,21 +8,24 @@ using FluentMvc;
 using FluentMvc.ActionResultFactories;
 using FluentMvc.Conventions;
 using FluentMvc.Utils;
+using ProjectSample.Core.Install.Base;
 using ProjectSample.Infrastructure.FluentMvc;
 using ProjectSample.Infrastructure.FluentMvc.Windsor;
+using ProjectSample.Infrastructure.Windsor.Extensions;
 
 namespace ProjectSample.Core.Install
 {
-    public class FluentMvcInstaller : IWindsorInstaller
+    public class FluentMvcInstaller : ProjectSampleInstaller
     {
-        public void Install(IWindsorContainer container, IConfigurationStore store)
+        public override void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(
-                Classes.FromThisAssembly()
-                    .Where(x => !string.IsNullOrEmpty(x.Namespace) && x.Namespace.EndsWith("Filters")));
+            RegisterFilters(container);
+            RegisterFilterConventions(container);
+            ConfigureFilterProvider(container);
+        }
 
-            container.Register(Classes.FromThisAssembly().Where(x => x.CanBeCastTo<IFilterConvention>()));
-
+        private static void ConfigureFilterProvider(IWindsorContainer container)
+        {
             var provider = FluentMvcConfiguration.ConfigureFilterProvider(c =>
             {
                 c.ResolveWith(new WindsorObjectFactory(container));
@@ -31,6 +36,22 @@ namespace ProjectSample.Core.Install
             });
 
             FilterProviders.Providers.Add(new ProjectSampleFilterProvider(provider));
+        }
+
+        private void RegisterFilterConventions(IWindsorContainer container)
+        {
+            Action<Assembly> action = asm =>
+                            container.Register(Classes.FromAssembly(asm).Where(x => x.CanBeCastTo<IFilterConvention>()));
+            action.VisitAssemblies(AssemblyConfiguration);
+        }
+
+        private void RegisterFilters(IWindsorContainer container)
+        {
+            Action<Assembly> action = asm =>
+                            container.Register(
+                                Classes.FromAssembly(asm)
+                                    .Where(x => !string.IsNullOrEmpty(x.Namespace) && x.Namespace.EndsWith("Filters")));
+            action.VisitAssemblies(AssemblyConfiguration);
         }
     }
 }
