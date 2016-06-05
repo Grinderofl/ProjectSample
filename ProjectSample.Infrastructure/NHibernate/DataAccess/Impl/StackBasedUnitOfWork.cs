@@ -18,8 +18,8 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.Impl
         public virtual void Begin()
         {
             _stack++;
-            if(_transaction == null)
-            _transaction = _session.BeginTransaction();
+            if (_transaction == null)
+                _transaction = _session.BeginTransaction();
         }
 
         public virtual bool Commit()

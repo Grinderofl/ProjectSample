@@ -6,7 +6,6 @@ namespace ProjectSample.Core.Domain
     {
         protected BasketItem()
         {
-
         }
 
         private BasketItem(Product product, Basket basket)

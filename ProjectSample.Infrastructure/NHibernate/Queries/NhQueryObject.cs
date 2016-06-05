@@ -11,7 +11,7 @@ namespace ProjectSample.Infrastructure.NHibernate.Queries
         protected NhRepository EnsureNhRepo(IRepository repository)
         {
             var nhRepo = repository as NhRepository;
-            if(nhRepo == null)
+            if (nhRepo == null)
                 throw new Exception("Repo is not NH Repo");
 
             return nhRepo;

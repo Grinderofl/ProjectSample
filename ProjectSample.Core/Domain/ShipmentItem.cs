@@ -6,7 +6,6 @@ namespace ProjectSample.Core.Domain
     {
         protected ShipmentItem()
         {
-            
         }
 
         public ShipmentItem(OrderItem orderItem, Shipment shipment)

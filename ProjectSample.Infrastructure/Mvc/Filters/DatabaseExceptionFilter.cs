@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using ProjectSample.Infrastructure.Mvc.Registries;
 
@@ -24,7 +21,6 @@ namespace ProjectSample.Infrastructure.Mvc.Filters
             var result = _exceptionRouteRegistry.CreateResultForException(filterContext.Exception);
             if (result != null)
             {
-
                 filterContext.ExceptionHandled = true;
                 if (filterContext.IsChildAction) return;
                 filterContext.Result = result;
@@ -32,6 +28,4 @@ namespace ProjectSample.Infrastructure.Mvc.Filters
             }
         }
     }
-
-
 }

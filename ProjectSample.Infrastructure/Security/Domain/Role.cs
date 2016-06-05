@@ -15,7 +15,6 @@ namespace ProjectSample.Infrastructure.Security.Domain
 
         protected Role()
         {
-            
         }
 
         public virtual string Name { get; set; }

@@ -10,7 +10,6 @@ namespace ProjectSample.Core.Domain
 
         protected Shipment()
         {
-            
         }
 
         public Shipment(Order order)

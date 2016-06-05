@@ -7,7 +7,10 @@ namespace ProjectSample.Core.Migrations
     {
         public override void Up()
         {
-            Update.Table("Order").InSchema("dbo").Set(new {CurrentStateId = (int?)1}).Where(new {CurrentStateId = (int?)null});
+            Update.Table("Order")
+                .InSchema("dbo")
+                .Set(new {CurrentStateId = (int?) 1})
+                .Where(new {CurrentStateId = (int?) null});
             Alter.Table("Order").InSchema("dbo").AlterColumn("CurrentStateId").AsInt16().NotNullable();
         }
 

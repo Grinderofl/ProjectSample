@@ -138,7 +138,7 @@ namespace ProjectSample.Infrastructure.Mvc.Controllers
         {
             var entity = MapFromFields(fields);
             SaveEntity(entity);
-            return Result.Valid(entity, fields, $"{typeof (TEntity).Name} created");
+            return Result.Valid(entity, fields, $"{typeof(TEntity).Name} created");
         }
 
         protected virtual TEntity MapFromFields(TFieldModel fields) => Mapper.Map<TEntity>(fields);
@@ -207,7 +207,7 @@ namespace ProjectSample.Infrastructure.Mvc.Controllers
         {
             MapFromFields(fields, entity);
             SaveEntity(entity);
-            return Result.Valid(entity, fields, $"{typeof (TEntity).Name} saved");
+            return Result.Valid(entity, fields, $"{typeof(TEntity).Name} saved");
         }
 
         protected virtual void MapFromFields(TFieldModel fields, TEntity entity)
@@ -215,5 +215,4 @@ namespace ProjectSample.Infrastructure.Mvc.Controllers
 
         #endregion
     }
-
 }

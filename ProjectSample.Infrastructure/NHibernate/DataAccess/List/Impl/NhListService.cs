@@ -27,10 +27,10 @@ namespace ProjectSample.Infrastructure.NHibernate.DataAccess.List.Impl
             var result = CreateListResult(pageDescriptor, totalItems, pagedItems);
 
             return result;
-
         }
 
-        private static ListResult<T> CreateListResult(PageDescriptor<T> pageDescriptor, int totalItems, IEnumerable<T> pagedItems)
+        private static ListResult<T> CreateListResult(PageDescriptor<T> pageDescriptor, int totalItems,
+            IEnumerable<T> pagedItems)
         {
             var result = new ListResult<T>(totalItems, pagedItems.ToList())
             {

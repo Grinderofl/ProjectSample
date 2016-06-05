@@ -6,7 +6,8 @@ using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Infrastructure.NHibernate.Queries
 {
-    public class GenericEntityQueryObject<TEntity, TPk> : NhQueryObject<IEnumerable<TEntity>> where TEntity : Entity<TPk>
+    public class GenericEntityQueryObject<TEntity, TPk> : NhQueryObject<IEnumerable<TEntity>>
+        where TEntity : Entity<TPk>
     {
         private readonly int _itemsPerPage;
         private readonly int _page;
@@ -19,7 +20,7 @@ namespace ProjectSample.Infrastructure.NHibernate.Queries
 
         protected override IEnumerable<TEntity> ExecuteCore(ISession session)
         {
-            return session.Query<TEntity>().OrderBy(x => x.Id).Skip((_page-1)*_itemsPerPage).Take(_itemsPerPage);
+            return session.Query<TEntity>().OrderBy(x => x.Id).Skip((_page - 1)*_itemsPerPage).Take(_itemsPerPage);
         }
     }
 }

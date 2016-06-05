@@ -9,30 +9,53 @@ namespace ProjectSample.Core.Migrations
     {
         public override void Up()
         {
-
             // Table: Order.
             Create.Table("Order").InSchema("dbo").WithColumn("OrderId").AsInt64().PrimaryKey().Identity().NotNullable()
-            .WithColumn("LastModified").AsDateTime().Nullable()
-            .WithColumn("CurrentStateId").AsInt16().Nullable();
+                .WithColumn("LastModified").AsDateTime().Nullable()
+                .WithColumn("CurrentStateId").AsInt16().Nullable();
 
             // Table: OrderState.
             Create.Table("OrderState").InSchema("dbo").WithColumn("OrderStateId").AsInt16().PrimaryKey().NotNullable()
-            .WithColumn("Name").AsString(255).Nullable()
-            .WithColumn("LastModified").AsDateTime().Nullable();
+                .WithColumn("Name").AsString(255).Nullable()
+                .WithColumn("LastModified").AsDateTime().Nullable();
 
             // Table: OrderStateHistoryItem.
-            Create.Table("OrderStateHistoryItem").InSchema("dbo").WithColumn("OrderStateHistoryItemId").AsInt64().PrimaryKey().Identity().NotNullable()
-            .WithColumn("Created").AsDateTime().Nullable()
-            .WithColumn("LastModified").AsDateTime().Nullable()
-            .WithColumn("OrderId").AsInt64().Nullable()
-            .WithColumn("StateId").AsInt16().Nullable();
+            Create.Table("OrderStateHistoryItem")
+                .InSchema("dbo")
+                .WithColumn("OrderStateHistoryItemId")
+                .AsInt64()
+                .PrimaryKey()
+                .Identity()
+                .NotNullable()
+                .WithColumn("Created").AsDateTime().Nullable()
+                .WithColumn("LastModified").AsDateTime().Nullable()
+                .WithColumn("OrderId").AsInt64().Nullable()
+                .WithColumn("StateId").AsInt16().Nullable();
 
             // Foreign keys for table: Order.
-            Create.ForeignKey("FK3117099BF33F4407").FromTable("Order").InSchema("dbo").ForeignColumns("CurrentStateId").ToTable("OrderState").InSchema("dbo").PrimaryColumns("OrderStateId");
+            Create.ForeignKey("FK3117099BF33F4407")
+                .FromTable("Order")
+                .InSchema("dbo")
+                .ForeignColumns("CurrentStateId")
+                .ToTable("OrderState")
+                .InSchema("dbo")
+                .PrimaryColumns("OrderStateId");
 
             // Foreign keys for table: OrderStateHistoryItem.
-            Create.ForeignKey("FKEBAAA11E871A04D2").FromTable("OrderStateHistoryItem").InSchema("dbo").ForeignColumns("OrderId").ToTable("Order").InSchema("dbo").PrimaryColumns("OrderId");
-            Create.ForeignKey("FKEBAAA11E3CAD2FD").FromTable("OrderStateHistoryItem").InSchema("dbo").ForeignColumns("StateId").ToTable("OrderState").InSchema("dbo").PrimaryColumns("OrderStateId");
+            Create.ForeignKey("FKEBAAA11E871A04D2")
+                .FromTable("OrderStateHistoryItem")
+                .InSchema("dbo")
+                .ForeignColumns("OrderId")
+                .ToTable("Order")
+                .InSchema("dbo")
+                .PrimaryColumns("OrderId");
+            Create.ForeignKey("FKEBAAA11E3CAD2FD")
+                .FromTable("OrderStateHistoryItem")
+                .InSchema("dbo")
+                .ForeignColumns("StateId")
+                .ToTable("OrderState")
+                .InSchema("dbo")
+                .PrimaryColumns("OrderStateId");
 
             var objs = new List<OrderState>
             {
@@ -49,7 +72,6 @@ namespace ProjectSample.Core.Migrations
 
         public override void Down()
         {
-
             // Foreign keys for table: Order.
             Delete.ForeignKey("FK3117099BF33F4407").OnTable("Order").InSchema("dbo");
 
@@ -65,7 +87,6 @@ namespace ProjectSample.Core.Migrations
 
             // Tabela: OrderStateHistoryItem.
             Delete.Table("OrderStateHistoryItem").InSchema("dbo");
-
         }
     }
 }

@@ -16,7 +16,7 @@ namespace ProjectSample.Core.Migrations
 
             var migrationContext = new RunnerContext(announcer);
 
-            var options = new ProcessorOptions { PreviewOnly = false, Timeout = 60 };
+            var options = new ProcessorOptions {PreviewOnly = false, Timeout = 60};
             var factory = new SqlServer2008ProcessorFactory();
             var processor = factory.Create(connectionString, announcer, options);
             var runner = new FluentMigrator.Runner.MigrationRunner(assembly, migrationContext, processor);

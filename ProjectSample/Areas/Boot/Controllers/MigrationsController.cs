@@ -25,8 +25,7 @@ namespace ProjectSample.Areas.Boot.Controllers
         [HttpPost]
         public ActionResult PerformMigration()
         {
-            var migrator = new MigrationRunner();
-            migrator.Execute(GetType(), ConfigurationManager.ConnectionStrings["Default"].ConnectionString);
+            _migrationService.PerformMigration();
             return View();
         }
 

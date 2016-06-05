@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using NHibernate;
-using ProjectSample.Infrastructure.NHibernate;
 using NHibernate.Linq;
 using ProjectSample.Infrastructure.NHibernate.Queries;
 using ProjectSample.Infrastructure.Security.Domain;

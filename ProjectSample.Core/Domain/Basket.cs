@@ -9,14 +9,15 @@ namespace ProjectSample.Core.Domain
         private readonly ISet<BasketItem> _items = new HashSet<BasketItem>();
 
         protected Basket()
-        { }
+        {
+        }
 
         public Basket(Customer customer)
         {
             Customer = customer;
         }
 
-        public virtual IEnumerable<BasketItem> Items => _items ;
+        public virtual IEnumerable<BasketItem> Items => _items;
         public virtual Customer Customer { get; protected set; }
 
         public virtual void Add(Product product, int quantity)

@@ -19,7 +19,11 @@ namespace ProjectSample.Core.Domain.Queries
 
         protected override IEnumerable<Product> ExecuteCore(ISession session)
         {
-            return session.Query<Product>().OrderBy(x => x.Id).Skip((_page - 1)*_numberOfItemsPerPage).Take(_numberOfItemsPerPage);
+            return
+                session.Query<Product>()
+                    .OrderBy(x => x.Id)
+                    .Skip((_page - 1)*_numberOfItemsPerPage)
+                    .Take(_numberOfItemsPerPage);
         }
     }
 }

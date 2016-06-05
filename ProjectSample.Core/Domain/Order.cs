@@ -14,7 +14,8 @@ namespace ProjectSample.Core.Domain
         private readonly ISet<Shipment> _shipments = new HashSet<Shipment>();
 
         protected Order()
-        { }
+        {
+        }
 
         public virtual IEnumerable<Shipment> Shipments => _shipments;
 

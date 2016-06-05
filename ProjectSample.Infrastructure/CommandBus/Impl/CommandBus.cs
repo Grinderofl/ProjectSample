@@ -14,7 +14,7 @@ namespace ProjectSample.Infrastructure.CommandBus.Impl
         public void Send<T>(T command)
         {
             var handlers = _commandHandlerFactory.FindHandlers<T>().ToArray();
-            foreach(var handler in handlers)
+            foreach (var handler in handlers)
                 handler.Handle(command);
             _commandHandlerFactory.ReleaseHandlers(handlers);
         }

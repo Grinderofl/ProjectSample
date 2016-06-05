@@ -12,7 +12,6 @@ namespace ProjectSample.Core.Domain
 
         protected OrderState()
         {
-            
         }
 
         private OrderState(short id, string name)

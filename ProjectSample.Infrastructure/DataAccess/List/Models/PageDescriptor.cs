@@ -20,7 +20,7 @@ namespace ProjectSample.Infrastructure.DataAccess.List.Models
         }
 
         public PageDescriptor() : this(1, 30)
-        {   
+        {
         }
 
         public int Page { get; set; }

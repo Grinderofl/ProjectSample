@@ -16,7 +16,7 @@ namespace ProjectSample.Infrastructure.FluentMvc.Windsor
 
         public override TFilter Resolve<TFilter>(Type type)
         {
-            return (TFilter)_container.Resolve(type);
+            return (TFilter) _container.Resolve(type);
         }
     }
 }

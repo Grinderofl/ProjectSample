@@ -17,13 +17,7 @@ namespace ProjectSample.Application.Common.Registries.Impl
             typeof(GenericADOException)
         };
 
-        private readonly Dictionary<string, string> _sqlExceptionResultRegistry = new Dictionary<string, string>()
-        {
-            ["Cannot open database"] = "/Boot/Migrations/Create",
-            ["could not execute query"] = "/Boot/Migrations"
-        };
 
-        
         public virtual bool HasResultForException(Exception exception) => _registry.Contains(exception.GetType());
 
         

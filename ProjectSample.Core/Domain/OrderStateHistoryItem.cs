@@ -7,7 +7,6 @@ namespace ProjectSample.Core.Domain
     {
         protected OrderStateHistoryItem()
         {
-            
         }
 
         public OrderStateHistoryItem(Order order, OrderState state)
