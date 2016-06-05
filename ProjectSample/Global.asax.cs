@@ -1,13 +1,16 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Castle.Facilities.TypedFactory;
+using Castle.MicroKernel.Lifestyle;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
 using Castle.Windsor.Installer;
 using Castle.Windsor.Mvc;
 using FluentValidation.Mvc;
+using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using ProjectSample.Infrastructure.FluentValidation.Windsor;
 
 namespace ProjectSample
@@ -15,6 +18,17 @@ namespace ProjectSample
     public class MvcApplication : HttpApplication
     {
         protected static IWindsorContainer Container;
+
+        public MvcApplication()
+        {
+            this.EndRequest += OnEndRequest;
+            new PerWebRequestLifestyleModule().Init(this);
+        }
+
+        private void OnEndRequest(object sender, EventArgs eventArgs)
+        {
+            
+        }
 
         protected void Application_Start()
         {
@@ -44,8 +58,6 @@ namespace ProjectSample
         private static void SetValidatorProvider()
         {
             var validatorFactory = new WindsorFluentValidatorFactory(Container.Kernel);
-            //FluentValidationModelValidatorProvider.Configure(x => x.ValidatorFactory = validatorFactory);
-
             var validatorProvider = new FluentValidationModelValidatorProvider(validatorFactory);
             ModelValidatorProviders.Providers.Add(validatorProvider);
             DataAnnotationsModelValidatorProvider.AddImplicitRequiredAttributeForValueTypes = false;

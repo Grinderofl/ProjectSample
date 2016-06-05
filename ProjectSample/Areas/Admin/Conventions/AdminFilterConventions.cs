@@ -10,7 +10,7 @@ namespace ProjectSample.Areas.Admin.Conventions
         public void ApplyConvention(IFilterRegistration filterRegistration)
         {
             filterRegistration.WithFilter<EntityTypeFilter>(Apply.When<EntityTypeControllerRequestConstraint>());
-            //filterRegistration.WithFilter<AuthorizeAttribute>(Apply.ForArea<AdminAreaRegistration>());
+            filterRegistration.WithFilter<AuthorizeAttribute>(Apply.ForArea<AdminAreaRegistration>());
         }
     }
 }

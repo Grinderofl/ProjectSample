@@ -3,9 +3,8 @@ using Castle.Facilities.NHibernateIntegration;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
-using ProjectSample.Core.Configuration;
 
-namespace ProjectSample.Core.Install
+namespace ProjectSample.Core.Configuration
 {
     public class NHibernateConfigurationBuilder : IConfigurationBuilder
     {

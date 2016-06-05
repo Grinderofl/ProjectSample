@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Castle.Core.Internal;
 using NHibernate.FluentMigrator;
 using NHibernate.Tool.hbm2ddl;
+using ProjectSample.Core.Configuration;
 using ProjectSample.Core.Install;
 using ProjectSample.Core.Migrations;
 

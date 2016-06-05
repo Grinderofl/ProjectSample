@@ -3,7 +3,7 @@ using ProjectSample.Infrastructure.Security.Services;
 
 namespace ProjectSample.Areas.Account.Commands.Handlers
 {
-    public class LogoutUserHandler : IHandleCommand<LoginUserCommand>
+    public class LogoutUserHandler : IHandleCommand<LogoutUserCommand>
     {
         private readonly IAuthorizationService _authorizationService;
 
@@ -12,7 +12,7 @@ namespace ProjectSample.Areas.Account.Commands.Handlers
             _authorizationService = authorizationService;
         }
 
-        public void Handle(LoginUserCommand command)
+        public void Handle(LogoutUserCommand command)
         {
             _authorizationService.SignOut();
         }
