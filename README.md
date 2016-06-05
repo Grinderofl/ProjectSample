@@ -1,8 +1,18 @@
 # ProjectSample
 Sample product management and ordering site using ASP.NET MVC5, NHibernate and Castle Windsor with DDD concepts
 
-This project is created to demonstrate the following:
+This project is created to demonstrate the usage of following:
 
+a) Libraries
+* Bcrypt.Net
+* Castle
+* FluentMigrator
+* FluentMvc
+* Fluent NHibernate
+* Fluent Validation
+* NHibernate
+
+b) Techniques
 * SOLID
 * Domain-Driven Design
 * Command-Query Responsibility Segregation
@@ -11,10 +21,9 @@ This project is created to demonstrate the following:
 * Usage and nesting of Editor / Display Templates
 * Structure & Organization
   * Organizing by Features
-* FluentMigrations
 * Migration Generation
 * Heavy use of generics
-* Cryptography (Bcrypt)
+* Authentication
 * Design Patterns:
   * Repository
   * Unit of Work
