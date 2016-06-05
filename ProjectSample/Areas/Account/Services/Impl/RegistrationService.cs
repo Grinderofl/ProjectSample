@@ -1,6 +1,6 @@
-﻿using ProjectSample.Areas.Account.Models.Register;
+﻿using ProjectSample.Application.Common.Services;
+using ProjectSample.Areas.Account.Models.Register;
 using ProjectSample.Areas.Account.Services.Models;
-using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
 using ProjectSample.Infrastructure.DataAccess;
 using ProjectSample.Infrastructure.NHibernate.Security.Queries;

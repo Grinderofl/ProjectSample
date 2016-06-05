@@ -1,6 +1,6 @@
 ﻿using System.Linq;
+using ProjectSample.Application.Common.Services;
 using ProjectSample.Areas.Basket.Factories;
-using ProjectSample.Areas.Shared.Services;
 using ProjectSample.Core.Domain;
 using ProjectSample.Infrastructure.CommandBus;
 using ProjectSample.Infrastructure.DataAccess;

@@ -72,12 +72,12 @@
       <HintPath>..\packages\Castle.Windsor.Mvc.1.3.0.0\lib\net45\Castle.Windsor.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FluentMigrator, Version=1.6.1.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.1.6.1\lib\40\FluentMigrator.dll</HintPath>
+    <Reference Include="FluentMigrator, Version=1.6.2.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.1.6.2\lib\40\FluentMigrator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FluentMigrator.Runner, Version=1.6.1.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentMigrator.Runner.1.6.1\lib\40\FluentMigrator.Runner.dll</HintPath>
+    <Reference Include="FluentMigrator.Runner, Version=1.6.2.0, Culture=neutral, PublicKeyToken=aacfc7de5acabf05, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentMigrator.Runner.1.6.2\lib\40\FluentMigrator.Runner.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FluentMvc, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -94,14 +94,6 @@
     </Reference>
     <Reference Include="FluentValidation.Mvc, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.MVC5.6.2.1.0\lib\Net45\FluentValidation.Mvc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FluentWindsor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentWindsor.2.0.1\lib\4.6.1\Release\FluentWindsor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FluentWindsor.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentWindsor.Mvc.2.0.1\lib\4.6.1\Release\FluentWindsor.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
@@ -251,124 +243,42 @@
     <Compile Include="Areas\Boot\Controllers\CreateController.cs" />
     <Compile Include="Areas\Boot\Controllers\HomeController.cs" />
     <Compile Include="Areas\Boot\Controllers\MigrationsController.cs" />
+    <Compile Include="Areas\Boot\Controllers\MigrationService.cs" />
     <Compile Include="Areas\Catalog\Controllers\HomeController.cs" />
     <Compile Include="Areas\Catalog\Mapping\CatalogMapping.cs" />
     <Compile Include="Areas\Catalog\Models\Home\IndexModel.cs" />
     <Compile Include="Areas\Catalog\Models\Home\ProductModel.cs" />
-    <Compile Include="Areas\Shared\Registries\Impl\ExceptionRouteRegistry.cs" />
-    <Compile Include="Areas\Shared\Services\ICurrentCustomerService.cs" />
-    <Compile Include="Areas\Shared\Services\ICurrentUserService.cs" />
-    <Compile Include="Areas\Shared\Services\Impl\Base\CurrentUserService.cs" />
-    <Compile Include="Areas\Shared\Services\Impl\CachingCurrentCustomerService.cs" />
-    <Compile Include="Areas\Shared\Services\Impl\Base\CurrentCustomerService.cs" />
-    <Compile Include="Areas\Shared\Factories\IIdentifierFactory.cs" />
-    <Compile Include="Areas\Shared\Services\Impl\CachingCurrentUserService.cs" />
-    <Compile Include="Areas\Shared\Factories\Impl\CustomerIdentifierFactory.cs" />
-    <Compile Include="Areas\Shared\Factories\Impl\UserIdentifierFactory.cs" />
-    <Compile Include="Areas\Shared\Models\Identifier.cs" />
-    <Compile Include="Core\Configuration\ProjectSampleAssemblyConfiguration.cs" />
-    <Compile Include="Core\Conventions\GlobalFilterConvention.cs" />
-    <Compile Include="Core\Install\Base\ProjectSampleInstaller.cs" />
-    <Compile Include="Core\Install\FluentValidatorInstaller.cs" />
-    <Compile Include="Infrastructure\FluentValidation\Windsor\WindsorFluentValidatorFactory.cs" />
-    <Compile Include="Infrastructure\Mvc\Filters\DatabaseExceptionFilter.cs" />
-    <Compile Include="Infrastructure\Mvc\Registries\IExceptionRouteRegistry.cs" />
-    <Compile Include="Infrastructure\Security\Domain\UserBase.cs" />
-    <Compile Include="Core\Domain\Basket.cs" />
-    <Compile Include="Core\Domain\BasketItem.cs" />
-    <Compile Include="Core\Domain\Customer.cs" />
-    <Compile Include="Core\Domain\Extensions\OrderExtensions.cs" />
-    <Compile Include="Core\Domain\Mapping\BasketOverride.cs" />
-    <Compile Include="Core\Domain\Mapping\CustomerOverride.cs" />
-    <Compile Include="Core\Domain\Mapping\RoleOverride.cs" />
-    <Compile Include="Core\Domain\Mapping\UserBaseOverride.cs" />
-    <Compile Include="Core\Domain\Mapping\UserOverride.cs" />
-    <Compile Include="Core\Domain\Queries\FindCustomerByIdentityQuery.cs" />
-    <Compile Include="Core\Domain\Queries\FindProductsByPageQuery.cs" />
-    <Compile Include="Infrastructure\Security\Domain\Role.cs" />
-    <Compile Include="Core\Domain\User.cs" />
-    <Compile Include="Infrastructure\AutoMapper\EntityProfile.cs" />
+    <Compile Include="Application\Common\Registries\Impl\ExceptionRouteRegistry.cs" />
+    <Compile Include="Application\Common\Services\ICurrentCustomerService.cs" />
+    <Compile Include="Application\Common\Services\ICurrentUserService.cs" />
+    <Compile Include="Application\Common\Services\Impl\Base\CurrentUserService.cs" />
+    <Compile Include="Application\Common\Services\Impl\CachingCurrentCustomerService.cs" />
+    <Compile Include="Application\Common\Services\Impl\Base\CurrentCustomerService.cs" />
+    <Compile Include="Application\Common\Factories\IIdentifierFactory.cs" />
+    <Compile Include="Application\Common\Services\Impl\CachingCurrentUserService.cs" />
+    <Compile Include="Application\Common\Factories\Impl\CustomerIdentifierFactory.cs" />
+    <Compile Include="Application\Common\Factories\Impl\UserIdentifierFactory.cs" />
+    <Compile Include="Application\Configuration\ProjectSampleAssemblyConfiguration.cs" />
+    <Compile Include="Application\Conventions\GlobalFilterConvention.cs" />
+    <Compile Include="Application\Install\Base\ProjectSampleInstaller.cs" />
+    <Compile Include="Application\Install\FluentValidatorInstaller.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductFields.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductLineItemModel.cs" />
     <Compile Include="Areas\Admin\Models\Products\ProductViewModel.cs" />
     <Compile Include="Areas\Catalog\CatalogAreaRegistration.cs" />
     <Compile Include="Areas\Home\Controllers\HomeController.cs" />
     <Compile Include="Areas\Home\HomeAreaRegistration.cs" />
-    <Compile Include="Infrastructure\Domain\Base\Entity.cs" />
-    <Compile Include="Core\Domain\Mapping\OrderOverride.cs" />
-    <Compile Include="Core\Domain\Mapping\OrderStateOverride.cs" />
-    <Compile Include="Core\Domain\Mapping\ShipmentItemOverride.cs" />
-    <Compile Include="Core\Domain\Mapping\ShipmentOverride.cs" />
-    <Compile Include="Core\Domain\Order.cs" />
-    <Compile Include="Core\Domain\OrderItem.cs" />
-    <Compile Include="Core\Domain\OrderState.cs" />
-    <Compile Include="Core\Domain\OrderStateHistoryItem.cs" />
-    <Compile Include="Core\Domain\Product.cs" />
-    <Compile Include="Core\Domain\Shipment.cs" />
-    <Compile Include="Core\Domain\ShipmentItem.cs" />
-    <Compile Include="Infrastructure\CommandBus\ICommandBus.cs" />
-    <Compile Include="Infrastructure\CommandBus\ICommandHandlerFactory.cs" />
-    <Compile Include="Infrastructure\CommandBus\IHandleCommand.cs" />
-    <Compile Include="Infrastructure\CommandBus\Impl\CommandBus.cs" />
-    <Compile Include="Infrastructure\DataAccess\List\Models\EntityPageDescriptor.cs" />
-    <Compile Include="Infrastructure\DataAccess\List\IListService.cs" />
-    <Compile Include="Infrastructure\DataAccess\List\Models\ListResult.cs" />
-    <Compile Include="Infrastructure\DataAccess\List\Mapping\ListProfile.cs" />
-    <Compile Include="Infrastructure\DataAccess\List\Models\ListModel.cs" />
-    <Compile Include="Infrastructure\DataAccess\List\Models\PageDescriptor.cs" />
-    <Compile Include="Infrastructure\DataAccess\List\Models\Search.cs" />
-    <Compile Include="Infrastructure\DataAccess\List\Models\SearchItem.cs" />
-    <Compile Include="Infrastructure\Extensions\StringExtensions.cs" />
-    <Compile Include="Infrastructure\Extensions\TypeExtensions.cs" />
-    <Compile Include="Infrastructure\FluentMvc\Windsor\WindsorConventionActivator.cs" />
-    <Compile Include="Infrastructure\FluentMvc\Windsor\WindsorObjectFactory.cs" />
-    <Compile Include="Infrastructure\NHibernate\Security\Impl\UserDataSource.cs" />
-    <Compile Include="Infrastructure\Security\Services\IAuthenticationService.cs" />
-    <Compile Include="Infrastructure\Security\Services\IAuthorizationService.cs" />
-    <Compile Include="Infrastructure\Security\IUserDataSource.cs" />
-    <Compile Include="Infrastructure\Security\Models\AuthenticationResult.cs" />
-    <Compile Include="Infrastructure\Mvc\Controllers\EntityController.cs" />
-    <Compile Include="Infrastructure\Mvc\Mapping\FieldsToEntityConverter.cs" />
-    <Compile Include="Infrastructure\Mvc\Models\EntityIndexModel.cs" />
-    <Compile Include="Infrastructure\Mvc\Models\Result.cs" />
-    <Compile Include="Infrastructure\NHibernate\Conventions\ProjectSampleConventions.cs" />
-    <Compile Include="Infrastructure\NHibernate\Conventions\ProjectSampleForeignKeyConvention.cs" />
-    <Compile Include="Infrastructure\NHibernate\DataAccess\Impl\NhRepository.cs" />
-    <Compile Include="Infrastructure\NHibernate\DataAccess\Impl\StackBasedUnitOfWork.cs" />
-    <Compile Include="Infrastructure\DataAccess\IRepository.cs" />
-    <Compile Include="Infrastructure\DataAccess\IUnitOfWork.cs" />
-    <Compile Include="Infrastructure\NHibernate\DataAccess\List\Impl\NhListService.cs" />
-    <Compile Include="Infrastructure\Security\Services\Impl\AuthenticationService.cs" />
-    <Compile Include="Infrastructure\Security\Services\Impl\AuthorizationService.cs" />
-    <Compile Include="Infrastructure\Security\Services\Impl\CryptoService.cs" />
-    <Compile Include="Infrastructure\NHibernate\Security\Queries\FindUserByUsernameQuery.cs" />
-    <Compile Include="Infrastructure\NHibernate\Queries\GenericEntityQueryObject.cs" />
-    <Compile Include="Infrastructure\NHibernate\Queries\NhQueryObject.cs" />
-    <Compile Include="Infrastructure\DataAccess\Queries\QueryObject.cs" />
-    <Compile Include="Infrastructure\DataAccess\Repository.cs" />
-    <Compile Include="Infrastructure\Security\Services\ICryptoService.cs" />
-    <Compile Include="Core\Install\AutoMapperInstaller.cs" />
-    <Compile Include="Core\Install\CommandBusInstaller.cs" />
-    <Compile Include="Core\Install\ControllerInstaller.cs" />
-    <Compile Include="Core\Install\FluentMvcInstaller.cs" />
-    <Compile Include="Core\Install\ImplementationInstaller.cs" />
-    <Compile Include="Core\Configuration\ProjectSampleAutoMappingConfiguration.cs" />
-    <Compile Include="Core\Configuration\NHibernateConfigurationBuilder.cs" />
-    <Compile Include="Core\Install\NHibernateInstaller.cs" />
-    <Compile Include="Infrastructure\FluentMvc\ProjectSampleFilterProvider.cs" />
-    <Compile Include="Core\Migrations\20160528112337_AddedUsers.cs" />
-    <Compile Include="Core\Migrations\MigrationRunner.cs" />
+    <Compile Include="Application\Install\AutoMapperInstaller.cs" />
+    <Compile Include="Application\Install\CommandBusInstaller.cs" />
+    <Compile Include="Application\Install\ControllerInstaller.cs" />
+    <Compile Include="Application\Install\FluentMvcInstaller.cs" />
+    <Compile Include="Application\Install\ImplementationInstaller.cs" />
+    <Compile Include="Application\Configuration\ProjectSampleAutoMappingConfiguration.cs" />
+    <Compile Include="Application\Configuration\NHibernateConfigurationBuilder.cs" />
+    <Compile Include="Application\Install\NHibernateInstaller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Core\Migrations\20160515131726_CreateOrderAndOrderHistory.cs" />
-    <Compile Include="Core\Migrations\20160517081229_AddedProducts.cs" />
-    <Compile Include="Core\Migrations\20160517214547_AddedShipments.cs" />
-    <Compile Include="Core\Migrations\20160517082329_MadeCurrentStateNotNull.cs" />
-    <Compile Include="Core\Migrations\20160524180427_AddedBasket.cs" />
-    <Compile Include="Infrastructure\Windsor\AbstractAssemblyInstaller.cs" />
-    <Compile Include="Infrastructure\Windsor\AssemblyConfiguration.cs" />
-    <Compile Include="Infrastructure\Windsor\Extensions\AssemblyConfigurationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -484,6 +394,16 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectSample.Core\ProjectSample.Core.csproj">
+      <Project>{e039cfa6-f525-490f-84df-533a61587cf1}</Project>
+      <Name>ProjectSample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectSample.Infrastructure\ProjectSample.Infrastructure.csproj">
+      <Project>{3fff849b-f114-4c81-bc54-bd59a84e6d45}</Project>
+      <Name>ProjectSample.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
