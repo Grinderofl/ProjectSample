@@ -21,13 +21,7 @@ namespace ProjectSample
 
         public MvcApplication()
         {
-            this.EndRequest += OnEndRequest;
             new PerWebRequestLifestyleModule().Init(this);
-        }
-
-        private void OnEndRequest(object sender, EventArgs eventArgs)
-        {
-            
         }
 
         protected void Application_Start()
