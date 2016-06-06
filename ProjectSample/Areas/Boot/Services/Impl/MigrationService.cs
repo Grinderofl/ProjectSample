@@ -3,11 +3,12 @@ using System.Web;
 using NHibernate.FluentMigrator;
 using NHibernate.Tool.hbm2ddl;
 using ProjectSample.Application.Configuration;
+using ProjectSample.Areas.Boot.Controllers;
 using ProjectSample.Core.Migrations;
 
-namespace ProjectSample.Areas.Boot.Controllers
+namespace ProjectSample.Areas.Boot.Services.Impl
 {
-    public class MigrationService
+    public class MigrationService : IMigrationService
     {
         private readonly MigrationsController _migrationsController;
 

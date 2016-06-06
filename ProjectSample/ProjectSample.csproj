@@ -226,6 +226,7 @@
     <Compile Include="Areas\Basket\Commands\AddProductToBasketCommand.cs" />
     <Compile Include="Areas\Basket\Commands\CheckoutCommand.cs" />
     <Compile Include="Areas\Basket\Commands\Handlers\AddProductToBasketHandler.cs" />
+    <Compile Include="Areas\Basket\Commands\Handlers\CheckoutHandler.cs" />
     <Compile Include="Areas\Basket\Factories\Impl\OrderFactory.cs" />
     <Compile Include="Areas\Basket\Factories\IOrderFactory.cs" />
     <Compile Include="Areas\Basket\Commands\Handlers\RemoveProductFromBasketHandler.cs" />
@@ -237,13 +238,12 @@
     <Compile Include="Areas\Basket\Controllers\HomeController.cs" />
     <Compile Include="Areas\Basket\Mapping\BasketItemListProfile.cs" />
     <Compile Include="Areas\Basket\Models\BasketItemModel.cs" />
-    <Compile Include="Areas\Basket\Services\IBasketItemService.cs" />
-    <Compile Include="Areas\Basket\Services\Impl\BasketItemListService.cs" />
     <Compile Include="Areas\Boot\BootAreaRegistration.cs" />
     <Compile Include="Areas\Boot\Controllers\CreateController.cs" />
     <Compile Include="Areas\Boot\Controllers\HomeController.cs" />
     <Compile Include="Areas\Boot\Controllers\MigrationsController.cs" />
-    <Compile Include="Areas\Boot\Controllers\MigrationService.cs" />
+    <Compile Include="Areas\Boot\Services\IMigrationService.cs" />
+    <Compile Include="Areas\Boot\Services\Impl\MigrationService.cs" />
     <Compile Include="Areas\Catalog\Controllers\HomeController.cs" />
     <Compile Include="Areas\Catalog\Mapping\CatalogMapping.cs" />
     <Compile Include="Areas\Catalog\Models\Home\IndexModel.cs" />

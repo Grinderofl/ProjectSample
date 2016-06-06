@@ -14,25 +14,39 @@ namespace ProjectSample.Application.Install
         public override void Install(IWindsorContainer container, IConfigurationStore store)
         {
 
-            
+
             Mapper.Initialize(conf =>
             {
                 conf.ConstructServicesUsing(container.Resolve);
-                var childContainer = new WindsorContainer();
-                container.AddChildContainer(childContainer);
-                Action<Assembly> action = asm =>
-                    childContainer.Register(Classes.FromAssembly(asm).BasedOn<Profile>().WithServiceBase());
-                action.VisitAssemblies(AssemblyConfiguration);
-                foreach (var profile in childContainer.ResolveAll<Profile>())
-                    conf.AddProfile(profile);
-                container.RemoveChildContainer(childContainer);
+                RegisterProfiles(container, conf);
                 container.Register(Component.For<IMapper>().Instance(Mapper.Instance));
             });
+            RegisterMappingHelpers(container);
+        }
 
-            container.Register(
-                Classes.FromThisAssembly().BasedOn(typeof (ITypeConverter<,>)),
-                Classes.FromThisAssembly().BasedOn(typeof (IMappingAction<,>)),
-                Classes.FromThisAssembly().BasedOn<IValueResolver>());
+        private void RegisterMappingHelpers(IWindsorContainer container)
+        {
+            Action<Assembly> action = asm =>
+                            container.Register(
+                                Classes.FromAssembly(asm).BasedOn(typeof(ITypeConverter<,>)).LifestylePerWebRequest(),
+                                Classes.FromAssembly(asm).BasedOn(typeof(IMappingAction<,>)).LifestylePerWebRequest(),
+                                Classes.FromAssembly(asm).BasedOn<IValueResolver>().LifestylePerWebRequest());
+            action.VisitAssemblies(AssemblyConfiguration);
+        }
+
+        private void RegisterProfiles(IWindsorContainer container, IMapperConfiguration conf)
+        {
+            var childContainer = new WindsorContainer();
+            container.AddChildContainer(childContainer);
+
+            Action<Assembly> action = asm =>
+                childContainer.Register(Classes.FromAssembly(asm).BasedOn<Profile>().WithServiceBase());
+            action.VisitAssemblies(AssemblyConfiguration);
+
+            foreach (var profile in childContainer.ResolveAll<Profile>())
+                conf.AddProfile(profile);
+
+            container.RemoveChildContainer(childContainer);
         }
     }
 }
