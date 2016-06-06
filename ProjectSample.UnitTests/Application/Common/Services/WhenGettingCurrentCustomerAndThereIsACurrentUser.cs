@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 using ProjectSample.Core.Domain;
@@ -26,7 +27,7 @@ namespace ProjectSample.UnitTests.Application.Common.Services
         [Test]
         public void should_return_customer()
         {
-            Assert.AreSame(Result, _mockCustomer.Object);
+            Result.Should().BeSameAs(_mockCustomer.Object);
         }
     }
 }

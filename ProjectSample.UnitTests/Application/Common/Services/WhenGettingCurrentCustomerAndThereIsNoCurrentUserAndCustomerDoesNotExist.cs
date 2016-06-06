@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 using ProjectSample.Core.Common.Models;
@@ -20,7 +21,7 @@ namespace ProjectSample.UnitTests.Application.Common.Services
         [Test]
         public void should_return_customer_with_correct_identifier()
         {
-            Assert.AreEqual((string)_identifier, Result.Identifier);
+            Result.Identifier.ShouldBeEquivalentTo((string)_identifier);
         }
 
         [Test]

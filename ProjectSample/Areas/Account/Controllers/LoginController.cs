@@ -30,7 +30,7 @@ namespace ProjectSample.Areas.Account.Controllers
                     Bus.Send(new LoginUserCommand(result.User));
                     return RedirectToAction("Index", "Home", new {area = "Catalog"});
                 }
-                ModelState.AddModelError("Email", result.Message);
+                ModelState.AddModelError(nameof(fields.Email), result.Message);
             }
             return View(fields);
         }

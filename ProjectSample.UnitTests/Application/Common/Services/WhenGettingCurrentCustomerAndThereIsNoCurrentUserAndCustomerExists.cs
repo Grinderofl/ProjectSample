@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 using ProjectSample.Core.Common.Models;
@@ -24,7 +25,7 @@ namespace ProjectSample.UnitTests.Application.Common.Services
         [Test]
         public void should_return_customer()
         {
-            Assert.AreSame(Result, _mockCustomer.Object);
+            Result.Should().BeSameAs(_mockCustomer.Object);
         }
     }
 }
