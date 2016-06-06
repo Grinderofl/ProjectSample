@@ -11,7 +11,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
     {
         private LoginFields _fields;
 
-        protected override void Setup()
+        protected override void Context()
         {
             _fields = new LoginFields()
             {

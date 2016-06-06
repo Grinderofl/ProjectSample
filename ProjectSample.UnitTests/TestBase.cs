@@ -13,15 +13,15 @@ namespace ProjectSample.UnitTests
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            SharedSetup();
-            Setup();
+            SharedContext();
+            Context();
         }
 
-        protected virtual void SharedSetup()
+        protected virtual void SharedContext()
         {
         }
 
-        protected virtual void Setup()
+        protected virtual void Context()
         {
         }
     }

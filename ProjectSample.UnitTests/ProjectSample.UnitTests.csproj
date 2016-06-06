@@ -101,7 +101,6 @@
     <Compile Include="Areas\Account\Controllers\WhenLoggingInAndUserCanBeAuthenticated.cs" />
     <Compile Include="Areas\Account\Controllers\WhenLoggingInAndUserCannotBeAuthenticated.cs" />
     <Compile Include="TestBase.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

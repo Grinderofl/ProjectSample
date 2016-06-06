@@ -12,7 +12,7 @@ namespace ProjectSample.UnitTests.Application.Common.Services
         private Mock<Customer> _mockCustomer;
         private Identifier _identifier;
 
-        protected override void Setup()
+        protected override void Context()
         {
             _mockCustomer = CreateDependency<Customer>();
             _identifier = (Identifier) "123";

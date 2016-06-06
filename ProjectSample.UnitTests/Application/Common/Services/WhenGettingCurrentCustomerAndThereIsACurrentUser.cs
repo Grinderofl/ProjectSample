@@ -14,7 +14,7 @@ namespace ProjectSample.UnitTests.Application.Common.Services
     {
         private Mock<Customer> _mockCustomer;
         
-        protected override void Setup()
+        protected override void Context()
         {
             _mockCustomer = CreateDependency<Customer>();
             var mockUser = CreateDependency<User>();

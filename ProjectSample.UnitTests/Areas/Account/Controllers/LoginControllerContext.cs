@@ -21,7 +21,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
 
         protected ActionResult Result;
 
-        protected override void SharedSetup()
+        protected override void SharedContext()
         {
             AuthServiceMock = CreateDependency<IAuthenticationService>();
             CommandBusMock = CreateDependency<ICommandBus>();

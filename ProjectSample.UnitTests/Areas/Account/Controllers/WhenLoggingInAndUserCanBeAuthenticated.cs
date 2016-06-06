@@ -12,7 +12,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
     {
         private Mock<UserBase> _userBaseMock;
         private LoginFields _fields;
-        protected override void Setup()
+        protected override void Context()
         {
             _fields = new LoginFields()
             {

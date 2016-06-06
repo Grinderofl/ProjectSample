@@ -11,7 +11,7 @@ namespace ProjectSample.UnitTests.Application.Common.Services
     {
         private Identifier _identifier;
 
-        protected override void Setup()
+        protected override void Context()
         {
             _identifier = (Identifier) "123";
             IdentifierFactoryMock.Setup(x => x.CreateIdentifier()).Returns(_identifier);

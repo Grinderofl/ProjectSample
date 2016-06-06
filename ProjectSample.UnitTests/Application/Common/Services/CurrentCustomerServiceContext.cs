@@ -17,7 +17,7 @@ namespace ProjectSample.UnitTests.Application.Common.Services
 
         protected Customer Result;
 
-        protected override void SharedSetup()
+        protected override void SharedContext()
         {
             IdentifierFactoryMock = CreateDependency<IIdentifierFactory<Customer>>();
             RepositoryMock = CreateDependency<IRepository>();
