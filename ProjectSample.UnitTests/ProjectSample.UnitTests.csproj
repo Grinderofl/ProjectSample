@@ -93,13 +93,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\Common\Services\CurrentCustomerServiceContext.cs" />
-    <Compile Include="Application\Common\Services\WhenGettingCurrentCustomerAndThereIsACurrentUser.cs" />
-    <Compile Include="Application\Common\Services\WhenGettingCurrentCustomerAndThereIsNoCurrentUserAndCustomerDoesNotExist.cs" />
-    <Compile Include="Application\Common\Services\WhenGettingCurrentCustomerAndThereIsNoCurrentUserAndCustomerExists.cs" />
-    <Compile Include="Areas\Account\Controllers\LoginControllerContext.cs" />
-    <Compile Include="Areas\Account\Controllers\WhenLoggingInAndUserCanBeAuthenticated.cs" />
-    <Compile Include="Areas\Account\Controllers\WhenLoggingInAndUserCannotBeAuthenticated.cs" />
+    <Compile Include="Application\Common\Services\CurrentCustomerServiceSpecs.cs" />
+    <Compile Include="Areas\Account\Controllers\RegisterControllerSpecs.cs" />
+    <Compile Include="Areas\Account\Controllers\LoginControllerSpecs.cs" />
+    <Compile Include="Areas\Account\Services\RegistrationServiceSpecs.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,6 +15,12 @@ namespace ProjectSample.UnitTests
         {
             SharedContext();
             Context();
+            Because();
+        }
+
+        protected virtual void Because()
+        {
+            
         }
 
         protected virtual void SharedContext()
