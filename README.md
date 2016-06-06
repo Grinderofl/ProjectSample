@@ -6,11 +6,15 @@ This project is created to demonstrate the usage of following:
 a) Libraries
 * Bcrypt.Net
 * Castle
+* FluentAssertions
 * FluentMigrator
 * FluentMvc
 * Fluent NHibernate
 * Fluent Validation
+* Moq
 * NHibernate
+* NUnit
+
 
 b) Techniques
 * SOLID
@@ -24,6 +28,8 @@ b) Techniques
 * Migration Generation
 * Heavy use of generics
 * Authentication
+* Unit Testing
+* Context/Specification
 * Design Patterns:
   * Repository
   * Unit of Work
