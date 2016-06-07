@@ -68,10 +68,8 @@
     <Compile Include="Domain\Mapping\CustomerOverride.cs" />
     <Compile Include="Domain\Mapping\OrderOverride.cs" />
     <Compile Include="Domain\Mapping\OrderStateOverride.cs" />
-    <Compile Include="Domain\Mapping\RoleOverride.cs" />
     <Compile Include="Domain\Mapping\ShipmentItemOverride.cs" />
     <Compile Include="Domain\Mapping\ShipmentOverride.cs" />
-    <Compile Include="Domain\Mapping\UserBaseOverride.cs" />
     <Compile Include="Domain\Mapping\UserOverride.cs" />
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderItem.cs" />

@@ -145,6 +145,8 @@
     <Compile Include="NHibernate\Security\Impl\UserDataSource.cs" />
     <Compile Include="NHibernate\Security\Queries\FindUserByUsernameQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Domain\Mapping\RoleOverride.cs" />
+    <Compile Include="Security\Domain\Mapping\UserBaseOverride.cs" />
     <Compile Include="Security\Domain\Role.cs" />
     <Compile Include="Security\Domain\UserBase.cs" />
     <Compile Include="Security\IUserDataSource.cs" />
