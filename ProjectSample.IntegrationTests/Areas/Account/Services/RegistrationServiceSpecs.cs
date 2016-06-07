@@ -1,46 +1,45 @@
-﻿using FluentAssertions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FluentAssertions;
 using Moq;
+using NHibernate.Linq;
 using NUnit.Framework;
 using ProjectSample.Application.Common.Services;
 using ProjectSample.Areas.Account.Models.Register;
 using ProjectSample.Areas.Account.Services.Impl;
 using ProjectSample.Areas.Account.Services.Models;
 using ProjectSample.Core.Domain;
-using ProjectSample.Infrastructure.DataAccess;
-using ProjectSample.Infrastructure.NHibernate.Security.Queries;
 using ProjectSample.Infrastructure.Security.Domain;
 using ProjectSample.Infrastructure.Security.Services;
 using ProjectSample.Infrastructure.Security.Services.Impl;
 
-namespace ProjectSample.UnitTests.Areas.Account.Services
+namespace ProjectSample.IntegrationTests.Areas.Account.Services
 {
     public class RegistrationServiceSpecs
     {
-        public abstract class RegistrationServiceContext : TestBase
+        public abstract class RegistrationServiceContext : IntegrationTestBase
         {
+            protected RegistrationService Service;
+
             protected ICryptoService CryptoService;
             protected Mock<ICurrentCustomerService> CurrentCustomerServiceMock;
-            protected Mock<IRepository> RepositoryMock;
 
-            protected RegistrationService Service;
             protected RegistrationResult Result;
-
             protected RegisterFields Fields;
 
             protected override void SharedContext()
             {
-                RepositoryMock = CreateDependency<IRepository>();
-                CurrentCustomerServiceMock = CreateDependency<ICurrentCustomerService>();
                 CryptoService = new CryptoService();
-
+                CurrentCustomerServiceMock = CreateDependency<ICurrentCustomerService>();
                 Fields = new RegisterFields()
                 {
                     Email = "Foo@bar.com",
                     Password = "foobar"
                 };
-
-                Service = new RegistrationService(RepositoryMock.Object, CurrentCustomerServiceMock.Object,
-                    CryptoService);
+                Service = new RegistrationService(Repository, CurrentCustomerServiceMock.Object, CryptoService);
             }
 
             protected override void Because()
@@ -51,11 +50,14 @@ namespace ProjectSample.UnitTests.Areas.Account.Services
 
         public class WhenRegisteringAndUserAlreadyExists : RegistrationServiceContext
         {
-            private Mock<User> _userMock;
             protected override void Context()
             {
-                _userMock = CreateDependency<User>();
-                RepositoryMock.Setup(x => x.Query(It.IsAny<FindUserByUsernameQuery>())).Returns(_userMock.Object);
+                var user = new User()
+                {
+                    Role = Role.User,
+                    UserName = "Foo@bar.com"
+                };
+                Save((UserBase)user);
             }
 
             [Test]
@@ -67,17 +69,22 @@ namespace ProjectSample.UnitTests.Areas.Account.Services
 
         public class WhenRegisteringAndUserDoesNotExist : RegistrationServiceContext
         {
-            private Mock<Customer> _customerMock;
+            private Customer _customer;
             protected override void Context()
             {
-                _customerMock = CreateDependency<Customer>();
-                CurrentCustomerServiceMock.Setup(x => x.CurrentCustomer()).Returns(_customerMock.Object);
+                _customer = new Customer()
+                {
+                    Identifier = "123"
+                };
+                CurrentCustomerServiceMock.Setup(x => x.CurrentCustomer()).Returns(_customer);
             }
 
             [Test]
             public void should_save()
             {
-                RepositoryMock.Verify(x => x.Save(It.IsAny<User>()), Times.Once);
+                var user = Session.Query<User>().SingleOrDefault();
+                user.Should().NotBeNull();
+                user.UserName.Should().BeEquivalentTo(Fields.Email);
             }
 
             [Test]

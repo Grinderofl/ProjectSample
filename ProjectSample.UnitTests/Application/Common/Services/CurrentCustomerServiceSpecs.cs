@@ -13,7 +13,7 @@ namespace ProjectSample.UnitTests.Application.Common.Services
 {
     public class CurrentCustomerServiceSpecs
     {
-        public class CurrentCustomerServiceContext : TestBase
+        public abstract class CurrentCustomerServiceContext : TestBase
         {
             protected CurrentCustomerService Service;
 

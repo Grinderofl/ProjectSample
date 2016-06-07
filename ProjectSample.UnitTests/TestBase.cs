@@ -11,7 +11,7 @@ namespace ProjectSample.UnitTests
         }
 
         [OneTimeSetUp]
-        public void OneTimeSetup()
+        public virtual void OneTimeSetup()
         {
             SharedContext();
             Context();

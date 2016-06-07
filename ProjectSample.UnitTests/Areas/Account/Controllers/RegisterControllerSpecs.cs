@@ -14,7 +14,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
 {
     public class RegisterControllerSpecs
     {
-        public class RegisterControllerContext : TestBase
+        public abstract class RegisterControllerContext : TestBase
         {
             protected RegisterController Controller;
 

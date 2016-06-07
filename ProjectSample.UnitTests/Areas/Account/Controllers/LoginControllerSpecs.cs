@@ -14,7 +14,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
 {
     public class LoginControllerSpecs
     {
-        public class LoginControllerContext : TestBase
+        public abstract class LoginControllerContext : TestBase
         {
             protected LoginController Controller;
 
