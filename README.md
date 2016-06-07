@@ -14,6 +14,7 @@ a) Libraries
 * Moq
 * NHibernate
 * NUnit
+* SQLite
 
 
 b) Techniques
@@ -29,6 +30,7 @@ b) Techniques
 * Heavy use of generics
 * Authentication
 * Unit Testing
+* Integration Testing
 * Context/Specification
 * Design Patterns:
   * Repository
