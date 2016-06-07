@@ -36,11 +36,6 @@ namespace ProjectSample.UnitTests.Domain
                     Id = 2,
                     Name = "Bar"
                 };
-                //var mockProduct1 = CreateDependency<Product>();
-                //mockProduct1.SetupGet(x => x.Id).Returns(1);
-
-                //var mockProduct2 = CreateDependency<Product>();
-                //mockProduct2.SetupGet(x => x.Id).Returns(2);
                 _customerToTransfer.Basket.Add(product1, 2);
                 _customerToTransfer.Basket.Add(product2, 3);
             }
