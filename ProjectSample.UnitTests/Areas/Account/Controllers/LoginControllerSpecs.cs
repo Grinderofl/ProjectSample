@@ -5,6 +5,7 @@ using NUnit.Framework;
 using ProjectSample.Areas.Account.Commands;
 using ProjectSample.Areas.Account.Controllers;
 using ProjectSample.Areas.Account.Models.Login;
+using ProjectSample.Core.Domain;
 using ProjectSample.Infrastructure.CommandBus;
 using ProjectSample.Infrastructure.Security.Domain;
 using ProjectSample.Infrastructure.Security.Models;
@@ -36,7 +37,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
 
         public class WhenLoggingInAndUserCanBeAuthenticated : LoginControllerContext
         {
-            private Mock<UserBase> _userBaseMock;
+            private Mock<User> _userBaseMock;
             private LoginFields _fields;
             protected override void Context()
             {
@@ -45,7 +46,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
                     Email = "foo",
                     Password = "bar"
                 };
-                _userBaseMock = CreateDependency<UserBase>();
+                _userBaseMock = CreateDependency<User>();
                 var authResult = AuthenticationResult.Success(_userBaseMock.Object);
                 AuthServiceMock.Setup(x => x.Authenticate(_fields.Email, _fields.Password)).Returns(authResult);
 

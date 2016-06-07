@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Iesi.Collections.Generic;
 using ProjectSample.Infrastructure.Domain.Base;
 
 namespace ProjectSample.Core.Domain
 {
     public class Basket : Entity<long>
     {
-        private readonly ISet<BasketItem> _items = new HashSet<BasketItem>();
+        private readonly ICollection<BasketItem> _items = new List<BasketItem>();
 
         protected Basket()
         {
@@ -26,6 +27,8 @@ namespace ProjectSample.Core.Domain
             if (currentItem == null)
             {
                 currentItem = BasketItem.Create(product, this);
+                if(quantity > 0)
+                    currentItem.IncreaseQuantity(quantity - 1);
                 _items.Add(currentItem);
             }
             else

@@ -7,7 +7,7 @@ namespace ProjectSample.Core.Domain.Mapping
     {
         public void Override(AutoMapping<Basket> mapping)
         {
-            mapping.HasMany(x => x.Items).Cascade.AllDeleteOrphan();
+            mapping.HasMany(x => x.Items).AsList().Cascade.AllDeleteOrphan();
         }
     }
 }

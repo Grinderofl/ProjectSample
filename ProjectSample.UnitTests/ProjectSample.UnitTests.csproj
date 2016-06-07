@@ -97,6 +97,7 @@
     <Compile Include="Areas\Account\Controllers\RegisterControllerSpecs.cs" />
     <Compile Include="Areas\Account\Controllers\LoginControllerSpecs.cs" />
     <Compile Include="Areas\Account\Services\RegistrationServiceSpecs.cs" />
+    <Compile Include="Domain\CustomerSpecs.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

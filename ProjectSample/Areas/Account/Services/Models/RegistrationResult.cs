@@ -1,4 +1,5 @@
-﻿using ProjectSample.Infrastructure.Security.Domain;
+﻿using ProjectSample.Core.Domain;
+using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Areas.Account.Services.Models
 {
@@ -14,9 +15,9 @@ namespace ProjectSample.Areas.Account.Services.Models
 
         public string Message { get; }
         public bool Registered { get; }
-        public UserBase User { get; set; }
+        public User User { get; set; }
 
-        public static RegistrationResult Success(UserBase user) => new RegistrationResult("Success", true)
+        public static RegistrationResult Success(User user) => new RegistrationResult("Success", true)
         {
             User = user
         };

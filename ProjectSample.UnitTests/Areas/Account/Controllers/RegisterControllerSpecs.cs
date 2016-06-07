@@ -7,6 +7,7 @@ using ProjectSample.Areas.Account.Controllers;
 using ProjectSample.Areas.Account.Models.Register;
 using ProjectSample.Areas.Account.Services;
 using ProjectSample.Areas.Account.Services.Models;
+using ProjectSample.Core.Domain;
 using ProjectSample.Infrastructure.CommandBus;
 using ProjectSample.Infrastructure.Security.Domain;
 
@@ -36,7 +37,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
 
         public class WhenRegisteringAndUserCanBeRegistered : RegisterControllerContext
         {
-            private Mock<UserBase> _userBaseMock;
+            private Mock<User> _userBaseMock;
             private RegisterFields _fields;
             protected override void Context()
             {
@@ -45,7 +46,7 @@ namespace ProjectSample.UnitTests.Areas.Account.Controllers
                     Email = "foo",
                     Password = "bar"
                 };
-                _userBaseMock = CreateDependency<UserBase>();
+                _userBaseMock = CreateDependency<User>();
                 RegistrationServiceMock.Setup(x => x.Register(It.IsAny<RegisterFields>()))
                     .Returns(RegistrationResult.Success(_userBaseMock.Object));
 

@@ -194,8 +194,10 @@
     <Compile Include="Areas\Account\AccountAreaRegistration.cs" />
     <Compile Include="Areas\Account\Commands\Handlers\LoginUserHandler.cs" />
     <Compile Include="Areas\Account\Commands\Handlers\LogoutUserHandler.cs" />
+    <Compile Include="Areas\Account\Commands\Handlers\TransferBasketHandler.cs" />
     <Compile Include="Areas\Account\Commands\LoginUserCommand.cs" />
     <Compile Include="Areas\Account\Commands\LogoutUserCommand.cs" />
+    <Compile Include="Areas\Account\Commands\TransferBasketCommand.cs" />
     <Compile Include="Areas\Account\Controllers\AccountControllerBase.cs" />
     <Compile Include="Areas\Account\Controllers\LoginController.cs" />
     <Compile Include="Areas\Account\Controllers\LogoutController.cs" />

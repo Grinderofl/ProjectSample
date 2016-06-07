@@ -1,6 +1,7 @@
 using System.Web.Mvc;
 using ProjectSample.Areas.Account.Commands;
 using ProjectSample.Areas.Account.Models.Login;
+using ProjectSample.Core.Domain;
 using ProjectSample.Infrastructure.Security.Services;
 
 namespace ProjectSample.Areas.Account.Controllers
@@ -27,7 +28,7 @@ namespace ProjectSample.Areas.Account.Controllers
                 var result = _authenticationService.Authenticate(fields.Email, fields.Password);
                 if (result.Authenticated)
                 {
-                    Bus.Send(new LoginUserCommand(result.User));
+                    Bus.Send(new LoginUserCommand((User)result.User));
                     return RedirectToAction("Index", "Home", new {area = "Catalog"});
                 }
                 ModelState.AddModelError(nameof(fields.Email), result.Message);

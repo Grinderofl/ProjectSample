@@ -1,14 +1,15 @@
-﻿using ProjectSample.Infrastructure.Security.Domain;
+﻿using ProjectSample.Core.Domain;
+using ProjectSample.Infrastructure.Security.Domain;
 
 namespace ProjectSample.Areas.Account.Commands
 {
     public class LoginUserCommand
     {
-        public LoginUserCommand(UserBase user)
+        public LoginUserCommand(User user)
         {
             User = user;
         }
 
-        public UserBase User { get; }
+        public User User { get; }
     }
 }
