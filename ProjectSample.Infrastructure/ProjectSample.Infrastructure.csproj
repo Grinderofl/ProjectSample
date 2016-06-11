@@ -131,6 +131,7 @@
     <Compile Include="FluentValidation\Windsor\WindsorFluentValidatorFactory.cs" />
     <Compile Include="Mvc\Controllers\EntityController.cs" />
     <Compile Include="Mvc\Filters\DatabaseExceptionFilter.cs" />
+    <Compile Include="Mvc\Install\AbstractControllerInstaller.cs" />
     <Compile Include="Mvc\Mapping\FieldsToEntityConverter.cs" />
     <Compile Include="Mvc\Models\EntityIndexModel.cs" />
     <Compile Include="Mvc\Models\Result.cs" />
