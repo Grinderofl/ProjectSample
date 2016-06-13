@@ -8,8 +8,7 @@ namespace ProjectSample.EF.Application.Configuration
     {
         public override Assembly[] Assemblies => new[]
         {
-            typeof(User).Assembly,
-            typeof(AssemblyConfiguration).Assembly
+            typeof(User).Assembly
         };
     }
 }

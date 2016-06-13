@@ -182,6 +182,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Common\Factories\Impl\CustomerIdentifierFactory.cs" />
+    <Compile Include="Application\Common\Factories\IIdentifierFactory.cs" />
+    <Compile Include="Application\Common\Services\ICurrentUserService.cs" />
+    <Compile Include="Application\Common\Services\Impl\CachingCurrentCustomerService.cs" />
+    <Compile Include="Application\Common\Services\Impl\Base\CurrentCustomerService.cs" />
     <Compile Include="Application\Configuration\ProjectSampleAssemblyConfiguration.cs" />
     <Compile Include="Application\Install\Base\ProjectSampleInstaller.cs" />
     <Compile Include="Application\Install\ControllerInstaller.cs" />
@@ -200,10 +205,13 @@
     <Compile Include="Core\Domain\Customer.cs" />
     <Compile Include="Core\Domain\Mapping\CustomerConfiguration.cs" />
     <Compile Include="Core\Domain\Product.cs" />
+    <Compile Include="Core\Domain\Queries\FindCustomerByIdentityQuery.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Common\Models\Identifier.cs" />
     <Compile Include="Infrastructure\Domain\Base\Entity.cs" />
+    <Compile Include="Infrastructure\EntityFramework\Queries\EfQueryObject.cs" />
     <Compile Include="Infrastructure\Windsor\WindsorMiddleware.cs" />
     <Compile Include="Migrations\201606111423052_Initial.cs" />
     <Compile Include="Migrations\201606111423052_Initial.Designer.cs">
@@ -211,7 +219,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Core\Domain\User.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -288,6 +296,10 @@
     <ProjectReference Include="..\ProjectSample.Infrastructure\ProjectSample.Infrastructure.csproj">
       <Project>{3fff849b-f114-4c81-bc54-bd59a84e6d45}</Project>
       <Name>ProjectSample.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectSample\ProjectSample.csproj">
+      <Project>{52A68B9C-24C9-490F-B7B6-A4ADCB375EF8}</Project>
+      <Name>ProjectSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
